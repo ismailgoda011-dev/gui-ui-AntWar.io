@@ -1,38 +1,19 @@
-// =======================================================
-// performance.js — adaptive visual-effects budget
-// =======================================================
+// Backward-compatible facade. New code should use performance-manager.js.
+import { getPerformanceMode, getPerformancePolicy, setPerformanceMode, rafThrottle, initPerformanceManager } from './performance-manager.js';
 
-let mode = 'auto';
 let frame = 0;
 let raf = 0;
 
-export function getPerformanceMode() { return mode; }
-
-export function applyPerformanceMode(next = 'auto') {
-    mode = ['auto', 'high', 'low', 'off'].includes(next) ? next : 'auto';
-    document.documentElement.dataset.performance = mode;
-    const low = mode === 'low' || mode === 'off';
-    document.documentElement.classList.toggle('reduce-effects', low);
-    const canvas = document.getElementById('ambient-particles-canvas');
-    if (canvas) canvas.style.display = mode === 'off' ? 'none' : '';
-    if (mode === 'off') stopFrameBudget();
-    return mode;
-}
-
-export function shouldAnimate() {
-    return mode !== 'off' && !document.hidden;
-}
-
+export { getPerformanceMode, getPerformancePolicy, rafThrottle };
+export function applyPerformanceMode(mode = 'auto') { return setPerformanceMode(mode); }
+export function shouldAnimate() { return !document.hidden && getPerformancePolicy().motion; }
 export function startFrameBudget(callback) {
-    stopFrameBudget();
-    const tick = time => {
-        if (shouldAnimate()) callback(time, frame++);
-        raf = requestAnimationFrame(tick);
-    };
+  stopFrameBudget();
+  const tick = time => {
+    if (shouldAnimate()) callback(time, frame++);
     raf = requestAnimationFrame(tick);
+  };
+  raf = requestAnimationFrame(tick);
 }
-
-export function stopFrameBudget() {
-    if (raf) cancelAnimationFrame(raf);
-    raf = 0;
-}
+export function stopFrameBudget() { if (raf) cancelAnimationFrame(raf); raf = 0; }
+export { initPerformanceManager };
