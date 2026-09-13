@@ -1,24 +1,25 @@
-/* Adaptive visual budget. The JavaScript controller toggles these flags. */
-html.reduce-effects *,
-html[data-performance="low"] .ambient-overlay {
-    animation-duration: 1ms !important;
-    transition-duration: 120ms !important;
+/* Adaptive visual budget. performance-manager.js controls the data attribute. */
+html[data-performance="low"] .ambient-overlay,
+html[data-performance="low"] .ambient-particles,
+html[data-performance="low"] #ambient-particles-canvas { display: none !important; }
+html[data-performance="low"] .parallax-target { transform: none !important; }
+html[data-performance="low"] *, html.reduced-motion * {
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 120ms !important;
+  scroll-behavior: auto !important;
 }
+html[data-performance="medium"] .parallax-target { transform: none !important; }
+html[data-performance="medium"] .ambient-overlay { opacity: .7; }
+html[data-performance="high"] .ambient-overlay { opacity: 1; }
 
-html[data-performance="low"] #ambient-particles-canvas {
-    opacity: .45;
-}
-
-html[data-performance="off"] #ambient-particles-canvas,
-html[data-performance="off"] .ambient-overlay {
-    display: none !important;
-}
+.modal-open { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 1ms !important;
-        scroll-behavior: auto !important;
-    }
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
 }
