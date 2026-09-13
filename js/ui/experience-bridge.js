@@ -5,6 +5,15 @@ window.addEventListener('antwar:ux:set-language', event => {
   if (code) setLanguage(code);
 });
 
+window.addEventListener('languageChanged', () => {
+  const ui = window.ANTWAR_PREMIUM_UI;
+  const active = document.querySelector('.antwar-ux-overlay')?.dataset.kind;
+  if (!ui || !active) return;
+  if (active === 'chat') ui.openChat();
+  else if (active === 'room') ui.openRoom();
+  else if (active === 'settings') ui.openSettings();
+});
+
 window.addEventListener('antwar:room:create', event => {
   window.dispatchEvent(new CustomEvent('antwar:room:changed', { detail: event.detail }));
 });
