@@ -1,4 +1,19 @@
-/* Adaptive visual budget. performance-manager.js controls the data attribute. */
+/* =========================================================
+   AntWar GUI foundation: visual budget + accessibility + tokens
+   ========================================================= */
+:root {
+  --aw-gold: #ffd875;
+  --aw-gold-strong: #f5b942;
+  --aw-danger: #bc4526;
+  --aw-success: #37aa49;
+  --aw-panel: rgba(12, 8, 7, .78);
+  --aw-border: rgba(255, 216, 117, .28);
+  --aw-radius-sm: 6px;
+  --aw-radius-md: 10px;
+  --aw-radius-lg: 14px;
+  --aw-shadow-panel: 0 10px 30px rgba(0,0,0,.42);
+}
+
 html[data-performance="low"] .ambient-overlay,
 html[data-performance="low"] .ambient-particles,
 html[data-performance="low"] #ambient-particles-canvas { display: none !important; }
@@ -14,6 +29,21 @@ html[data-performance="medium"] .ambient-overlay { opacity: .7; }
 html[data-performance="high"] .ambient-overlay { opacity: 1; }
 
 .modal-open { overflow: hidden; }
+
+/* Focus visibility for keyboard/controller users. */
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--aw-gold);
+  outline-offset: 2px;
+}
+
+/* Avoid accidental selection on game controls while keeping text fields usable. */
+button, [role="button"] { -webkit-tap-highlight-color: transparent; }
+
+@media (max-width: 640px) {
+  :root { --aw-shadow-panel: 0 6px 18px rgba(0,0,0,.38); }
+  .game-modal-backdrop { padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)); }
+  .wood-modal-body { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
