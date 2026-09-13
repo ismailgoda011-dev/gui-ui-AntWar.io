@@ -1,0 +1,4 @@
+.antwar-ux-shell :focus-visible{outline:2px solid rgba(255,216,117,.9);outline-offset:2px}
+.large-text-ui .antwar-ux-shell .antwar-chat-name,.large-text-ui .antwar-ux-shell .antwar-setting-label{font-size:calc(1em + 1px)}
+.large-text-ui .antwar-ux-shell .antwar-chat-preview,.large-text-ui .antwar-ux-shell .antwar-setting-hint,.large-text-ui .antwar-ux-shell .antwar-room-row-meta{font-size:calc(1em + 1px)}
+@media (prefers-reduced-motion:reduce){.antwar-ux-shell *{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
