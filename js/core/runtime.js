@@ -5,7 +5,7 @@
 import { GameAdapter } from '../game/game-adapter.js';
 import { gameEvents } from './event-bus.js';
 import { getGameState, patchState } from './game-state.js';
-import { initPerformanceManager, setPerformanceMode } from './performance-manager.js';
+import { initPerformanceManager } from './performance-manager.js';
 
 let started = false;
 
@@ -28,15 +28,13 @@ function bindDirectGameControls() {
   document.addEventListener('click', event => {
     const play = event.target.closest?.('#play-action-btn');
     if (!play || !GameAdapter.isAvailable()) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
+    event.preventDefault(); event.stopImmediatePropagation();
     GameAdapter.start(play.getAttribute('data-game-mode') || 'normal', { source: 'gui', direct: true });
   }, true);
   document.addEventListener('click', event => {
     const exit = event.target.closest?.('[data-game-exit], #game-exit-btn');
     if (!exit || !GameAdapter.isAvailable()) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
+    event.preventDefault(); event.stopImmediatePropagation();
     GameAdapter.exit();
   }, true);
 }
@@ -46,7 +44,6 @@ export function initRuntime() {
   started = true;
   const performance = initPerformanceManager();
   patchState('ui.reducedMotion', window.matchMedia?.('(prefers-reduced-motion: reduce)').matches === true);
-  setPerformanceMode(patchState ? 'auto' : 'auto');
   bindEngineEvents();
   bindDirectGameControls();
   window.AntWarRuntime = Object.freeze({
