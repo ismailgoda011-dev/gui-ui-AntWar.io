@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
     <link rel="stylesheet" href="style.css" id="main-stylesheet">
     <link rel="stylesheet" href="js/core/performance.css">
+    <link rel="stylesheet" href="js/ui/experience-overrides.css">
 </head>
 <body id="game-body" class="w-full h-screen h-[100dvh] overflow-hidden game-bg flex justify-center items-center select-none font-game">
     <div id="loading-screen" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center loading-screen transition-opacity duration-500">
@@ -61,5 +62,7 @@
     <div id="mobile-bottom-nav"></div>
     <script type="module">import { initRuntime } from './js/core/runtime.js'; initRuntime();</script>
     <script type="module" src="script.js" id="main-script"></script>
+    <script type="module" src="js/ui/experience-overrides-v3.js"></script>
+    <script type="module" src="js/ui/experience-bridge.js"></script>
 </body>
 </html>
