@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "version": "1.0.0"
+  },
+  "defaultServer": "me",
+  "servers": [
+    {
+      "id": "me",
+      "flag": "🟢",
+      "ping": "18ms",
+      "status": "emerald",
+      "nameKey": "server.middleEast"
+    },
+    {
+      "id": "eu",
+      "flag": "🇪🇺",
+      "ping": "34ms",
+      "status": "emerald",
+      "nameKey": "server.europe"
+    },
+    {
+      "id": "us",
+      "flag": "🇺🇸",
+      "ping": "88ms",
+      "status": "amber",
+      "nameKey": "server.usEast"
+    },
+    {
+      "id": "ap",
+      "flag": "🇸🇬",
+      "ping": "112ms",
+      "status": "amber",
+      "nameKey": "server.asiaPacific"
+    }
+  ]
+}

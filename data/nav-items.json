@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "version": "3.0.0",
+    "description": "Single source of truth for AntWar GUI navigation, events, servers and reward UI definitions. Game data can replace these records later without rewriting the UI."
+  },
+  "bottomNav": [
+    { "id": "bnav-home", "icon": "Play.png", "labelKey": "nav.home", "action": "home" },
+    { "id": "bnav-shop", "icon": "shop.png", "labelKey": "nav.shop", "action": "page:shop", "iconClass": "filter hue-rotate-180 brightness-110" },
+    { "id": "bnav-wardrobe", "icon": "Wardrobe.png", "labelKey": "nav.wardrobe", "action": "page:wardrobe" },
+    { "id": "bnav-chat", "icon": "Chat.png", "labelKey": "nav.chat", "action": "page:chat" }
+  ],
+  "headerNav": [
+    { "id": "mail-nav-btn", "icon": "mail.png", "labelKey": "nav.mail", "titleKey": "nav.mailboxTitle", "modal": "mailbox", "badge": { "id": "mail-badge", "value": 3 } },
+    { "id": "shop-nav-btn", "icon": "shop.png", "labelKey": "nav.shop", "titleKey": "nav.shopTitle", "action": "page:shop", "iconClass": "filter hue-rotate-180 brightness-110" }
+  ],
+  "events": [
+    { "id": "daily-chest-btn", "icon": "Daily-Gifts.png", "labelKey": "events.gifts", "titleKey": "events.dailyRewardsTitle", "modal": "daily-rewards", "iconWrapperClass": "chest-wobble", "badge": { "id": "daily-chest-badge", "value": "!" } },
+    { "id": "daily-quests-btn", "icon": "Task.png", "labelKey": "events.tasks", "titleKey": "events.dailyQuestsTitle", "modal": "daily-quests", "badge": { "id": "daily-quests-badge", "value": 3, "className": "absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#FFD875] text-black font-black text-[9px] flex items-center justify-center border border-[#BC4526] shadow" } },
+    { "id": "royal-pass-btn", "icon": "RoyalPass.png", "labelKey": "events.pass", "titleKey": "events.royalPassTitle", "modal": "royal-pass", "levelTag": { "id": "royal-pass-level-tag", "value": "T-18" }, "labelClass": "rpg-btn-label text-[#FFD875]" }
+  ],
+  "mainActions": {
+    "play": { "id": "play-action-btn", "icon": "Play.png", "labelKey": "actions.play", "titleKey": "actions.startBattle", "modal": "play-modes" },
+    "createRoom": { "id": "create-room-action-btn", "icon": "Create Room.png", "labelKey": "actions.createRoom", "titleKey": "actions.createRoom", "modal": "create-room" }
+  },
+  "serverOptions": [
+    { "id": "me", "nameKey": "server.middleEast", "flag": "🟢", "ping": "18ms", "status": "emerald" },
+    { "id": "eu", "nameKey": "server.europe", "flag": "🇪🇺", "ping": "34ms", "status": "emerald" },
+    { "id": "us", "nameKey": "server.usEast", "flag": "🇺🇸", "ping": "88ms", "status": "amber" },
+    { "id": "ap", "nameKey": "server.asiaPacific", "flag": "🇸🇬", "ping": "112ms", "status": "amber" }
+  ],
+  "dailyRewards": [
+    { "id": "day-1", "day": 1, "dayKey": "dailyRewards.day1", "icon": "Coin.png", "amount": 500, "rewardType": "gold", "rarity": "common", "isToday": true },
+    { "id": "day-2", "day": 2, "dayKey": "dailyRewards.day2", "icon": "Diamond.png", "amount": 25, "rewardType": "gem", "rarity": "rare" },
+    { "id": "day-3", "day": 3, "dayKey": "dailyRewards.day3", "icon": "Coin.png", "amount": 1200, "rewardType": "gold", "rarity": "common" },
+    { "id": "day-4", "day": 4, "dayKey": "dailyRewards.day4", "icon": "Diamond.png", "amount": 50, "rewardType": "gem", "rarity": "epic" },
+    { "id": "day-5", "day": 5, "dayKey": "dailyRewards.day5", "icon": "Coin.png", "amount": 2500, "rewardType": "gold", "rarity": "rare" },
+    { "id": "day-6", "day": 6, "dayKey": "dailyRewards.day6", "icon": "Diamond.png", "amount": 100, "rewardType": "gem", "rarity": "epic" },
+    { "id": "day-7", "day": 7, "dayKey": "dailyRewards.day7", "icon": "Daily-Gifts.png", "amount": 500, "rewardType": "mega", "rarity": "legendary", "bonusKey": "dailyRewards.megaBonus" }
+  ],
+  "dailyQuests": {
+    "daily": [
+      { "id": "qd1", "titleKey": "quests.arenaVictor.title", "descKey": "quests.arenaVictor.desc", "guideKey": "quests.arenaVictor.guide", "progress": 2, "max": 2, "rewardGold": 600, "rewardGems": 10, "claimed": false },
+      { "id": "qd2", "titleKey": "quests.marketShopper.title", "descKey": "quests.marketShopper.desc", "guideKey": "quests.marketShopper.guide", "progress": 1000, "max": 1000, "rewardGold": 800, "rewardGems": 20, "claimed": false },
+      { "id": "qd3", "titleKey": "quests.dungeonWave.title", "descKey": "quests.dungeonWave.desc", "guideKey": "quests.dungeonWave.guide", "progress": 3, "max": 5, "rewardGold": 700, "rewardGems": 15, "claimed": false },
+      { "id": "qd4", "titleKey": "quests.socialMessenger.title", "descKey": "quests.socialMessenger.desc", "guideKey": "quests.socialMessenger.guide", "progress": 1, "max": 1, "rewardGold": 500, "rewardGems": 10, "claimed": false }
+    ],
+    "weekly": [
+      { "id": "qw1", "titleKey": "quests.endlessChampion.title", "descKey": "quests.endlessChampion.desc", "guideKey": "quests.endlessChampion.guide", "progress": 9, "max": 15, "rewardGold": 3500, "rewardGems": 80, "claimed": false },
+      { "id": "qw2", "titleKey": "quests.teamStrategist.title", "descKey": "quests.teamStrategist.desc", "guideKey": "quests.teamStrategist.guide", "progress": 5, "max": 5, "rewardGold": 4500, "rewardGems": 100, "claimed": false },
+      { "id": "qw3", "titleKey": "quests.masterCollector.title", "descKey": "quests.masterCollector.desc", "guideKey": "quests.masterCollector.guide", "progress": 7, "max": 10, "rewardGold": 2800, "rewardGems": 60, "claimed": false },
+      { "id": "qw4", "titleKey": "quests.passLevelUp.title", "descKey": "quests.passLevelUp.desc", "guideKey": "quests.passLevelUp.guide", "progress": 5, "max": 5, "rewardGold": 5000, "rewardGems": 120, "claimed": false }
+    ]
+  },
+  "royalPass": {
+    "tabs": [
+      { "id": "track", "labelKey": "royalPass.tabs.rewards" },
+      { "id": "daily", "labelKey": "royalPass.tabs.daily" },
+      { "id": "weekly", "labelKey": "royalPass.tabs.weekly" }
+    ]
+  }
+}

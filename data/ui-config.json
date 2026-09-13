@@ -1,0 +1,8 @@
+{
+  "_meta": {
+    "version": "3.0.0",
+    "deprecated": true,
+    "description": "Legacy compatibility file. Navigation, events, server options, daily rewards and UI registry data now live in data/nav-items.json.",
+    "sourceOfTruth": "data/nav-items.json"
+  }
+}

@@ -1,0 +1,3330 @@
+/* ==========================================================
+   1. الخطوط المحلية، الألوان، والخلفية img/bg0.png
+   ========================================================== */
+@font-face {
+    font-family: 'ReadexPro';
+    src: url('language/ar/ReadexPro-one.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tajawal';
+    src: url('language/ar/Tajawal-Light-tow.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LuckiestGuy';
+    src: url('language/en/LuckiestGuy-Regular-one.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('language/en/Nunito-VariableFont_wght-tow.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+}
+
+:root {
+    --font-display: 'ReadexPro', 'Fredoka', sans-serif;
+    --font-body: 'Tajawal', 'Changa', sans-serif;
+
+    /* Base Palette */
+    --c-primary: #BC4526;
+    --c-crimson: #7E2025;
+    --c-burgundy: #66180F;
+    --c-gold: #FFD875;
+    --c-amber: #d97706;
+    --c-amber-500: #f59e0b;
+    --c-yellow: #eab308;
+    --c-yellow-200: #fef08a;
+    --c-yellow-400: #facc15;
+    --c-yellow-500: #eab308;
+    --c-green: #37AA49;
+    --c-cyan: #67e8f9;
+    --c-danger: #dc2626;
+    --c-danger-red: #ef4444;
+    --c-white: #ffffff;
+    --c-black: #000000;
+
+    /* Dark Backgrounds */
+    --c-bg-base: #0d0703;
+    --c-bg-darkest: #0d0403;
+    --c-bg-darker: #1c0d06;
+    --c-bg-dark: #1e0e06;
+
+    /* Neutrals & Slate */
+    --c-slate-300: #cbd5e1;
+    --c-slate-400: #94a3b8;
+    --c-slate-500: #64748b;
+    --c-slate-600: #475569;
+    --c-slate-700: #334155;
+    --c-slate-800: #1e293b;
+
+    /* Opacities & Overlays */
+    --c-primary-30: rgba(188, 69, 38, 0.3);
+    --c-primary-40: rgba(188, 69, 38, 0.4);
+    --c-primary-50: rgba(188, 69, 38, 0.5);
+    --c-primary-80: rgba(188, 69, 38, 0.8);
+    --c-crimson-60: rgba(126, 32, 37, 0.6);
+    --c-crimson-80: rgba(126, 32, 37, 0.8);
+    --c-crimson-90: rgba(126, 32, 37, 0.9);
+    --c-burgundy-40: rgba(102, 24, 15, 0.4);
+    --c-burgundy-60: rgba(102, 24, 15, 0.6);
+    --c-burgundy-80: rgba(102, 24, 15, 0.8);
+    --c-burgundy-90: rgba(102, 24, 15, 0.9);
+    --c-burgundy-95: rgba(102, 24, 15, 0.95);
+    --c-gold-40: rgba(255, 216, 117, 0.4);
+    --c-gold-50: rgba(255, 216, 117, 0.5);
+    --c-gold-60: rgba(255, 216, 117, 0.6);
+    --c-gold-70: rgba(255, 216, 117, 0.7);
+    --c-gold-80: rgba(255, 216, 117, 0.8);
+    --c-green-40: rgba(55, 170, 73, 0.4);
+    --c-white-10: rgba(255, 255, 255, 0.1);
+    --c-white-40: rgba(255, 255, 255, 0.4);
+    --c-white-50: rgba(255, 255, 255, 0.5);
+    --c-white-60: rgba(255, 255, 255, 0.6);
+    --c-white-70: rgba(255, 255, 255, 0.7);
+    --c-white-80: rgba(255, 255, 255, 0.8);
+    --c-white-90: rgba(255, 255, 255, 0.9);
+    --c-black-30: rgba(0, 0, 0, 0.3);
+    --c-black-40: rgba(0, 0, 0, 0.4);
+    --c-black-60: rgba(0, 0, 0, 0.6);
+    --c-black-70: rgba(0, 0, 0, 0.7);
+    --c-black-75: rgba(0, 0, 0, 0.75);
+    --c-black-80: rgba(0, 0, 0, 0.8);
+    --c-black-95: rgba(0, 0, 0, 0.95);
+    --c-slate-400-40: rgba(148, 163, 184, 0.4);
+    --c-slate-600-40: rgba(71, 85, 105, 0.4);
+    --c-slate-700-30: rgba(51, 65, 85, 0.3);
+    --c-slate-800-60: rgba(30, 41, 59, 0.6);
+
+    /* Gradients */
+    --grad-loading-bg: linear-gradient(180deg, var(--c-bg-darker) 0%, var(--c-bg-base) 50%, var(--c-black) 100%);
+    --grad-loading-bar: linear-gradient(90deg, var(--c-amber) 0%, var(--c-yellow) 50%, #fcd34d 100%);
+    --grad-pass-badge: linear-gradient(90deg, var(--c-amber) 0%, var(--c-yellow) 100%);
+    --grad-chat-header: linear-gradient(90deg, var(--c-burgundy) 0%, var(--c-crimson-90) 100%);
+    --grad-hud-amber: linear-gradient(90deg, var(--c-amber-500) 0%, var(--c-yellow-400) 100%);
+
+    /* Glows & Shadows */
+    --glow-gold-title: 0 4px 10px rgba(255, 216, 117, 0.5);
+    --glow-gold-avatar: 0 8px 16px rgba(251, 191, 36, 0.6);
+    --glow-gold-bar: 0 0 12px rgba(251, 191, 36, 0.8);
+    --glow-gold-tab: 0 0 10px rgba(255, 216, 117, 0.4);
+
+    /* Legacy mapping */
+    --clr-primary-1: var(--c-primary);
+    --clr-primary-2: var(--c-crimson);
+    --clr-primary-3: var(--c-burgundy);
+    --clr-accent-green: var(--c-green);
+    --clr-white: var(--c-white);
+    --clr-black: var(--c-black);
+    --clr-yellow: var(--c-gold);
+    --clr-yellow-bright: var(--c-gold);
+    --clr-gold-light: var(--c-gold);
+    --clr-gold-main: var(--c-gold);
+    --clr-gold-accent: var(--c-gold);
+    --clr-gold-deep: var(--c-primary);
+    --clr-primary-cyan: var(--c-cyan);
+    --clr-primary-blue: var(--c-crimson);
+    --clr-neon-emerald: var(--c-green);
+    --clr-bright-orange: var(--c-primary);
+    --clr-bright-red: var(--c-crimson);
+    --clr-wood-light: var(--c-primary);
+    --clr-wood-main: var(--c-burgundy);
+    --clr-wood-border: var(--c-gold);
+    --clr-card-bg: var(--c-burgundy-80);
+    --clr-chip-bg: rgba(255, 216, 117, 0.15);
+}
+
+/* ==========================================================
+   Semantic Component Color Rules (Driven purely by :root)
+   ========================================================== */
+.loading-screen { background-color: var(--c-bg-base); }
+.loading-overlay { background: var(--grad-loading-bg); }
+.loading-title { color: var(--c-gold); filter: drop-shadow(var(--glow-gold-title)); }
+.loading-status { color: var(--c-gold-80); }
+.loading-track { background-color: var(--c-black-70); border: 1px solid var(--c-primary-40); }
+#loading-progress-bar { background: var(--grad-loading-bar); box-shadow: var(--glow-gold-bar); }
+.loading-counter { color: var(--c-gold-80); }
+.loading-tip-box { background-color: var(--c-black-40); border: 1px solid var(--c-primary-40); color: var(--c-gold-70); }
+
+.ambient-overlay { background-color: var(--c-black-30); }
+
+.hud-pass-badge { background: var(--grad-pass-badge); color: var(--c-black); border: 1px solid var(--c-yellow-200); }
+.hud-player-name { color: var(--c-white); }
+.hud-pill-text { color: var(--c-white); }
+.hud-plus-gold { background-color: var(--c-gold); color: var(--c-black); }
+.hud-plus-gems { background-color: var(--c-green); color: var(--c-black); }
+
+.server-selector-btn {
+    background-color: var(--c-black-80);
+    border: 1px solid var(--c-primary-80);
+    color: var(--c-gold);
+}
+.server-selector-btn:hover {
+    background-color: var(--c-black-95);
+    border-color: var(--c-primary);
+}
+.server-dropdown-menu {
+    background-color: var(--c-bg-darkest);
+    border: 2px solid var(--c-primary);
+}
+.server-dropdown-header {
+    border-bottom: 1px solid var(--c-primary-40);
+    background: var(--grad-chat-header);
+}
+.server-dropdown-title { color: var(--c-gold); }
+.server-dropdown-sub { color: var(--c-white-70); }
+.server-refresh-btn {
+    background-color: var(--c-burgundy-80);
+    border: 1px solid var(--c-primary-40);
+    color: var(--c-gold);
+}
+.server-refresh-btn:hover {
+    background-color: var(--c-primary);
+    color: var(--c-white);
+}
+.server-ping-badge { color: var(--c-green); }
+
+.match-mode-pill {
+    background-color: var(--c-black-60);
+    border: 1px solid var(--c-primary-40);
+    color: var(--c-white-70);
+}
+.match-mode-pill:hover {
+    color: var(--c-white);
+    border-color: var(--c-primary);
+}
+.match-mode-pill.active {
+    background-color: var(--c-burgundy-90);
+    color: var(--c-gold);
+    border-color: var(--c-gold-60);
+}
+
+.rank-item-my {
+    background-color: var(--c-burgundy-95);
+    border: 1px solid var(--c-gold-50);
+}
+.rank-badge-my { color: var(--c-gold); }
+.rank-avatar-my { border: 1px solid var(--c-primary); }
+.rank-name-my { color: var(--c-white); }
+.rank-score-my { color: var(--c-green); }
+
+.friends-dock-header { border-bottom: 1px solid var(--c-primary-40); }
+.friends-dock-title { color: var(--c-cyan); }
+.friends-dock-count-badge {
+    background-color: var(--c-burgundy-80);
+    color: var(--c-white);
+    border: 1px solid var(--c-primary-30);
+}
+.friends-row {
+    background-color: var(--c-black-40);
+    border: 1px solid var(--c-primary-30);
+}
+.friends-row:hover { border-color: var(--c-primary); }
+.friends-row-offline {
+    background-color: var(--c-black-30);
+    border: 1px solid var(--c-slate-700-30);
+}
+.friends-avatar { border: 1px solid var(--c-primary); }
+.friends-avatar-offline { border: 1px solid var(--c-slate-600); }
+.friend-status-online { background-color: var(--c-green); border: 1px solid var(--c-black); }
+.friend-status-inbattle { background-color: var(--c-green); border: 1px solid var(--c-black); }
+.friend-status-inlobby { background-color: var(--c-gold); border: 1px solid var(--c-black); }
+.friend-status-offline { background-color: var(--c-slate-500); border: 1px solid var(--c-black); }
+.friend-name { color: var(--c-white); }
+.friend-name-offline { color: var(--c-white-70); }
+.friend-text-battle { color: var(--c-green); }
+.friend-text-online { color: var(--c-green); }
+.friend-text-lobby { color: var(--c-gold); }
+.friend-text-offline { color: var(--c-slate-400); }
+.friend-action-btn {
+    background-color: var(--c-burgundy-60);
+    color: var(--c-white);
+    border: 1px solid var(--c-primary-40);
+}
+.friend-action-btn:hover { background-color: var(--c-burgundy-80); }
+.friend-action-btn-offline {
+    background-color: var(--c-slate-800-60);
+    color: var(--c-slate-300);
+    border: 1px solid var(--c-slate-600-40);
+}
+.friends-dock-footer { border-top: 1px solid var(--c-primary-30); }
+.friends-total-text { color: var(--c-white-80); }
+.friends-all-btn { color: var(--c-white); }
+
+.chat-unread-badge {
+    background-color: var(--c-danger);
+    color: var(--c-white);
+    border: 1px solid var(--c-white);
+}
+.chat-btn-label { color: var(--c-gold); }
+.chat-popup-container {
+    background-color: var(--c-bg-darkest);
+    border: 2px solid var(--c-primary);
+}
+.chat-popup-header {
+    border-bottom: 1px solid var(--c-primary-50);
+    background: var(--grad-chat-header);
+}
+.chat-online-indicator {
+    background-color: var(--c-green);
+    border: 2px solid var(--c-black);
+}
+.chat-popup-title { color: var(--c-gold); }
+.chat-online-count { color: var(--c-green); }
+.chat-icon-btn {
+    background-color: var(--c-black-40);
+    color: var(--c-white-80);
+}
+.chat-icon-btn:hover {
+    background-color: var(--c-white-10);
+    color: var(--c-gold);
+}
+.chat-close-btn {
+    background-color: var(--c-black-40);
+    color: var(--c-white);
+}
+.chat-close-btn:hover { background-color: var(--c-primary); }
+.chat-body-area { background-color: var(--c-black-75); }
+.chat-avatar-other { border: 1px solid var(--c-primary); }
+.chat-avatar-mine { border: 1px solid var(--c-green); }
+.chat-name-other { color: var(--c-gold); }
+.chat-name-mine { color: var(--c-green); }
+.chat-time-text { color: var(--c-white-50); }
+.chat-footer-bar {
+    border-top: 1px solid var(--c-primary-40);
+    background-color: var(--c-burgundy-90);
+}
+.chat-input-box {
+    background-color: var(--c-black-80);
+    border: 1px solid var(--c-primary-50);
+    color: var(--c-white);
+}
+.chat-input-box:focus { border-color: var(--c-gold); }
+.chat-send-btn {
+    background-color: var(--c-primary);
+    color: var(--c-white);
+}
+.chat-send-btn:hover { background-color: var(--c-crimson); }
+.chat-tabs-sidebar {
+    background-color: var(--c-burgundy-95);
+    border-right: 1px solid var(--c-primary-40);
+}
+.chat-tab-btn { color: var(--c-white-70); }
+.chat-tab-btn:hover {
+    color: var(--c-white);
+    background-color: var(--c-white-10);
+}
+.chat-tab-btn.active {
+    color: var(--c-gold);
+    background-color: var(--c-crimson);
+    border: 1px solid var(--c-gold-50);
+}
+
+.wardrobe-tabs-wrap {
+    background-color: var(--c-black-60);
+    border: 1px solid var(--c-gold-40);
+}
+.wardrobe-tab-btn { color: var(--c-white-70); }
+.wardrobe-tab-btn:hover { color: var(--c-white); }
+.wardrobe-tab-btn.active { color: var(--c-gold); }
+
+/* Theme utility helpers */
+.c-text-gold       { color: var(--c-gold) !important; }
+.c-text-gold-80    { color: var(--c-gold-80) !important; }
+.c-text-gold-70    { color: var(--c-gold-70) !important; }
+.c-text-white      { color: var(--c-white) !important; }
+.c-text-white-80   { color: var(--c-white-80) !important; }
+.c-text-white-70   { color: var(--c-white-70) !important; }
+.c-text-white-50   { color: var(--c-white-50) !important; }
+.c-text-black      { color: var(--c-black) !important; }
+.c-text-green      { color: var(--c-green) !important; }
+.c-text-cyan       { color: var(--c-cyan) !important; }
+.c-text-danger     { color: var(--c-danger) !important; }
+.c-text-slate-300  { color: var(--c-slate-300) !important; }
+.c-text-slate-400  { color: var(--c-slate-400) !important; }
+
+.c-bg-darkest      { background-color: var(--c-bg-darkest) !important; }
+.c-bg-base         { background-color: var(--c-bg-base) !important; }
+.c-bg-burgundy     { background-color: var(--c-burgundy) !important; }
+.c-bg-crimson      { background-color: var(--c-crimson) !important; }
+.c-bg-primary      { background-color: var(--c-primary) !important; }
+.c-bg-gold         { background-color: var(--c-gold) !important; }
+.c-bg-green        { background-color: var(--c-green) !important; }
+.c-bg-panel        { background-color: var(--c-black-80) !important; }
+.c-bg-card         { background-color: var(--c-black-40) !important; }
+
+.c-border-primary    { border-color: var(--c-primary) !important; }
+.c-border-primary-40 { border-color: var(--c-primary-40) !important; }
+.c-border-gold       { border-color: var(--c-gold) !important; }
+.c-border-gold-40    { border-color: var(--c-gold-40) !important; }
+.c-border-green      { border-color: var(--c-green) !important; }
+.c-border-white      { border-color: var(--c-white) !important; }
+.c-border-black      { border-color: var(--c-black) !important; }
+
+html[lang="en"] {
+    --font-display: 'LuckiestGuy', 'Fredoka', cursive;
+    --font-body: 'Nunito', 'Fredoka', sans-serif;
+}
+
+.font-game {
+    font-family: var(--font-body);
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+body.game-bg {
+    background-image: url('img/bg0.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #0d0a08;
+    font-family: var(--font-body);
+}
+
+/* ==========================================================
+   2. طبقات الواجهة والفيزياء (Z-Layers & Press Effects)
+   ========================================================== */
+.layer-base { z-index: 0; }
+.layer-ui   { z-index: 10; }
+
+.btn-press, .btn-wood {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.12s ease;
+    will-change: transform;
+}
+
+.btn-press:hover, .btn-wood:hover {
+    transform: scale(1.05);
+    filter: brightness(1.09);
+}
+
+.btn-press:active, .btn-wood:active {
+    transform: scale(0.94) translateY(2px);
+    filter: brightness(0.91);
+}
+
+/* ==========================================================
+   الأزرار الموحدة (بدون خلفية مربعة مع إبقاء الاسم جزءاً من الزر)
+   ========================================================== */
+.rpg-unified-btn {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.14s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.14s ease;
+    will-change: transform;
+    user-select: none;
+}
+
+.rpg-unified-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    filter: brightness(1.15);
+}
+
+.rpg-unified-btn:active {
+    transform: scale(0.93) translateY(2px);
+    filter: brightness(0.9);
+}
+
+.rpg-unified-btn .rpg-btn-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.rpg-unified-btn .rpg-btn-label {
+    font-size: clamp(8px, 0.78vw, 10.5px);
+    font-weight: 800;
+    color: #F7E2AF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(30, 14, 6, 0.88);
+    border: 1px solid rgba(255, 216, 117, 0.4);
+    padding: 1px 6px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    margin-top: 1px;
+    pointer-events: none;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.rpg-unified-btn:hover .rpg-btn-label {
+    color: #ffffff;
+    border-color: #FFD66B;
+}
+
+/* زر خشبي مرن img/Empty-button.png (نسبة العرض للارتفاع 2.17:1) */
+.btn-wood-empty {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1530 / 704;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    min-width: 90px;
+    max-width: 320px;
+    width: auto;
+    transition: transform 0.14s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.14s ease;
+    will-change: transform;
+}
+
+.btn-wood-empty:hover {
+    transform: scale(1.04);
+    filter: brightness(1.1);
+}
+
+.btn-wood-empty:active {
+    transform: scale(0.96) translateY(2px);
+    filter: brightness(0.92);
+}
+
+.btn-wood-empty .btn-bg-art {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.btn-wood-empty .btn-inner-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4% 8%;
+    pointer-events: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95), 0 0 6px rgba(0,0,0,0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* الزر السفلي المعلق في قاعدة النوافذ */
+.modal-footer-btn {
+    position: relative;
+    z-index: 10;
+    margin-top: calc(-1 * clamp(18px, 4.2vh, 32px));
+    flex-shrink: 0;
+    width: clamp(145px, 21vw, 200px);
+}
+
+/* أسماء الأزرار السفلية الأنيقة (Engraved Wood Labels) */
+.nav-item-label {
+    font-size: clamp(9px, 0.85vw, 11px);
+    font-weight: 800;
+    color: #F7E2AF;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(30, 14, 6, 0.85);
+    border: 1px solid rgba(255, 216, 117, 0.4);
+    padding: 1px 7px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* ==========================================================
+   3. الصندوق الخشبي "الملموس" (Tangible Box Modals)
+   ========================================================== */
+.wood-modal-container {
+    width: clamp(330px, 56vw, 620px);
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.78);
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wood-modal-box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.95));
+}
+
+.wood-modal-box .box-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* تجويف المحتوى داخل الصندوق — متوافق تلقائياً مع img/box-big.png النظيف بدون هدر المساحة */
+.wood-modal-cavity {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 14px;
+    padding: 3.5% 6.5% 6% 6.5%;
+    min-height: 220px;
+    max-height: min(84vh, 780px);
+}
+
+/* دعم خاص لـ img/box-big-Brother.png (اللوح الخشبي العريض) */
+.wood-modal-container.box-brother-style .wood-modal-cavity {
+    padding: 4.5% 6% 6% 6%;
+    max-height: min(86vh, 800px);
+}
+
+/* دعم النوافذ التي تطلب أصل img/box.png المزدحم بأوراق الشجر */
+.wood-modal-container.box-leaves-style .wood-modal-cavity {
+    padding: 4.5% 23% 11% 24%;
+}
+
+.wood-modal-header {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+    margin-bottom: 5px;
+}
+
+.wood-modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 4px;
+}
+
+/* ==========================================================
+   4. حل مشكلة إطار img/frame-item.png وظهور العناصر في الطبقة العلوية في المنتصف
+   ========================================================== */
+.icon-currency {
+    width: clamp(18px, 2.2vw, 24px);
+    height: clamp(18px, 2.2vw, 24px);
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+    flex-shrink: 0;
+}
+
+/* بنية إطار العناصر الملموسة img/frame-item.png (نظيفة تماماً من أي شادو خارجي) */
+.item-slot-frame {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border-radius: 8px;
+    background: transparent;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: visible;
+    flex-shrink: 0;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.item-slot-frame:hover {
+    transform: scale(1.08);
+}
+
+/* إطار الصورة الفعلي img/frame-item.png (في الطبقة السفلية z-2 بدون شادو إطلاقاً) */
+.item-slot-frame .frame-border-art {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+    z-index: 2;
+    filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* المحتوى الداخلي للعنصر (في الطبقة العلوية z-10 في منتصف الفريم تماماً مع شادو مخصص للعنصر نفسه) */
+.item-slot-frame .item-content {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* الأيقونة/العنصر الداخلي: الشادو حول العنصر نفسه فقط ومناسب لشكله وتفاصيله */
+.item-slot-frame .item-graphic {
+    max-width: 60%;
+    max-height: 60%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.9)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.2s ease;
+    display: block;
+    margin: auto;
+}
+
+.item-slot-frame:hover .item-graphic {
+    transform: scale(1.15);
+    filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 8px rgba(255, 216, 117, 0.8));
+}
+
+.item-slot-frame .item-badge-count {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: rgba(0, 0, 0, 0.88);
+    border: 1px solid #FFD66B;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 800;
+    padding: 0 4px;
+    border-radius: 4px;
+    z-index: 15;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* توهجات وهالات الندرة مخصصة للعنصر نفسه فقط (Item Graphic Rarity Glows) */
+.item-slot-frame.rarity-common .item-graphic {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.85));
+}
+.item-slot-frame.rarity-rare .item-graphic {
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.85)) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.85));
+}
+.item-slot-frame.rarity-epic .item-graphic {
+    filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.9)) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.85));
+}
+.item-slot-frame.rarity-legendary .item-graphic {
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.95)) drop-shadow(0 0 6px #FFD66B) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+    animation: pulseItemGraphicGlow 2.5s infinite alternate ease-in-out;
+}
+@keyframes pulseItemGraphicGlow {
+    0% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 4px #FFD66B); }
+    100% { filter: drop-shadow(0 0 18px rgba(245, 158, 11, 1)) drop-shadow(0 0 8px #FFD66B) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9)); }
+}
+.item-slot-frame.rarity-mythic .item-graphic {
+    filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.95)) drop-shadow(0 0 6px #f43f5e) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+    animation: pulseMythicItemGlow 2.2s infinite alternate ease-in-out;
+}
+@keyframes pulseMythicItemGlow {
+    0% { filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.8)) drop-shadow(0 0 5px #f43f5e); }
+    100% { filter: drop-shadow(0 0 22px rgba(239, 68, 68, 1)) drop-shadow(0 0 10px #fb923c) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.95)); }
+}
+
+/* بطاقات القوائم */
+.game-card-row {
+    background: linear-gradient(180deg, rgba(46, 21, 9, 0.9), rgba(28, 12, 5, 0.95));
+    border: 1.5px solid rgba(139, 69, 19, 0.75);
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.6), 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.15s ease;
+}
+
+.game-card-row:hover {
+    background: linear-gradient(180deg, rgba(68, 31, 13, 0.95), rgba(41, 18, 7, 0.95));
+    border-color: #FFD66B;
+}
+
+/* ==========================================================
+   5. شريط البروفايل والنصوص الخشبية (name-bar-container خلف الإطار)
+   ========================================================== */
+.avatar-container {
+    position: relative;
+    z-index: 10;
+}
+
+.name-bar {
+    position: relative;
+    z-index: 0;
+    background: url('img/namePalyer.png') no-repeat center/contain;
+    width: clamp(125px, 17vw, 175px);
+    height: clamp(40px, 5vw, 55px);
+    flex-shrink: 0;
+    margin-left: calc(clamp(54px, 7vw, 84px) * -0.38); 
+    padding-left: clamp(26px, 3.4vw, 38px);
+    padding-right: clamp(10px, 1.3vw, 15px);
+}
+
+.text-bg-box {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 36px;
+    min-height: 36px;
+    max-height: 38px;
+    min-width: 120px;
+    max-width: 380px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    margin-inline: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    box-sizing: border-box;
+}
+
+/* سلايدر الصوت */
+.wood-slider-wrapper {
+    width: 230px;
+    height: 32px;
+}
+
+.wood-slider-track {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    overflow: hidden;
+    position: relative;
+    filter: brightness(0.72) contrast(1.1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.wood-slider-fill {
+    height: 100%;
+    border-radius: inherit;
+    background-image: 
+        linear-gradient(rgba(245, 158, 11, 0.45), rgba(217, 119, 6, 0.45)), 
+        url('img/Text BackgroundBox.png');
+    background-size: 240px 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-blend-mode: overlay;
+    filter: brightness(1.35) saturate(1.8) drop-shadow(0 0 6px rgba(245, 158, 11, 0.6));
+    pointer-events: none;
+}
+
+.wood-range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    border-radius: 7px;
+}
+
+.wood-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #FFD66B, #FF9F2E 70%, #641A17 100%);
+    border: 2px solid #FFE59A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+/* تبويبات النوافذ (Wood Tab Buttons) */
+.wood-tab-btn {
+    background: rgba(45, 20, 9, 0.85);
+    border: 1.5px solid rgba(139, 69, 19, 0.85);
+    border-radius: 8px;
+    color: #FFDFA0;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+.wood-tab-btn.active, .wood-tab-btn:hover {
+    background: linear-gradient(180deg, #C85A24, #8F2E20);
+    color: #ffffff;
+    border-color: #FFD66B;
+    box-shadow: 0 0 10px rgba(255, 216, 117, 0.4);
+}
+
+/* شريط التمرير (Scrollbar) */
+.modal-scrollbar::-webkit-scrollbar { width: 5px; }
+.modal-scrollbar::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.4); border-radius: 4px; }
+.modal-scrollbar::-webkit-scrollbar-thumb { background: #A94A27; border-radius: 4px; border: 1px solid rgba(255, 216, 117, 0.25); }
+
+/* الأنماط المتحركة */
+@keyframes chestWobbleAnim {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    15% { transform: rotate(-7deg) scale(1.06); }
+    30% { transform: rotate(7deg) scale(1.06); }
+    45% { transform: rotate(-4deg) scale(1.04); }
+    60% { transform: rotate(4deg) scale(1.04); }
+    75% { transform: rotate(0deg) scale(1); }
+}
+
+.chest-wobble { animation: chestWobbleAnim 1.2s infinite ease-in-out; }
+
+.bump { animation: bumpAnim 0.22s cubic-bezier(0.34, 1.56, 0.64, 1); }
+@keyframes bumpAnim {
+    0% { transform: scale(0.85); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.game-modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.game-modal-backdrop.active .wood-modal-container {
+    transform: scale(1);
+    transition-duration: 0.28s;
+}
+
+/* شريط الترتيب الشخصي الثابت في الأسفل */
+.pinned-user-rank-bar {
+    flex-shrink: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(82, 38, 14, 0.95), rgba(41, 19, 7, 0.95));
+    border: 1.5px solid #FFD66B;
+    border-radius: 8px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.5), inset 0 1px 2px rgba(255, 216, 117, 0.4);
+    padding: 6px 10px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* صندوق القائمة الرئيسية "الملموس" */
+.main-box-shell {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.main-box-shell .box-art {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.main-box-cavity {
+    position: absolute;
+    inset: 16% 16% 14% 16%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1.2vh, 12px);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* ==========================================================
+   6. أنماط نافذة الدردشة الاجتماعية الحديثة (Modern Social App UI)
+   ========================================================== */
+.social-chat-hub {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.social-chat-tabs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 216, 117, 0.2);
+    flex-shrink: 0;
+}
+
+.social-chat-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(35, 16, 7, 0.85);
+    border: 1px solid rgba(139, 69, 19, 0.7);
+    color: #FFD66B;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    outline: none;
+}
+
+.social-chat-tab-btn:hover {
+    background: rgba(85, 38, 14, 0.9);
+    border-color: #FFD66B;
+    color: #ffffff;
+}
+
+.social-chat-tab-btn.active {
+    background: linear-gradient(180deg, #8F2E20, #641A17);
+    border-color: #FFD66B;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 216, 117, 0.35);
+}
+
+.social-chat-tab-badge {
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 1px 5px;
+    border-radius: 9999px;
+    line-height: 1;
+}
+
+/* فقاعات المحادثة الحديثة (Message Bubbles) */
+.chat-bubble-user {
+    background: linear-gradient(135deg, rgba(180, 83, 9, 0.92), rgba(120, 53, 15, 0.96));
+    border: 1px solid rgba(255, 216, 117, 0.5);
+    color: #ffffff;
+    border-radius: 14px 14px 2px 14px;
+    padding: 8px 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+}
+
+.chat-bubble-other {
+    background: linear-gradient(135deg, rgba(30, 14, 6, 0.92), rgba(18, 8, 3, 0.96));
+    border: 1px solid rgba(139, 69, 19, 0.75);
+    color: #F7E2AF;
+    border-radius: 14px 14px 14px 2px;
+    padding: 8px 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+}
+
+.chat-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.chat-status-dot.online {
+    background-color: #10b981;
+    box-shadow: 0 0 6px #10b981;
+}
+
+.chat-status-dot.in-game {
+    background-color: #FFB52E;
+    box-shadow: 0 0 6px #FFB52E;
+}
+
+.chat-status-dot.offline {
+    background-color: #6b7280;
+}
+
+/* ==========================================================
+   7. أنماط الإعدادات المتقدمة ومحدد اللغات (Advanced Settings)
+   ========================================================== */
+.settings-tab-bar {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 216, 117, 0.2);
+    padding-bottom: 6px;
+    flex-shrink: 0;
+}
+
+.setting-group-box {
+    width: 100%;
+    background: rgba(26, 11, 4, 0.75);
+    border: 1px solid rgba(139, 69, 19, 0.65);
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+}
+
+.setting-opt-pill {
+    padding: 5px 8px;
+    background: rgba(45, 20, 8, 0.85);
+    border: 1px solid rgba(139, 69, 19, 0.85);
+    border-radius: 6px;
+    color: #FFE9C2;
+    font-size: 10.5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-align: center;
+    user-select: none;
+}
+
+.setting-opt-pill:hover {
+    background: rgba(85, 38, 14, 0.9);
+    border-color: #FFD66B;
+    color: #ffffff;
+}
+
+.setting-opt-pill.active {
+    background: linear-gradient(180deg, #FF9F2E, #C85A24);
+    border-color: #FFD66B;
+    color: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 216, 117, 0.4);
+}
+
+.language-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background: rgba(36, 15, 6, 0.85);
+    border: 1.5px solid rgba(139, 69, 19, 0.75);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    user-select: none;
+    width: 100%;
+}
+
+.language-card:hover {
+    border-color: #FFD66B;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.language-card.active {
+    background: linear-gradient(180deg, rgba(82, 38, 14, 0.95), rgba(41, 19, 7, 0.95));
+    border-color: #FFD66B;
+    box-shadow: 0 0 12px rgba(255, 216, 117, 0.45), inset 0 1px 2px rgba(255, 216, 117, 0.5);
+}
+
+/* ==========================================================
+   8. أنماط شريط تقدم الرويال باس (Royal Pass Progress & Missions)
+   ========================================================== */
+.pass-progress-track {
+    position: relative;
+    width: 100%;
+    height: 16px;
+    background: rgba(12, 5, 2, 0.95);
+    border: 1.5px solid rgba(255, 216, 117, 0.5);
+    border-radius: 9999px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.85);
+}
+
+.pass-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF9F2E, #FFB52E, #FFE59A);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.7);
+    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.pass-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 6px;
+    background: #ffffff;
+    box-shadow: 0 0 8px #ffffff;
+    border-radius: 9999px;
+}
+
+/* ==========================================================
+   9. أنماط نافذة الحقيبة والخزنة الخاصة (Inventory & Rare Vault)
+   ========================================================== */
+.vault-inspector-card {
+    background: linear-gradient(180deg, rgba(46, 21, 9, 0.92), rgba(20, 8, 3, 0.96));
+    border: 1.5px solid rgba(255, 216, 117, 0.5);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 216, 117, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.vault-action-btn-equip {
+    background: linear-gradient(180deg, #10b981, #047857);
+    border: 1.5px solid #6ee7b7;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+}
+
+.vault-action-btn-equip:hover {
+    filter: brightness(1.18);
+    transform: scale(1.04);
+}
+
+.vault-action-btn-stash {
+    background: linear-gradient(180deg, #6366f1, #4338ca);
+    border: 1.5px solid #a5b4fc;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+}
+
+.vault-action-btn-stash:hover {
+    filter: brightness(1.18);
+    transform: scale(1.04);
+}
+
+/* ==========================================================
+   10. أنماط غرفة اللوبي المخصصة والـ 8 فرق (Custom Room Lobby & 4 Players)
+   ========================================================== */
+.team-lobby-card {
+    border-radius: 8px;
+    padding: 4px 6px;
+    border-width: 1.5px;
+    border-style: solid;
+    transition: all 0.18s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background: rgba(18, 8, 3, 0.9);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.team-lobby-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* ألوان الفرق الـ 8 المحددة */
+.team-theme-1 { border-color: #ef4444; background: linear-gradient(180deg, rgba(239, 68, 68, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-2 { border-color: #3b82f6; background: linear-gradient(180deg, rgba(59, 130, 246, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-3 { border-color: #10b981; background: linear-gradient(180deg, rgba(16, 185, 129, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-4 { border-color: #eab308; background: linear-gradient(180deg, rgba(234, 179, 8, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-5 { border-color: #a855f7; background: linear-gradient(180deg, rgba(168, 85, 247, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-6 { border-color: #06b6d4; background: linear-gradient(180deg, rgba(6, 182, 212, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-7 { border-color: #f97316; background: linear-gradient(180deg, rgba(249, 115, 22, 0.22), rgba(20, 9, 4, 0.9)); }
+.team-theme-8 { border-color: #ec4899; background: linear-gradient(180deg, rgba(236, 72, 153, 0.22), rgba(20, 9, 4, 0.9)); }
+
+/* فتحات اللاعبين الـ 4 لكل فريق (Max 4 Slots) */
+.team-player-slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 2.5px 5px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 9.5px;
+    min-height: 24px;
+}
+
+.team-player-slot.empty {
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.25);
+    color: rgba(255, 255, 255, 0.35);
+    justify-content: center;
+}
+
+.team-leader-badge {
+    background: linear-gradient(90deg, #FFB52E, #FF9F2E);
+    color: #000;
+    font-size: 8px;
+    font-weight: 900;
+    padding: 0 4px;
+    border-radius: 4px;
+    border: 1px solid #FFD66B;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* أزرار مضغوطة أنيقة للوبي لتوفير المساحة */
+.btn-compact-wood {
+    background: linear-gradient(180deg, #A94A27, #612015);
+    border: 1.5px solid #FFD66B;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 11px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.btn-compact-wood:hover {
+    filter: brightness(1.18);
+    transform: scale(1.04);
+}
+
+.btn-compact-wood:active {
+    transform: scale(0.96);
+}
+
+.countdown-pulsing {
+    animation: countdownPulse 1s infinite alternate ease-in-out;
+}
+@keyframes countdownPulse {
+    0% { transform: scale(1); text-shadow: 0 0 4px #FFD66B; }
+    100% { transform: scale(1.08); text-shadow: 0 0 12px #FFB52E, 0 0 20px #ef4444; }
+}
+
+/* ==========================================================
+   11. نافذة الصندوق الكبير img/box-big.png — إصلاح تجاوز الحدود
+   ========================================================== */
+.wood-modal-container.use-box-big {
+    width: min(99vw, 1180px);
+    max-height: 94vh;
+}
+
+.wood-modal-container.use-box-big .wood-modal-box {
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.98));
+}
+
+.wood-modal-container.use-box-big .wood-modal-cavity {
+    /* ضبط دقيق ليتناسب مع التجويف الداخلي لـ img/box-big.png */
+    padding: 3.8% 13.5% 10% 13.5%;
+    max-height: min(80vh, 740px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* المحتوى القابل للتمرير داخل تجويف الصندوق الكبير */
+.wood-modal-container.use-box-big .wood-modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ==========================================================
+   11b. أنماط أزرار الغرفة باستخدام img/Empty-button.png كخلفية
+   ========================================================== */
+/* زر Empty-button استخدام ك background للأزرار في الغرفة */
+.lobby-empty-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.12s ease;
+    user-select: none;
+}
+
+.lobby-empty-btn .lobby-btn-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+    user-select: none;
+    border-radius: 4px;
+}
+
+.lobby-empty-btn .lobby-btn-label {
+    position: relative;
+    z-index: 2;
+    font-weight: 900;
+    font-size: 10px;
+    color: #FFE59A;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.8);
+    padding: 5px 10px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.lobby-empty-btn:hover {
+    transform: scale(1.06) translateY(-1px);
+    filter: brightness(1.15);
+}
+
+.lobby-empty-btn:active {
+    transform: scale(0.94) translateY(1px);
+    filter: brightness(0.9);
+}
+
+/* فتحة اللاعب بـ img/Text BackgroundBox.png كخلفية */
+.slot-textbox-bg {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 3px 6px;
+    min-height: 28px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+
+/* رأس بطاقة الفريق بـ img/Text BackgroundBox.png كخلفية */
+.team-header-textbox {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 8px;
+    min-height: 30px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* مؤشر الاستعداد (img/enable.png / img/disabled.png) */
+.ready-indicator {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.7));
+}
+
+/* أفاتار اللاعب في فتحة الفريق */
+.slot-player-avatar {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 216, 117, 0.5);
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.8));
+}
+
+/* حاوية معلومات الغرفة مع Text BackgroundBox */
+.room-info-textbox {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 5px 12px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    border-radius: 4px;
+}
+
+/* ==========================================================
+   12. أدوات الإعدادات: المفاتيح والقوائم المنسدلة (Toggles & Dropdowns)
+   ========================================================== */
+.rpg-toggle-pill {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 38px;
+    padding: 4px 16px;
+    display: inline-flex !important;
+    width: fit-content !important;
+    max-width: max-content !important;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.12s ease, filter 0.12s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+    border-radius: 8px;
+}
+
+.rpg-toggle-pill:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1) drop-shadow(0 3px 6px rgba(0,0,0,0.7));
+}
+
+.rpg-toggle-indicator {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));
+    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.rpg-toggle-pill:active .rpg-toggle-indicator {
+    transform: scale(0.9);
+}
+
+/* القوائم المنسدلة: img/arrow-Menu.png و img/option-Menu.png و img/Text BackgroundBox.png */
+.rpg-dropdown-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px !important;
+    min-width: 140px !important;
+    margin-inline: auto;
+}
+
+.rpg-dropdown-trigger {
+    background-image: url('img/Text BackgroundBox.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 38px;
+    max-height: 40px;
+    max-width: 320px !important;
+    min-width: 140px !important;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-inline: auto;
+    transition: filter 0.15s ease, transform 0.12s ease;
+}
+
+.rpg-dropdown-trigger:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.rpg-dropdown-arrow {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    flex-shrink: 0;
+}
+
+.rpg-dropdown-wrapper.open .rpg-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.rpg-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 6px;
+    border-radius: 10px;
+    background: rgba(18, 7, 3, 0.98);
+    border: 1.5px solid #FFD66B;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.95), 0 0 12px rgba(255, 216, 117, 0.3);
+    backdrop-filter: blur(8px);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.rpg-dropdown-option {
+    background-image: url('img/option-Menu.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 6px 12px;
+    color: #FFE9C2;
+    font-size: 10.5px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.12s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rpg-dropdown-option:hover, .rpg-dropdown-option.selected {
+    filter: brightness(1.3) saturate(1.2);
+    color: #ffffff;
+    transform: translateX(-3px);
+}
+
+/* معرض اختيار أفتار الحشرات الكرتوني */
+.avatar-choice-card {
+    position: relative;
+    width: clamp(52px, 7vw, 68px);
+    height: clamp(52px, 7vw, 68px);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2.5px solid rgba(139, 69, 19, 0.7);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    background: radial-gradient(circle at center, rgba(50, 20, 8, 0.9), rgba(15, 6, 2, 0.98));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+}
+
+.avatar-choice-card:hover {
+    transform: scale(1.12);
+    border-color: #FFD66B;
+    box-shadow: 0 0 14px rgba(255, 216, 117, 0.7);
+}
+
+.avatar-choice-card.active {
+    border-color: #10b981;
+    box-shadow: 0 0 18px rgba(16, 185, 129, 0.9), 0 0 6px #ffffff;
+    transform: scale(1.1);
+}
+
+.avatar-choice-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+    transition: transform 0.2s ease;
+}
+
+.avatar-choice-card:hover img {
+    transform: scale(1.1);
+}
+
+/* إشعارات التوست الحية (Toasts) */
+.rpg-toast {
+    background: linear-gradient(180deg, rgba(46, 21, 9, 0.97), rgba(18, 7, 2, 0.98));
+    border: 1.5px solid #FFD66B;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.95), 0 0 12px rgba(255, 216, 117, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    animation: toastPopAnim 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: auto;
+    backdrop-filter: blur(8px);
+}
+
+@keyframes toastPopAnim {
+    0% { transform: translateY(-20px) scale(0.85); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.rpg-toast.toast-fadeout {
+    animation: toastFadeOut 0.3s forwards ease-in;
+}
+
+@keyframes toastFadeOut {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-15px) scale(0.9); opacity: 0; }
+}
+ 
+/* تحسينات كاملة وشاملة للهواتف والشاشات الصغيرة */
+@media (max-width: 640px) {
+
+    .wood-modal-cavity,
+    .wood-modal-container.use-box-big .wood-modal-cavity,
+    .wood-modal-container.box-brother-style .wood-modal-cavity {
+        padding: 3.5% 5.5% 5.5% 5.5% !important;
+        max-height: 86vh !important;
+    }
+    .wood-modal-header {
+        margin-bottom: 4px !important;
+        padding: 0 2px !important;
+    }
+    .wood-modal-header .modal-title {
+        font-size: 11px !important;
+        letter-spacing: 0.2px !important;
+    }
+    .wood-modal-body {
+        max-height: 72vh !important;
+        padding: 2px 2px !important;
+        gap: 4px !important;
+    }
+    .main-box-cavity {
+        inset: 13% 12% 11% 12% !important;
+    }
+    .name-bar {
+        width: clamp(110px, 28vw, 150px);
+    }
+    /* الغرفة على الهاتف */
+    .lobby-empty-btn .lobby-btn-label {
+        font-size: 9px;
+        padding: 4px 7px;
+    }
+    .slot-textbox-bg {
+        min-height: 24px;
+        padding: 2px 5px;
+    }
+    /* جعل events-quick-dock عمودياً في الهاتف حتى لا يتم قص مظهر الأزرار */
+    #events-quick-dock {
+        flex-direction: column !important;
+        position: fixed !important;
+        top: clamp(65px, 9vh, 85px) !important;
+        right: 8px !important;
+        gap: 6px !important;
+        z-index: 35 !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        padding: 6px 4px !important;
+        border-radius: 16px !important;
+        border: 1.5px solid rgba(251, 191, 36, 0.4) !important;
+        backdrop-filter: blur(4px) !important;
+    }
+    #events-quick-dock .rpg-btn-label {
+        display: none !important;
+    }
+    /* إخفاء شريط التنقل العلوي في الهواتف لصالح شريط التنقل السفلي الاحترافي */
+    #header-nav-menu {
+        display: none !important;
+    }
+    #mobile-bottom-nav {
+        display: flex !important;
+        z-index: 150 !important;
+    }
+    .full-page-view {
+        padding-bottom: clamp(62px, 9.5vh, 76px) !important;
+    }
+}
+
+/* ==========================================================
+   10. شريط التنقل السفلي المخصص للهواتف (Mobile Bottom Nav) — طراز خشبي برونزي ملحمي
+   ========================================================== */
+#mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: clamp(62px, 9.2vh, 74px);
+    background: linear-gradient(180deg, #3F160F 0%, #250B08 40%, #130504 100%);
+    border-top: 3px solid #FF9F2E;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.95), inset 0 2px 4px rgba(255, 216, 117, 0.4);
+    z-index: 150;
+    padding: 4px 12px env(safe-area-inset-bottom, 4px) 12px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bnav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 30%, #5A1D12 0%, #230806 100%);
+    border: 1.5px solid rgba(255, 216, 117, 0.45);
+    border-radius: 9999px;
+    padding: 7px 16px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.7), inset 0 1px 2px rgba(255,255,255,0.2);
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bnav-item:active {
+    transform: scale(0.92);
+}
+
+.bnav-icon-wrap {
+    position: relative;
+    width: clamp(28px, 6.8vw, 34px);
+    height: clamp(28px, 6.8vw, 34px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.bnav-icon-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+}
+
+/* إخفاء اسم التاب افتراضياً وإظهاره فقط عند تنشيط التاب مع تمدد ذهبي */
+.bnav-label {
+    display: none;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* مظهر التاب المفتوح / النشط */
+.bnav-item.active {
+    background: radial-gradient(circle at 50% 30%, #C85A24 0%, #641A17 65%, #4A120E 100%);
+    border: 2px solid #FFD66B;
+    box-shadow: 0 0 18px rgba(251, 191, 36, 0.65), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px);
+    gap: 8px;
+}
+
+.bnav-item.active .bnav-label {
+    display: inline-block;
+    max-width: 110px;
+    opacity: 1;
+    font-size: 11.5px;
+    font-weight: 900;
+    color: #FFD66B;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.95), 0 0 8px rgba(251, 191, 36, 0.6);
+}
+
+.bnav-item.active .bnav-icon-wrap img {
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.95)) drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+    transform: scale(1.15);
+}
+
+/* ==========================================================
+   11. صفحات العرض الكاملة داخل الشاشة (خلفيات مخصصة لكل صفحة)
+   ========================================================== */
+.full-page-view {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 100 !important;
+    background-color: #0d0a08 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.full-page-view.active {
+    display: flex;
+}
+
+/* خلفية متجر الذهب الملكي */
+#fullpage-shop {
+    background-image: radial-gradient(circle at 50% 25%, rgba(255, 216, 117, 0.25) 0%, rgba(26, 14, 5, 0.92) 80%), url('img/bg1.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
+/* خلفية دولاب الملابس والمخزن: bg2.png مع بلور خفيف بنفس إعدادات img/bg0.png */
+#fullpage-wardrobe {
+    background: radial-gradient(circle at 50% 30%, rgba(126, 32, 37, 0.45) 0%, rgba(10, 5, 2, 0.9) 80%), url('img/bg2.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    overflow: hidden;
+}
+#fullpage-wardrobe::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(126, 32, 37, 0.35) 0%, rgba(10, 5, 2, 0.88) 85%), url('img/bg2.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    filter: blur(4px);
+    z-index: 0;
+    pointer-events: none;
+}
+#fullpage-wardrobe > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* خلفية ملف القائد الشخصي */
+#fullpage-profile {
+    background-image: radial-gradient(circle at 50% 25%, rgba(55, 170, 73, 0.18) 0%, rgba(8, 12, 16, 0.97) 80%), url('img/bg5.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
+/* إزالة full-page-header واستبداله بـ left-hud-row الشامل في كل الصفحات */
+.full-page-header {
+    display: none !important;
+}
+
+.full-page-view {
+    padding-top: clamp(60px, 8.5vh, 80px) !important;
+}
+
+.full-page-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.full-page-title-icon {
+    width: clamp(28px, 4vw, 42px);
+    height: clamp(28px, 4vw, 42px);
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(255, 216, 117, 0.5));
+}
+
+.full-page-title {
+    font-size: clamp(16px, 2.4vw, 24px);
+    font-weight: 900;
+    color: #FFD66B;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.95), 0 0 14px rgba(251, 191, 36, 0.45);
+    letter-spacing: 0.5px;
+}
+
+.full-page-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: clamp(14px, 2.5vw, 26px);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* زر الرجوع الفخم */
+.btn-back-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: clamp(34px, 5vh, 44px);
+    padding: 0 16px;
+    background: rgba(30, 14, 6, 0.9);
+    border: 1.5px solid rgba(255, 216, 117, 0.6);
+    border-radius: 8px;
+    color: #FFD66B;
+    font-weight: 800;
+    font-size: clamp(11px, 1.2vw, 14px);
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    transition: all 0.15s ease;
+}
+
+.btn-back-action:hover {
+    background: rgba(60, 28, 12, 0.95);
+    border-color: #FFD66B;
+    transform: scale(1.04);
+}
+
+.btn-back-action:active {
+    transform: scale(0.95);
+}
+
+/* ==========================================================
+   12. كروت المتجر والخزانة داخل الصفحة الكاملة
+   ========================================================== */
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(160px, 22vw, 260px), 1fr));
+    gap: clamp(10px, 1.8vw, 20px);
+    width: 100%;
+}
+
+.shop-card-epic {
+    position: relative;
+    background: radial-gradient(circle at 50% 30%, rgba(60, 28, 12, 0.85) 0%, rgba(20, 9, 4, 0.95) 100%);
+    border: 2px solid rgba(255, 216, 117, 0.4);
+    border-radius: 14px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s;
+}
+
+.shop-card-epic:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: #FFD66B;
+    box-shadow: 0 12px 28px rgba(251, 191, 36, 0.25);
+}
+
+/* ==========================================================
+   13. التأثيرات الحركية والـ Ripple
+   ========================================================== */
+.anim-ripple {
+    position: absolute;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 216, 117, 0.45);
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleAnim 0.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes rippleAnim {
+    to {
+        transform: translate(-50%, -50%) scale(25);
+        opacity: 0;
+    }
+}
+
+/* إشعار نابض للأزرار */
+.notify-pulse {
+    animation: badgePulse 1.2s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+/* ==========================================================
+   14. الصناديق الجلدية البيضاء (img/box-white-brother.png & img/box-white.png)
+   ========================================================== */
+.wood-modal-container.box-white-brother-style {
+    aspect-ratio: 914 / 569;
+    width: min(96vw, 980px);
+    max-height: 92vh;
+}
+.wood-modal-container.box-white-brother-style .wood-modal-cavity {
+    padding: 2.2% 4.8% 2.8% 4.8% !important;
+}
+
+.wood-modal-container.box-white-style {
+    aspect-ratio: 1080 / 1660;
+    width: min(94vw, 440px);
+    max-height: 94vh;
+}
+.wood-modal-container.box-white-style .wood-modal-cavity {
+    padding: 3% 4.5% 3.5% 4.5% !important;
+}
+
+@media (max-width: 640px) {
+    .wood-modal-container.box-white-style {
+        width: 100vw !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        aspect-ratio: auto !important;
+    }
+}
+
+/* قيود الأبعاد للأزرار والعناصر المصورة لمنع تمددها وتبكسلها على الشاشات الكبيرة */
+#create-room-confirm-btn,
+.btn-ref-ready-master,
+.btn-ref-share-link {
+    max-width: 320px !important;
+    min-width: 150px !important;
+    margin-inline: auto !important;
+}
+
+#setup-room-mode-group,
+#setup-teams-count-grid,
+.setup-form-constrained {
+    max-width: 480px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+}
+
+#setup-mode-classic-btn,
+#setup-mode-endless-btn {
+    max-width: 220px !important;
+    min-width: 120px !important;
+}
+
+.team-cnt-btn {
+    max-width: 72px !important;
+    min-width: 46px !important;
+}
+
+/* ==========================================================
+   15. نظام لوبي وغرفة المعركة (مطابق تماماً للصورة المرجعية)
+   ========================================================== */
+.lobby-reference-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    position: relative;
+    user-select: none;
+}
+
+/* الترويسة العلوية للغرفة */
+.lobby-reference-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.lobby-ref-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    width: 100%;
+}
+
+.lobby-ref-room-name {
+    font-size: clamp(18px, 2.6vw, 28px);
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.95), 0 0 14px rgba(255, 216, 117, 0.6);
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* صف خصائص الغرفة الـ 4 */
+.lobby-ref-meta-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    width: 100%;
+    text-align: center;
+    margin-top: 1px;
+}
+
+.lobby-ref-meta-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lobby-ref-meta-label {
+    font-size: clamp(9px, 1.05vw, 12px);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.lobby-ref-meta-val {
+    font-size: clamp(9.5px, 1.1vw, 13px);
+    font-weight: 900;
+    color: #FFD66B;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* شبكة الفرق الـ 8 (4 علوي + 4 سفلي) */
+.lobby-ref-teams-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: clamp(4px, 0.8vw, 10px);
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    margin: 4px 0;
+}
+
+@media (max-width: 640px) {
+    .lobby-ref-teams-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        overflow-y: auto;
+    }
+}
+
+/* بطاقة الفريق list.png الفاخرة */
+.team-sheet-card {
+    position: relative;
+    background-image: url('img/list.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    aspect-ratio: 184 / 238;
+    display: flex;
+    flex-direction: column;
+    padding: 7% 7% 8% 7%;
+    border-radius: 6px;
+    transition: transform 0.16s ease, filter 0.16s ease;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.team-sheet-card:hover {
+    transform: scale(1.02);
+}
+
+/* رأس الفريق مع الكرة الملونة واسم اللون - تكبير جداً */
+.team-sheet-head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 5;
+    flex-shrink: 0;
+    padding: 2px 0;
+}
+
+.team-sheet-orb {
+    width: clamp(22px, 2.6vw, 32px);
+    height: clamp(22px, 2.6vw, 32px);
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.8));
+}
+
+.team-sheet-color-title {
+    font-size: clamp(11px, 1.3vw, 15px);
+    font-weight: 900;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.95);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+}
+
+/* محتوى الفريق: اللاعبون */
+.team-sheet-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2px;
+    position: relative;
+    z-index: 5;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.team-player-slot-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 1px 2px;
+    font-size: clamp(8px, 0.82vw, 10px);
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.95);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.team-ready-check {
+    width: clamp(10px, 1.1vw, 14px);
+    height: clamp(10px, 1.1vw, 14px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    flex-shrink: 0;
+}
+
+/* الفريق الفارغ: علامة + و كلمة join */
+.team-sheet-empty-join {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.14s ease;
+}
+
+.team-sheet-empty-join:hover {
+    transform: scale(1.08);
+}
+
+.team-sheet-empty-join .join-plus {
+    font-size: clamp(24px, 3.2vw, 36px);
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+}
+
+.team-sheet-empty-join .join-text {
+    font-size: clamp(12px, 1.4vw, 18px);
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.9));
+}
+
+/* الفريق المعطل: أبيض وأسود + سلاسل img/lock-list.png */
+.team-sheet-card.team-disabled-state {
+    filter: grayscale(100%) opacity(0.7);
+    pointer-events: none;
+}
+
+.team-chains-lock-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-chains-lock-overlay img {
+    width: 82%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.9));
+}
+
+/* الفريق المقفل من الليدر: img/lock-team.png */
+.team-leader-lock-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.team-leader-lock-overlay img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.9));
+}
+
+/* الشريط السفلي للغرفة المطابق للصورة */
+.lobby-reference-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+
+/* زر مشاركة الرابط البيضاوي */
+.btn-ref-share-link {
+    background: linear-gradient(180deg, #D84F25 0%, #8F2D1E 70%, #681A16 100%);
+    border: 2px solid #fdba74;
+    border-radius: 9999px;
+    padding: clamp(5px, 0.9vh, 8px) clamp(14px, 1.8vw, 24px);
+    color: #ffffff;
+    font-size: clamp(10px, 1.1vw, 13px);
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.14s ease, filter 0.14s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.btn-ref-share-link:hover {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+}
+
+/* زر استعد الكبير البيضاوي بالمنتصف */
+.btn-ref-ready-master {
+    background: radial-gradient(ellipse at 50% 30%, #E85D2A 0%, #A83224 65%, #6E1B17 100%);
+    border: 3px solid #FFE59A;
+    border-radius: 9999px;
+    padding: clamp(6px, 1.2vh, 10px) clamp(34px, 5vw, 64px);
+    color: #ffffff;
+    font-size: clamp(17px, 2.3vw, 26px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.16s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.95);
+}
+
+.btn-ref-ready-master:hover {
+    transform: scale(1.06);
+    box-shadow: 0 8px 26px rgba(234, 88, 12, 0.9), inset 0 2px 6px rgba(255, 255, 255, 0.8);
+}
+
+.btn-ref-ready-master:active {
+    transform: scale(0.95);
+}
+
+.btn-ref-ready-master.is-ready {
+    background: radial-gradient(ellipse at 50% 30%, #22c55e 0%, #16a34a 65%, #14532d 100%);
+    border-color: #7BE28B;
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.7);
+}
+
+/* الوقت التنازلي - تكبير مميز */
+.lobby-ref-countdown-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: clamp(14px, 1.8vw, 22px);
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.45);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1.5px solid rgba(251, 191, 36, 0.6);
+}
+
+#room-countdown-timer {
+    font-size: clamp(16px, 2.2vw, 26px) !important;
+    color: #FFD66B !important;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.8) !important;
+    font-family: monospace;
+    font-weight: 900;
+}
+
+/* زر الشات الدائري */
+.btn-ref-chat-circle {
+    width: clamp(38px, 4.4vw, 48px);
+    height: clamp(38px, 4.4vw, 48px);
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 30%, #b91c1c 0%, #7f1d1d 75%, #450a0a 100%);
+    border: 2px solid #FFD66B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    flex-shrink: 0;
+}
+
+.btn-ref-chat-circle:hover {
+    transform: scale(1.12);
+}
+
+/* ==========================================================
+   16. تحديث فريم العنصر img/frame-item.png (اسم بالأعلى ووصف بالأسفل)
+   ========================================================== */
+.item-slot-frame {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 947 / 1024;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: visible;
+    flex-shrink: 0;
+    width: clamp(80px, 10vw, 110px);
+}
+
+.item-slot-frame:hover {
+    transform: scale(1.06);
+}
+
+/* اسم العنصر في المساحة العلوية المخصصة في فريم frame-item الجديد */
+.item-slot-frame .item-name-top {
+    position: absolute;
+    top: 5.5%;
+    left: 8%;
+    right: 8%;
+    z-index: 12;
+    text-align: center;
+    font-size: clamp(7.5px, 0.85vw, 10.5px);
+    font-weight: 900;
+    color: #FFD66B;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.95);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+/* الأيقونة المكبرة في منتصف الفريم */
+.item-slot-frame .item-content {
+    position: absolute;
+    top: 9%;
+    right: 8%;
+    bottom: 10%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.item-slot-frame .item-graphic {
+    max-width: 76%;
+    max-height: 76%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.95)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.item-slot-frame:hover .item-graphic {
+    transform: scale(1.12);
+}
+
+/* بطاقة العنصر مع الوصف القصير في الأسفل */
+.item-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+}
+
+.item-short-desc {
+    font-size: clamp(8px, 0.82vw, 10px);
+    color: rgba(247, 226, 175, 0.75);
+    text-align: center;
+    line-height: 1.25;
+    max-width: 130px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==========================================================
+   17. عينة النملة 2D التفاعلية لدولاب الملابس المدمج
+   ========================================================== */
+.ant-avatar-interactive-stage {
+    position: relative;
+    width: clamp(160px, 20vw, 240px);
+    height: clamp(160px, 20vw, 240px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.2) 0%, rgba(30, 14, 6, 0.8) 70%);
+    border: 3px solid rgba(255, 216, 117, 0.5);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.8), 0 0 25px rgba(251, 191, 36, 0.3);
+}
+
+.ant-avatar-interactive-stage img.ant-base-layer {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.9));
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.ant-avatar-interactive-stage img.ant-gear-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* زر التبويب في الخزانة والحقيبة */
+.wardrobe-tab-btn {
+    border: 1px solid transparent;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.wardrobe-tab-btn.active {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.45) 0%, rgba(120, 53, 15, 0.85) 100%);
+    border-color: rgba(255, 216, 117, 0.85);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+    color: #FFD66B !important;
+}
+
+/* خانات العتاد المجهز أسفل المعاينة */
+.equip-slots-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.equip-slot-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(20, 10, 5, 0.8);
+    border: 1px solid rgba(255, 216, 117, 0.35);
+    border-radius: 8px;
+    padding: 4px 6px;
+    min-width: 58px;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.equip-slot-chip:hover {
+    border-color: #FFD66B;
+    transform: scale(1.05);
+}
+
+.equip-slot-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.equip-slot-label {
+    font-size: 8.5px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+}
+
+/* شبكة كروت العتاد والعناصر */
+.items-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(115px, 13vw, 150px), 1fr));
+    gap: clamp(10px, 1.5vw, 18px);
+    width: 100%;
+    align-items: start;
+}
+
+/* أزرار تصنيف الحقيبة */
+.bag-filter-btn {
+    background: rgba(20, 10, 5, 0.7);
+    border: 1px solid rgba(255, 216, 117, 0.3);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.bag-filter-btn:hover {
+    background: rgba(50, 25, 10, 0.85);
+    color: #FFD66B;
+    border-color: rgba(255, 216, 117, 0.6);
+}
+
+.bag-filter-btn.active {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.4) 0%, rgba(120, 53, 15, 0.7) 100%);
+    border-color: #FFD66B;
+    color: #FFD66B;
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.35);
+}
+
+/* ==========================================================
+   16. لوحة المتصدرين الثابتة على الكمبيوتر (Desktop Leaderboard Dock)
+   ========================================================== */
+.desktop-rank-panel {
+    position: fixed;
+    left: clamp(12px, 1.5vw, 28px);
+    top: 30%;
+    transform: translateY(-50%);
+    width: clamp(200px, 100vw, 230px);
+    display: none; /* مخفية افتراضياً، تُفعَّل عبر lg:flex */
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 20%, rgba(40, 18, 6, 0.97) 0%, rgba(12, 6, 3, 0.99) 100%);
+    border: 2px solid rgba(255, 216, 117, 0.55);
+    border-radius: 16px;
+    padding: 14px 12px;
+    z-index: 30;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.92), 0 0 20px rgba(251,191,36,0.12);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .desktop-rank-panel {
+        display: flex;
+    }
+    #rank-nav-btn {
+        display: none !important;
+    }
+    .desktop-friends-panel {
+        display: flex;
+    }
+}
+
+/* لوحة الأصدقاء الثابتة على شاشة الكمبيوتر (الجهة اليمنى المقابلة للمتصدرين) */
+.desktop-friends-panel {
+    position: fixed;
+    right: clamp(12px, 1.5vw, 28px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(190px, 14vw, 230px);
+    display: none;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 20%, rgba(6, 25, 40, 0.97) 0%, rgba(3, 10, 16, 0.99) 100%);
+    border: 2px solid rgba(103, 232, 249, 0.55);
+    border-radius: 16px;
+    padding: 14px 12px;
+    z-index: 30;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.92), 0 0 20px rgba(6, 182, 212, 0.15);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+}
+
+/* نافذة الدردشة المنبثقة السريعة على الكمبيوتر من يمين الشاشة */
+.desktop-popup-chat {
+    background: radial-gradient(circle at 50% 10%, #281409 0%, #120904 80%, #0a0402 100%);
+    border-left: 3px solid #FFB52E;
+}
+
+/* ==========================================================
+   17. Left HUD Row — ثابت وتفاعلي فوق الصفحات الكاملة
+   ========================================================== */
+#left-hud-row {
+    position: relative;
+    z-index: 105;
+}
+
+body.fullpage-open #main-app-container {
+    z-index: 150 !important;
+    pointer-events: none !important;
+}
+
+body.fullpage-open #left-hud-row {
+    position: fixed !important;
+    top: 10px !important;
+    inset-inline-start: 12px !important;
+    z-index: 160 !important;
+    pointer-events: auto !important;
+}
+
+body.fullpage-open #main-content-area,
+body.fullpage-open #events-quick-dock,
+body.fullpage-open #desktop-leaderboard-dock,
+body.fullpage-open #desktop-friends-dock {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* إخفاء زر الإعدادات وإظهار زر العودة في الصفحات الكاملة */
+.full-page-view.active ~ #main-app-container #open-settings-btn,
+body.fullpage-open #open-settings-btn {
+    display: none !important;
+}
+
+body.fullpage-open #global-hud-back-btn {
+    display: inline-flex !important;
+    pointer-events: auto !important;
+}
+
+/* ==========================================================
+   18. صفحة الدردشة والأصدقاء المدمجة (Chat Full Page)
+   ========================================================== */
+/* خلفية صفحة الدردشة الكاملة: bg2.png مع بلور بنفس إعدادات img/bg0.png */
+#fullpage-chat {
+    background: radial-gradient(circle at 50% 50%, rgba(30, 10, 5, 0.6) 0%, rgba(5, 3, 2, 0.94) 85%), url('img/bg2.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    overflow: hidden;
+}
+#fullpage-chat::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(30, 10, 5, 0.5) 0%, rgba(5, 3, 2, 0.92) 85%), url('img/bg2.png');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    filter: blur(16px);
+    z-index: 0;
+    pointer-events: none;
+}
+#fullpage-chat > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* تخطيط الصفحة الكاملة للدردشة */
+.chat-page-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* شريط التبويب الرأسي (كمبيوتر) */
+.chat-sidebar-tabs {
+    display: flex;
+    flex-direction: column;
+    width: clamp(120px, 14vw, 180px);
+    flex-shrink: 0;
+    background: rgba(10, 5, 2, 0.92);
+    border-left: 2px solid rgba(255, 216, 117, 0.3);
+    padding: 12px 8px;
+    gap: 6px;
+}
+
+.chat-tab-btn-v {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid transparent;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 800;
+    font-size: clamp(11px, 1.1vw, 13px);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: right;
+    width: 100%;
+}
+
+.chat-tab-btn-v:hover {
+    background: rgba(50, 24, 8, 0.8);
+    color: #FFD66B;
+    border-color: rgba(255, 216, 117, 0.4);
+}
+
+.chat-tab-btn-v.active {
+    background: linear-gradient(135deg, rgba(180, 83, 9, 0.7) 0%, rgba(120, 53, 15, 0.9) 100%);
+    border-color: #FFD66B;
+    color: #FFD66B;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+.chat-tab-badge {
+    background: rgba(220, 38, 38, 0.9);
+    color: white;
+    font-size: 9px;
+    font-weight: 900;
+    padding: 1px 5px;
+    border-radius: 999px;
+    margin-right: auto;
+}
+
+/* المحتوى الرئيسي للدردشة */
+.chat-main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 16px;
+    gap: 12px;
+}
+
+/* شريط التبويب الأفقي (هاتف) */
+.chat-top-tabs-h {
+    display: none;
+    overflow-x: auto;
+    gap: 6px;
+    padding: 8px 12px 4px;
+    flex-shrink: 0;
+    background: rgba(10, 5, 2, 0.85);
+    border-bottom: 2px solid rgba(255, 216, 117, 0.25);
+    scrollbar-width: none;
+}
+
+.chat-top-tabs-h::-webkit-scrollbar { display: none; }
+
+.chat-tab-btn-h {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(30, 14, 6, 0.85);
+    border: 1.5px solid rgba(255, 216, 117, 0.3);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 800;
+    font-size: 11px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.chat-tab-btn-h.active {
+    background: linear-gradient(135deg, rgba(180, 83, 9, 0.8) 0%, rgba(120, 53, 15, 0.95) 100%);
+    border-color: #FFD66B;
+    color: #FFD66B;
+}
+
+@media (max-width: 767px) {
+    .chat-sidebar-tabs { display: none; }
+    .chat-top-tabs-h { display: flex; }
+    .chat-main-area {
+        padding: 10px;
+        gap: 8px;
+    }
+    .chat-page-layout { flex-direction: column; }
+}
+
+/* بطاقة صديق في لوحة الأصدقاء */
+.friend-card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: rgba(20, 10, 4, 0.75);
+    border: 1.5px solid rgba(255, 216, 117, 0.2);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.friend-card-row:hover {
+    background: rgba(50, 24, 8, 0.85);
+    border-color: rgba(255, 216, 117, 0.5);
+    transform: translateX(-3px);
+}
+
+/* فقاعات الدردشة */
+.chat-bubble-mine {
+    background: linear-gradient(135deg, rgba(180, 83, 9, 0.85) 0%, rgba(120, 53, 15, 0.9) 100%);
+    border: 1px solid rgba(255, 216, 117, 0.4);
+    border-radius: 14px 14px 4px 14px;
+    padding: 8px 12px;
+    max-width: 75%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.chat-bubble-other {
+    background: rgba(12, 6, 3, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px 14px 14px 4px;
+    padding: 8px 12px;
+    max-width: 75%;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+/* ==========================================================
+   19. صفحة البروفايل — نظام الأفاتار والتعديل المباشر
+   ========================================================== */
+.avatar-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.avatar-choice-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2.5px solid rgba(255, 216, 117, 0.3);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 10, 4, 0.7);
+    overflow: hidden;
+}
+
+.avatar-choice-card:hover {
+    border-color: #FFD66B;
+    transform: scale(1.12);
+    box-shadow: 0 0 16px rgba(251, 191, 36, 0.5);
+}
+
+.avatar-choice-card.selected {
+    border-color: #FFD66B;
+    border-width: 3px;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.7);
+}
+
+.avatar-choice-card.locked {
+    filter: grayscale(1) brightness(0.5);
+    cursor: not-allowed;
+}
+
+.avatar-choice-card.locked::after {
+    content: '🔒';
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: none;
+}
+
+.avatar-choice-card img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* حقل التعديل المباشر */
+.profile-edit-field {
+    background: rgba(10, 5, 2, 0.8);
+    border: 1.5px solid rgba(255, 216, 117, 0.35);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: var(--font-body);
+}
+
+.profile-edit-field:focus {
+    border-color: #FFD66B;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.25);
+}
+
+.profile-stat-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(20, 10, 4, 0.8);
+    border: 1.5px solid rgba(255, 216, 117, 0.25);
+    border-radius: 10px;
+    padding: 8px 10px;
+    min-width: 70px;
+}
+
+.profile-stat-val {
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 900;
+    color: #FFD66B;
+    line-height: 1;
+}
+
+.profile-stat-label {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+/* نافذة اختيار الأفاتار المنبثقة */
+.avatar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.avatar-overlay-box {
+    position: relative;
+    aspect-ratio: 1080 / 1660;
+    width: min(92vw, 380px);
+    max-height: min(92vh, 620px);
+}
+
+.avatar-overlay-box .box-art {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+.avatar-overlay-box .avatar-overlay-cavity {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10% 8% 8%;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+/* ==========================================================
+   20. إصلاحات نهائية: صفحة الدردشة، الـ HUD العلوي
+   ========================================================== */
+
+/* chat full-page-body يشغل الارتفاع الكامل بلا padding */
+#fullpage-chat-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* chat-main-area تشغل كامل المساحة مع التمرير الداخلي */
+.chat-main-area {
+    min-height: 0;
+}
+
+/* تصغير حجم desktop-rank-panel لاحتواء الشريط الجانبي */
+@media (min-width: 1024px) {
+    #main-content-area {
+        padding-left: clamp(200px, 16vw, 250px);
+    }
+}
+
+/* إصلاح left-hud-row: الثبات فوق الصفحات الكاملة */
+#left-hud-row {
+    z-index: 105;
+    position: relative;
+}
+
+/* تحديد نوع left-hud-row عند وجود صفحة كاملة نشطة */
+.full-page-view.active {
+    z-index: 100;
+}
+
+/* scrollbar مخصص للدردشة */
+.chat-page-layout .modal-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+.chat-page-layout .modal-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.3);
+    border-radius: 4px;
+}
+.chat-page-layout .modal-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 216, 117, 0.4);
+    border-radius: 4px;
+}
+
+/* ==========================================================
+   21. شريط التنقل السفلي للهاتف (Mobile Bottom Nav - RPG Dock)
+   ========================================================== */
+#mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 66px;
+    z-index: 120;
+    background: linear-gradient(180deg, rgba(28, 9, 7, 0.98) 0%, rgba(10, 3, 2, 0.99) 100%);
+    border-top: 2px solid #BC4526;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 216, 117, 0.35);
+    backdrop-filter: blur(14px);
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    user-select: none;
+}
+
+@media (max-width: 767px) {
+    #mobile-bottom-nav {
+        display: flex !important;
+    }
+    body {
+        padding-bottom: 68px;
+    }
+    #chat-dock-launcher {
+        display: none !important;
+    }
+}
+
+.bnav-item {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 2px 0;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.bnav-icon-wrap {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s ease;
+}
+
+.bnav-icon-wrap img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.85));
+    transition: transform 0.2s ease;
+}
+
+.bnav-label {
+    font-size: 10px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 1px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.bnav-item.active .bnav-icon-wrap {
+    transform: translateY(-6px) scale(1.15);
+    background: radial-gradient(circle, rgba(255, 216, 117, 0.3) 0%, rgba(188, 69, 38, 0.15) 70%, transparent 100%);
+    box-shadow: 0 0 12px rgba(255, 216, 117, 0.5);
+}
+
+.bnav-item.active .bnav-icon-wrap img {
+    filter: drop-shadow(0 0 6px rgba(255, 216, 117, 0.8));
+}
+
+.bnav-item.active .bnav-label {
+    color: #FFD875;
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(255, 216, 117, 0.6);
+}
+
+.bnav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FFD875;
+    box-shadow: 0 0 8px #FFD875;
+}
+
+.bnav-item:active {
+    transform: scale(0.92);
+}
+
+/* ==========================================================
+   22. ملف اللاعب (Player Profile Cavity)
+   ========================================================== */
+.wood-modal-cavity-player-profile {
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2% 4% !important;
+}
+
+.wood-modal-cavity-player-profile .btn-wood-empty {
+    min-width: 80px;
+    max-width: 130px;
+    height: 38px;
+    margin: 0 auto;
+}
+/* ��� ����� ���� ������� (In-Game Transition) */
+#main-app-container.in-game-hidden {
+    display: none !important;
+}
+#gameCanvas {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 1 !important;
+}
+
+
+/* Additional HUD, Server, and Leaderboard Component Styles */
+.hud-home-back-btn {
+    background: var(--grad-hud-amber);
+    color: var(--c-black);
+    border: 1px solid var(--c-white);
+}
+.server-dot-online { background-color: var(--c-green); }
+.server-name-text { color: var(--c-white); }
+.server-ping-tag {
+    color: var(--c-green);
+    background-color: var(--c-burgundy-80);
+    border: 1px solid var(--c-green-40);
+}
+.server-stat-badge {
+    background-color: var(--c-black-70);
+    border: 1px solid var(--c-primary-40);
+}
+.server-stat-val-white { color: var(--c-white); }
+.server-stat-val-gold { color: var(--c-gold); }
+.server-stat-lbl { color: var(--c-gold-70); }
+
+.rank-panel-header { border-bottom: 1px solid var(--c-primary-40); }
+.rank-panel-title { color: var(--c-gold); }
+.rank-panel-title:hover { color: var(--c-yellow-300); }
+.rank-panel-badge {
+    background-color: var(--c-burgundy-80);
+    color: var(--c-gold);
+    border: 1px solid var(--c-primary-30);
+}
+.rank-item-gold {
+    background-color: var(--c-burgundy-40);
+    border: 1px solid var(--c-primary-50);
+}
+.rank-item-silver {
+    background-color: var(--c-black-40);
+    border: 1px solid var(--c-slate-400-40);
+}
+.rank-item-bronze {
+    background-color: var(--c-black-40);
+    border: 1px solid var(--c-primary-40);
+}
+.rank-item-normal {
+    background-color: var(--c-black-30);
+    border: 1px solid var(--c-primary-30);
+}
+.rank-avatar-silver { border: 1px solid var(--c-slate-400); }
+.rank-text-gold { color: var(--c-gold); }
+.rank-text-gold-sub { color: var(--c-gold-80); }
+.rank-text-silver { color: var(--c-slate-300); }
+.rank-text-silver-sub { color: var(--c-slate-300); opacity: 0.8; }
+.rank-text-num { color: var(--c-white-60); }
+.rank-text-name { color: var(--c-white-90); }
+.rank-text-sub { color: var(--c-white-60); }
+.rank-text-lvl { color: var(--c-white-70); }
+.rank-panel-footer { border-top: 1px solid var(--c-primary-30); }
