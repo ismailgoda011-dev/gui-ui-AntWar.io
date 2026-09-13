@@ -5,7 +5,7 @@
 
 import { GameAdapter } from '../game/game-adapter.js';
 import { gameEvents } from './event-bus.js';
-import { getState, patchState } from './game-state.js';
+import { getGameState, patchState } from './game-state.js';
 import { applyPerformanceMode } from './performance.js';
 
 let started = false;
@@ -27,27 +27,20 @@ function syncEngineSnapshot(snapshot) {
 
 function bindEngineEvents() {
     const bridge = window.ANTWAR_ENGINE_EVENTS || window.antwarEngineEvents;
-    if (!bridge) return;
-
-    const names = ['state:changed', 'player:changed', 'room:changed', 'match:changed', 'connection:changed', 'game:started', 'game:ended', 'game:error'];
-    const subscribe = typeof bridge.on === 'function' ? bridge.on.bind(bridge) : null;
-    if (!subscribe) return;
-
-    names.forEach(name => {
+    if (!bridge || typeof bridge.on !== 'function') return;
+    const subscribe = bridge.on.bind(bridge);
+    ['state:changed', 'player:changed', 'room:changed', 'match:changed', 'connection:changed', 'game:started', 'game:ended', 'game:error'].forEach(name => {
         try { subscribe(name, payload => { syncEngineSnapshot(payload?.state || payload); gameEvents.emit(name, payload); }); } catch (_) {}
     });
 }
 
 function bindDirectGameControls() {
-    // This capture handler intentionally bypasses the prototype matchmaking modal.
-    // The real AntWar engine becomes the authority for starting a game.
     document.addEventListener('click', event => {
         const play = event.target.closest?.('#play-action-btn');
         if (!play || !GameAdapter.isAvailable()) return;
         event.preventDefault();
         event.stopImmediatePropagation();
-        const mode = play.getAttribute('data-game-mode') || 'normal';
-        GameAdapter.start(mode, { source: 'gui', direct: true });
+        GameAdapter.start(play.getAttribute('data-game-mode') || 'normal', { source: 'gui', direct: true });
     }, true);
 
     document.addEventListener('click', event => {
@@ -67,15 +60,13 @@ export function initRuntime() {
     applyPerformanceMode(reducedMotion ? 'low' : 'auto');
     bindEngineEvents();
     bindDirectGameControls();
-
     window.AntWarRuntime = {
         version: 2,
         directIntegration: true,
         engineAvailable: () => GameAdapter.isAvailable(),
-        state: () => getState(''),
+        getState: () => getGameState(),
         start: (mode, options) => GameAdapter.start(mode, options),
         exit: () => GameAdapter.exit()
     };
-
     gameEvents.emit('runtime:ready', { engineAvailable: GameAdapter.isAvailable() });
 }
