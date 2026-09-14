@@ -1,9 +1,0 @@
-/* AntWar Game UI v2 — motion */
-@keyframes aw-window-in { from{opacity:0;transform:translateY(8px) scale(.985)} to{opacity:1;transform:none} }
-@keyframes aw-pop { 0%{transform:scale(.96);opacity:.6} 70%{transform:scale(1.02)} 100%{transform:scale(1);opacity:1} }
-@keyframes aw-pulse-soft { 0%,100%{box-shadow:0 0 0 0 rgba(36,120,197,0)} 50%{box-shadow:0 0 0 5px rgba(36,120,197,.08)} }
-.wood-modal-container,.full-page-container,.desktop-popup-chat,.modal-window,.window-shell { animation:aw-window-in .18s ease both; }
-.rpg-unified-btn,.hud-pill,.player-card,.shop-item-card,.inventory-item { animation:aw-pop .18s ease both; }
-button:focus-visible,.rpg-unified-btn:focus-visible { outline:2px solid var(--aw-game-primary); outline-offset:3px; }
-.is-online,.server-dot-online { animation:aw-pulse-soft 2.2s ease-in-out infinite; }
-@media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; } }
