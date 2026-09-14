@@ -1,52 +1,84 @@
-/* AntWar GUI — image-backed surfaces */
+/* AntWar GUI v1.3 — CSS-only surfaces. */
+body,
+#app,
+#game-container { background: var(--aw-bg); color: var(--aw-text); }
+
 .aw-surface-list,
 .list-surface,
 .settings-list-surface,
 .team-list-surface,
-.room-list-surface { background: url('../../img/list.png') center / 100% 100% no-repeat; }
+.room-list-surface,
 .aw-surface-box,
 .white-box-surface,
 .team-surface,
 .room-surface,
-.inventory-surface { background: url('../../img/box-white.png') center / 100% 100% no-repeat; }
+.inventory-surface,
 .aw-surface-text,
 .text-surface,
 .text-bg-box,
 .modal-field-surface,
-.setting-label-surface { background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; }
+.setting-label-surface,
 .aw-topbar,
 .topbar-surface,
-.modal-topbar-surface { background: url('../../img/topbar-box.png') center / 100% 100% no-repeat; }
-.aw-option-menu,
-.option-menu-surface,
-.dropdown-surface { background: url('../../img/option-Menu.png') center / 100% 100% no-repeat; }
-.aw-modal-big { background: url('../../img/box-big.png') center / 100% 100% no-repeat; }
-.aw-modal-large { background: url('../../img/box-big-Brother.png') center / 100% 100% no-repeat; }
-.aw-modal-white { background: url('../../img/box-white.png') center / 100% 100% no-repeat; }
-.aw-modal-white-wide { background: url('../../img/box-white-brother.png') center / 100% 100% no-repeat; }
-.aw-avatar-frame,
-.avatar-frame-skin { background: url('../../img/frame.png') center / 100% 100% no-repeat; }
-.aw-item-frame,
-.item-frame-skin { background: url('../../img/frame-item.png') center / 100% 100% no-repeat; }
+.modal-topbar-surface,
+.aw-modal-big,
+.aw-modal-large,
+.aw-modal-white,
+.aw-modal-white-wide {
+  background: var(--aw-surface) !important;
+  color: var(--aw-text);
+  border: 1px solid var(--aw-border);
+  border-radius: var(--aw-radius-sm);
+  box-shadow: var(--aw-shadow-soft), var(--aw-shadow-inset);
+}
+
+.aw-surface-list,
+.list-surface,
+.settings-list-surface,
+.team-list-surface,
+.room-list-surface { background: var(--aw-surface-2) !important; }
+
+.aw-surface-text,
+.text-surface,
+.text-bg-box,
+.modal-field-surface,
+.setting-label-surface { background: var(--aw-surface-3) !important; }
+
 .aw-empty-button,
 .empty-button-skin,
 .btn-wood-empty,
 .btn-compact-wood,
-.btn-wood {
-  background: url('../../img/Empty-button.png') center / 100% 100% no-repeat;
-  border: 0; border-radius: 0; box-shadow: none; background-color: transparent;
+.btn-wood,
+.antwar-button {
+  background: linear-gradient(180deg, #ffffff, #eaf1f7) !important;
+  color: var(--aw-text) !important;
+  border: 1px solid var(--aw-border-strong) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 0 rgba(91,111,129,.12), var(--aw-shadow-inset) !important;
 }
+
 .aw-empty-button:hover,
 .empty-button-skin:hover,
 .btn-wood-empty:hover,
 .btn-compact-wood:hover,
-.btn-wood:hover { filter: brightness(1.08) saturate(1.06); transform: translateY(-1px); }
+.btn-wood:hover,
+.antwar-button:hover { transform: translateY(-1px); border-color: #9fb4c6 !important; }
 .aw-empty-button:active,
 .empty-button-skin:active,
 .btn-wood-empty:active,
 .btn-compact-wood:active,
-.btn-wood:active { filter: brightness(.96); transform: translateY(1px) scale(.985); }
+.btn-wood:active,
+.antwar-button:active { transform: translateY(1px); box-shadow: none !important; }
+
+.aw-avatar-frame,
+.avatar-frame-skin,
+.aw-item-frame,
+.item-frame-skin {
+  background: var(--aw-surface-2) !important;
+  border: 1px solid var(--aw-border-strong);
+  border-radius: 12px;
+}
 .aw-avatar-frame > img,
 .avatar-frame-skin > img { width: 72%; height: 72%; object-fit: cover; border-radius: 50%; }
-.aw-avatar-frame::after,
-.avatar-frame-skin::after { content: ''; position: absolute; inset: 0; background: url('../../img/frame.png') center / 100% 100% no-repeat; pointer-events: none; }
+.aw-item-frame > img,
+.item-frame-skin > img { max-width: 76%; max-height: 76%; object-fit: contain; }
