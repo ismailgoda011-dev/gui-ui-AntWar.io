@@ -1,0 +1,232 @@
+/* AntWar GUI — image-first skin. Visual surfaces come from the supplied game artwork. */
+
+:root {
+  --aw-image-window: url('../../img/box-big.png');
+  --aw-image-window-wide: url('../../img/box-big-Brother.png');
+  --aw-image-panel: url('../../img/box-white.png');
+  --aw-image-panel-wide: url('../../img/box-white-brother.png');
+  --aw-image-list: url('../../img/list.png');
+  --aw-image-text: url('../../img/Text BackgroundBox.png');
+  --aw-image-button: url('../../img/Empty-button.png');
+  --aw-image-topbar: url('../../img/topbar-box.png');
+  --aw-image-menu: url('../../img/option-Menu.png');
+  --aw-image-frame: url('../../img/frame.png');
+  --aw-image-item-frame: url('../../img/frame-item.png');
+}
+
+/* Never paint synthetic navy/gradient window chrome over the artwork. */
+.wood-modal-container,
+.wood-modal-shell,
+.modal-window,
+.window-shell,
+.full-page-window,
+.desktop-popup-chat {
+  background: var(--aw-image-window) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.wood-modal-container.wood-modal-container-wide,
+.modal-window.modal-window-wide,
+.full-page-window.wide-window {
+  background-image: var(--aw-image-window-wide) !important;
+}
+
+.wood-modal-cavity,
+.wood-modal-body,
+.modal-window-body,
+.window-body,
+.full-page-body {
+  background: var(--aw-image-panel) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.wood-modal-header,
+.full-page-header,
+.modal-window-header,
+.window-header,
+.desktop-popup-chat .chat-popup-header {
+  background: var(--aw-image-topbar) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.wood-modal-footer,
+.modal-window-footer,
+.window-footer,
+.desktop-popup-chat .chat-footer-bar {
+  background: var(--aw-image-text) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+/* Buttons inherit the actual button artwork, not CSS-generated colors. */
+button,
+.rpg-unified-btn,
+.aw-button,
+.primary-button,
+.secondary-button,
+.success-button,
+.danger-button,
+.ghost-button,
+.setup-mode-btn,
+.wood-tab-btn {
+  background: var(--aw-image-button) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--aw-ink) !important;
+  box-shadow: none !important;
+}
+
+button:hover,
+.rpg-unified-btn:hover,
+.aw-button:hover,
+.wood-tab-btn:hover { filter: brightness(1.08); }
+
+button:active,
+.rpg-unified-btn:active,
+.aw-button:active,
+.wood-tab-btn:active { filter: brightness(.96); }
+
+/* Inputs and compact value surfaces use the same supplied artwork. */
+input:not([type='checkbox']):not([type='radio']),
+select,
+textarea,
+.setting-opt-pill,
+.rpg-toggle-pill {
+  background: var(--aw-image-text) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--aw-ink) !important;
+  box-shadow: none !important;
+}
+
+/* Dropdowns use the game's top bar + menu + text assets. */
+.rpg-dropdown-trigger,
+.server-selector-btn {
+  background: var(--aw-image-topbar) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--aw-ink) !important;
+}
+
+.rpg-dropdown-menu,
+.server-dropdown-menu,
+.dropdown-menu,
+.option-menu,
+.option-menu-surface {
+  background: var(--aw-image-menu) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.rpg-dropdown-menu button,
+.server-dropdown-menu button,
+.dropdown-menu button,
+.option-menu button,
+.rpg-dropdown-option {
+  background: var(--aw-image-text) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--aw-ink) !important;
+}
+
+/* Lists/cards use list.png and box-white.png, preserving the original palette. */
+.settings-list-surface,
+.team-list-surface,
+.room-list-surface,
+.chat-list-surface,
+.notification-list-surface,
+.profile-section,
+.player-section {
+  background: var(--aw-image-list) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+.profile-card,
+.player-card,
+.player-profile-card,
+.inventory-card,
+.shop-card,
+.shop-item-card,
+.product-card,
+.mail-row,
+.reward-card,
+.pass-card,
+.profile-stat-card {
+  background: var(--aw-image-panel) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.profile-hero,
+.profile-header,
+.player-profile-hero,
+.player-dossier-hero {
+  background: var(--aw-image-window-wide) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.avatar-frame,
+.user-avatar-frame,
+.member-avatar-frame,
+.profile-avatar-frame {
+  background: var(--aw-image-frame) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+}
+
+.item-frame,
+.inventory-item-frame,
+.shop-item-frame {
+  background: var(--aw-image-item-frame) center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+}
+
+/* Chat keeps the Discord-like layout, but its colors are now supplied by the game art. */
+.desktop-popup-chat,
+#fullpage-chat .full-page-window { background-image: var(--aw-image-window) !important; }
+.desktop-popup-chat .chat-body-area,
+.desktop-popup-chat #desktop-popup-chat-messages,
+#fullpage-chat .chat-main-area { background: var(--aw-image-panel) center / 100% 100% no-repeat !important; }
+.desktop-popup-chat .chat-tabs-sidebar,
+#fullpage-chat .chat-sidebar-tabs { background: var(--aw-image-list) center / 100% 100% no-repeat !important; border: 0 !important; }
+.desktop-popup-chat .chat-tab-btn,
+#fullpage-chat .chat-tab-btn-v { background: var(--aw-image-text) center / 100% 100% no-repeat !important; border: 0 !important; color: var(--aw-ink) !important; }
+.desktop-popup-chat .chat-tab-btn.active,
+#fullpage-chat .chat-tab-btn-v.active { filter: brightness(1.1); }
+.desktop-popup-chat .chat-bubble-other,
+.desktop-popup-chat .chat-bubble-mine { background: var(--aw-image-text) center / 100% 100% no-repeat !important; border: 0 !important; border-radius: 0 !important; color: var(--aw-ink) !important; box-shadow: none !important; }
+.desktop-popup-chat .chat-input-box { background: var(--aw-image-text) center / 100% 100% no-repeat !important; border: 0 !important; border-radius: 0 !important; color: var(--aw-ink) !important; }
+.desktop-popup-chat .chat-send-btn { background: var(--aw-image-button) center / 100% 100% no-repeat !important; color: var(--aw-ink) !important; }
+
+/* Settings: centered, larger tabs while retaining the original image palette. */
+#modal-settings .settings-tab-bar { display: flex !important; align-items: center; justify-content: center !important; flex-wrap: wrap; gap: 8px; width: 100%; margin-inline: auto; }
+#modal-settings .settings-tab-bar .wood-tab-btn { color: var(--aw-ink) !important; font-size: 13px !important; text-shadow: none; }
+#modal-settings #settings-panel-toggles,
+#modal-settings #settings-panel-dropdowns,
+#modal-settings #settings-panel-audio { width: min(100%,520px) !important; margin-inline: auto !important; }
+#modal-settings #settings-panel-toggles > .rpg-toggle-pill { width: min(100%,470px) !important; margin-inline: auto !important; }
+#modal-settings .rpg-dropdown-menu { max-height: 240px; overflow-y: auto; }
+
+/* Reduce only the non-artificial effects; no new navy palette. */
+.wood-modal-container,
+.desktop-popup-chat { filter: drop-shadow(0 18px 35px rgba(0,0,0,.42)); }
+
+@media (max-width: 640px) {
+  #modal-settings .settings-tab-bar { gap: 6px; }
+  #modal-settings .settings-tab-bar .wood-tab-btn { font-size: 12px !important; padding-inline: 10px; }
+}
