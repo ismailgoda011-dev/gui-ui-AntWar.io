@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "version": "3.0.0",
+    "version": "3.2.0",
     "description": "Single source of truth for AntWar GUI navigation, events, servers and reward UI definitions. Game data can replace these records later without rewriting the UI."
   },
   "bottomNav": [
