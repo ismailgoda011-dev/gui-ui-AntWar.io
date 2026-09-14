@@ -1,0 +1,73 @@
+/* AntWar GUI — controls, dropdowns, teams and form elements */
+.aw-control,
+.antwar-control,
+.setting-opt-pill,
+.rpg-toggle-pill,
+.rpg-dropdown-trigger,
+.server-selector-btn { min-height: var(--aw-control-h); font-family: var(--aw-font-body); color: var(--aw-ink); }
+.setting-opt-pill,
+.rpg-toggle-pill { background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat !important; border: 0 !important; box-shadow: none !important; padding-inline: clamp(12px,1.5vw,20px) !important; }
+.rpg-dropdown-trigger,
+.server-selector-btn { background: url('../../img/topbar-box.png') center / 100% 100% no-repeat !important; border: 0 !important; border-radius: 0 !important; color: var(--aw-ink) !important; box-shadow: none !important; position: relative; padding-inline-end: 34px !important; }
+.rpg-dropdown-trigger::after { content: ''; position: absolute; inset-inline-end: 9px; top: 50%; width: 20px; height: 20px; transform: translateY(-50%); background: url('../../img/arrow-Menu.png') center / contain no-repeat; pointer-events: none; }
+.rpg-dropdown-menu,
+.server-dropdown-menu,
+.dropdown-menu,
+.option-menu,
+.option-menu-surface { background: url('../../img/option-Menu.png') center / 100% 100% no-repeat !important; border: 0 !important; border-radius: 0 !important; box-shadow: var(--aw-shadow-soft) !important; padding: 9px !important; }
+.rpg-dropdown-menu button,
+.server-dropdown-menu button,
+.dropdown-menu button,
+.option-menu button { min-height: 38px; background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; border: 0; color: var(--aw-ink); font-weight: 800; transition: filter var(--aw-transition), transform var(--aw-transition); }
+.rpg-dropdown-menu button:hover,
+.server-dropdown-menu button:hover,
+.dropdown-menu button:hover,
+.option-menu button:hover { filter: brightness(1.08); transform: translateX(-2px); }
+input[type='checkbox'].antwar-skin-control,
+input[type='radio'].antwar-skin-control,
+.antwar-checkbox,
+.antwar-radio { appearance: none; -webkit-appearance: none; width: 30px; height: 30px; min-width: 30px; margin: 0; border: 0; background: url('../../img/disabled.png') center / contain no-repeat; cursor: pointer; vertical-align: middle; }
+input[type='checkbox'].antwar-skin-control:checked,
+input[type='radio'].antwar-skin-control:checked,
+.antwar-checkbox.is-checked,
+.antwar-radio.is-checked { background-image: url('../../img/enable.png'); }
+input[type='checkbox'].antwar-skin-control:disabled,
+input[type='radio'].antwar-skin-control:disabled { opacity: .55; cursor: not-allowed; }
+.team-color-control { width: 36px; height: 36px; border: 0; background: url('../../img/color-team.png') center / contain no-repeat; }
+.team-lock-list { background: url('../../img/lock-list.png') center / contain no-repeat; }
+.team-lock { background: url('../../img/lock-team.png') center / contain no-repeat; }
+.ui-list-row,
+.team-member-row,
+.room-list-row,
+.notification-row,
+.chat-list-row { background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; border: 0 !important; min-height: 48px; padding: 8px 12px; transition: filter var(--aw-transition), transform var(--aw-transition); }
+.ui-list-row:hover,
+.team-member-row:hover,
+.room-list-row:hover,
+.notification-row:hover,
+.chat-list-row:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.avatar-frame,
+.user-avatar-frame,
+.member-avatar-frame,
+.profile-avatar-frame { position: relative; display: grid; place-items: center; background: url('../../img/frame.png') center / 100% 100% no-repeat; padding: 9%; }
+.avatar-frame img,
+.user-avatar-frame img,
+.member-avatar-frame img,
+.profile-avatar-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.item-frame,
+.inventory-item-frame,
+.shop-item-frame { background: url('../../img/frame-item.png') center / 100% 100% no-repeat; padding: 10%; }
+.item-frame img,
+.inventory-item-frame img,
+.shop-item-frame img { width: 100%; height: 100%; object-fit: contain; }
+.modal-close-btn img { object-fit: contain; }
+.wood-modal-header,
+.full-page-header { background: url('../../img/topbar-box.png') center / 100% 100% no-repeat; min-height: 54px; }
+.wood-modal-body { scrollbar-color: var(--aw-gold-deep) rgba(36,16,8,.18); }
+.wood-modal-body::-webkit-scrollbar { width: 8px; }
+.wood-modal-body::-webkit-scrollbar-thumb { background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; }
+.wood-modal-container { filter: drop-shadow(0 18px 35px rgba(0,0,0,.58)); }
+.wood-modal-container .wood-modal-cavity { gap: var(--aw-gap); }
+.rpg-unified-btn { transition: transform var(--aw-transition), filter var(--aw-transition); }
+.rpg-unified-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.rpg-unified-btn:active { transform: translateY(1px) scale(.98); }
