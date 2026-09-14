@@ -1,22 +1,31 @@
-/* AntWar GUI — visual skin tokens
-   One visual language for every surface. Assets live in /img. */
+/* AntWar GUI v1.3 — bright modern game UI tokens. No image assets. */
 :root {
-  --aw-font-display: 'ReadexPro', 'LuckiestGuy', sans-serif;
-  --aw-font-body: 'Tajawal', 'Nunito', sans-serif;
-  --aw-wood-dark: #3b170b;
-  --aw-wood-mid: #6b2a13;
-  --aw-wood-light: #a94a25;
-  --aw-gold: #ffd875;
-  --aw-gold-deep: #c98724;
-  --aw-ink: #241008;
-  --aw-paper: #f7ead0;
-  --aw-paper-soft: #fff6e4;
-  --aw-red: #7e2025;
-  --aw-green: #37aa49;
-  --aw-shadow: 0 16px 42px rgba(0,0,0,.62);
-  --aw-shadow-soft: 0 8px 20px rgba(0,0,0,.38);
+  --aw-font-display: 'ReadexPro', 'LuckiestGuy', 'Tajawal', sans-serif;
+  --aw-font-body: 'Tajawal', 'Nunito', system-ui, sans-serif;
+
+  --aw-bg: #eef3f8;
+  --aw-bg-2: #e3ebf3;
+  --aw-surface: #ffffff;
+  --aw-surface-2: #f6f9fc;
+  --aw-surface-3: #edf3f8;
+  --aw-border: #d5e0ea;
+  --aw-border-strong: #bccbd8;
+  --aw-text: #17212b;
+  --aw-muted: #6c7b88;
+  --aw-accent: #2f80ed;
+  --aw-accent-2: #1769d2;
+  --aw-cyan: #16b8c9;
+  --aw-success: #22a06b;
+  --aw-warning: #e69b18;
+  --aw-danger: #e05252;
+  --aw-purple: #7b61d9;
+
+  --aw-shadow: 0 18px 45px rgba(44, 62, 80, .14);
+  --aw-shadow-soft: 0 8px 24px rgba(44, 62, 80, .10);
+  --aw-shadow-inset: inset 0 1px 0 rgba(255,255,255,.9);
   --aw-radius: 14px;
+  --aw-radius-sm: 10px;
   --aw-gap: clamp(10px, 1.4vw, 18px);
-  --aw-control-h: clamp(42px, 4.2vw, 52px);
+  --aw-control-h: clamp(40px, 4.2vw, 48px);
   --aw-transition: 160ms ease;
 }
