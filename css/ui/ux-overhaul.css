@@ -1,0 +1,360 @@
+/* AntWar GUI v1.1 — visual system / UX polish layer.
+   Loaded after the skin controls so this file can safely refine the experience without
+   replacing the original game CSS. */
+
+:root {
+  --aw-ui-bg: #1e1f22;
+  --aw-ui-panel: #2b2d31;
+  --aw-ui-panel-2: #313338;
+  --aw-ui-panel-3: #383a40;
+  --aw-ui-line: rgba(255,255,255,.08);
+  --aw-ui-muted: #949ba4;
+  --aw-ui-text: #f2f3f5;
+  --aw-ui-accent: #5865f2;
+  --aw-ui-accent-2: #4752c4;
+  --aw-ui-success: #23a55a;
+  --aw-ui-danger: #ed4245;
+  --aw-ui-warning: #f0b232;
+}
+
+/* Global hierarchy: reduce visual noise and make every surface feel intentional. */
+body,
+#app,
+#game-container {
+  text-rendering: optimizeLegibility;
+}
+button,
+input,
+select,
+textarea { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+/* Window system */
+.wood-modal-container,
+.full-page-container,
+.full-page-modal,
+.rpg-window {
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  box-shadow: 0 28px 70px rgba(0,0,0,.55), 0 2px 0 rgba(255,255,255,.04) inset !important;
+}
+.wood-modal-header,
+.full-page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px !important;
+  padding-inline: 14px !important;
+}
+.wood-modal-header::after,
+.full-page-header::after {
+  content: '';
+  position: absolute;
+  inset-inline: 14px;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(88,101,242,.5),transparent);
+  pointer-events: none;
+}
+.wood-modal-body,
+.full-page-body { scrollbar-width: thin; }
+.wood-modal-body::-webkit-scrollbar,
+.full-page-body::-webkit-scrollbar { width: 7px; }
+.wood-modal-body::-webkit-scrollbar-thumb,
+.full-page-body::-webkit-scrollbar-thumb { background: rgba(148,163,184,.35); border-radius: 99px; }
+
+/* Consistent button language */
+.rpg-unified-btn,
+.antwar-button,
+.setup-mode-btn,
+#modal-create-room button,
+#modal-settings button {
+  min-height: 38px;
+  border-radius: 9px;
+  font-weight: 900;
+  letter-spacing: .01em;
+  transition: transform .16s ease, filter .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.rpg-unified-btn:hover,
+.antwar-button:hover,
+.setup-mode-btn:hover,
+#modal-create-room button:hover,
+#modal-settings button:hover { transform: translateY(-1px); }
+.rpg-unified-btn:focus-visible,
+.antwar-button:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible { outline: 2px solid rgba(88,101,242,.8); outline-offset: 2px; }
+
+/* Semantic action classes can be applied to future UI without new artwork. */
+.aw-btn-primary { background: var(--aw-ui-accent) !important; color:#fff !important; border:0 !important; }
+.aw-btn-primary:hover { background: var(--aw-ui-accent-2) !important; box-shadow:0 8px 20px rgba(88,101,242,.25); }
+.aw-btn-success { background: var(--aw-ui-success) !important; color:#fff !important; border:0 !important; }
+.aw-btn-danger { background: var(--aw-ui-danger) !important; color:#fff !important; border:0 !important; }
+.aw-btn-ghost { background: rgba(255,255,255,.06) !important; color:var(--aw-ui-text) !important; border:1px solid var(--aw-ui-line) !important; }
+
+/* Settings becomes a real control center. */
+#modal-settings .wood-modal-body {
+  background: linear-gradient(180deg,rgba(17,24,39,.94),rgba(31,41,55,.92)) !important;
+}
+#modal-settings .settings-panel,
+#modal-settings [id^='settings-panel-'] {
+  animation: aw-panel-in .18s ease both;
+}
+#modal-settings .settings-tab-bar {
+  padding: 4px;
+  background: rgba(17,24,39,.62);
+  border: 1px solid var(--aw-ui-line);
+  border-radius: 12px;
+}
+#modal-settings .settings-tab-bar .wood-tab-btn { flex: 1 1 0; min-width: 120px; }
+#modal-settings .settings-section,
+#modal-settings .settings-group,
+#modal-settings .rpg-dropdown-wrapper {
+  padding: 10px;
+  border: 1px solid var(--aw-ui-line);
+  border-radius: 12px;
+  background: rgba(43,45,49,.55);
+}
+#modal-settings .settings-section + .settings-section,
+#modal-settings .settings-group + .settings-group,
+#modal-settings .rpg-dropdown-wrapper + .rpg-dropdown-wrapper { margin-top: 8px; }
+#modal-settings label { color: #dbdee1; font-weight: 800; }
+
+/* Dropdown behavior / polish */
+#modal-settings .rpg-dropdown-menu { animation: aw-dropdown-in .13s ease both; transform-origin: top center; }
+#modal-settings .rpg-dropdown-option { position: relative; }
+#modal-settings .rpg-dropdown-option.is-selected,
+#modal-settings .rpg-dropdown-option[aria-selected='true'] {
+  background: rgba(88,101,242,.2);
+  color: #fff;
+}
+#modal-settings .rpg-dropdown-option.is-selected::after,
+#modal-settings .rpg-dropdown-option[aria-selected='true']::after {
+  content:'✓';
+  margin-inline-start:auto;
+  color:#a5b4fc;
+  font-weight:900;
+}
+
+/* Profile system: strong identity header + information hierarchy. */
+#modal-player-profile .wood-modal-body,
+#modal-profile .wood-modal-body,
+#modal-my-profile .wood-modal-body,
+#modal-player-details .wood-modal-body {
+  background: linear-gradient(180deg,#111827 0%,#1f2937 42%,#111827 100%) !important;
+}
+.profile-header-card,
+.player-profile-header,
+.profile-hero,
+#detail-player-header,
+#my-profile-header {
+  position: relative;
+  min-height: 150px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg,rgba(88,101,242,.22),rgba(31,41,55,.88) 48%,rgba(17,24,39,.96));
+  border: 1px solid rgba(114,137,218,.25);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.profile-header-card::before,
+.player-profile-header::before,
+.profile-hero::before,
+#detail-player-header::before,
+#my-profile-header::before {
+  content:'';
+  position:absolute;
+  width:220px;
+  height:220px;
+  inset-inline-end:-70px;
+  top:-100px;
+  border-radius:50%;
+  background:rgba(88,101,242,.16);
+  filter:blur(3px);
+}
+.profile-avatar-frame,
+#detail-avatar-img,
+#profile-avatar-preview {
+  position:relative;
+  z-index:1;
+}
+.profile-hero .profile-name,
+.player-profile-header .profile-name,
+#detail-player-header .player-name { font-size:18px; color:#fff; font-weight:950; }
+.profile-subtitle,
+.player-profile-subtitle { color:var(--aw-ui-muted); font-size:11px; }
+.profile-status-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--aw-ui-success); box-shadow:0 0 0 3px rgba(35,165,90,.16); }
+.profile-stats-grid,
+.player-stats-grid,
+.profile-stat-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+  margin-top:10px;
+}
+.profile-stat,
+.player-stat,
+.profile-stat-card {
+  min-height:64px;
+  padding:9px;
+  border:1px solid var(--aw-ui-line);
+  border-radius:11px;
+  background:rgba(43,45,49,.78);
+  text-align:center;
+}
+.profile-stat .value,
+.player-stat .value,
+.profile-stat-card .value { display:block; color:#fff; font-size:15px; font-weight:950; }
+.profile-stat .label,
+.player-stat .label,
+.profile-stat-card .label { display:block; color:var(--aw-ui-muted); font-size:9px; font-weight:800; margin-top:3px; }
+.profile-progress,
+.xp-progress { height:8px; border-radius:99px; overflow:hidden; background:#1e1f22; border:1px solid rgba(255,255,255,.05); }
+.profile-progress > span,
+.xp-progress > span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#5865f2,#8b5cf6); box-shadow:0 0 14px rgba(88,101,242,.35); }
+
+/* Player cards / member lists */
+.player-card,
+.user-card,
+.member-card {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:9px;
+  border:1px solid transparent;
+  border-radius:11px;
+  background:rgba(43,45,49,.72);
+  transition:background .16s ease,border-color .16s ease,transform .16s ease;
+}
+.player-card:hover,
+.user-card:hover,
+.member-card:hover { background:#383a40; border-color:rgba(88,101,242,.3); transform:translateY(-1px); }
+.player-card .status,
+.user-card .status,
+.member-card .status { margin-inline-start:auto; width:8px; height:8px; border-radius:50%; background:var(--aw-ui-success); }
+
+/* Chat: Discord-like channel/member/message rhythm. */
+.desktop-popup-chat,
+#fullpage-chat {
+  --chat-bg:#313338;
+  --chat-sidebar:#2b2d31;
+  --chat-input:#1e1f22;
+  --chat-line:rgba(255,255,255,.06);
+}
+.desktop-popup-chat .chat-body-area,
+#fullpage-chat .full-page-body { min-height:0; }
+.desktop-popup-chat .chat-tabs-sidebar,
+#fullpage-chat .chat-sidebar-tabs {
+  padding:8px;
+}
+.desktop-popup-chat .chat-tab-btn,
+#fullpage-chat .chat-tab-btn-v {
+  position:relative;
+  padding-inline:10px !important;
+  text-align:start;
+  font-weight:850;
+}
+.desktop-popup-chat .chat-tab-btn.active::before,
+#fullpage-chat .chat-tab-btn-v.active::before {
+  content:'';
+  position:absolute;
+  inset-inline-start:-8px;
+  top:7px;
+  bottom:7px;
+  width:3px;
+  border-radius:0 4px 4px 0;
+  background:#fff;
+}
+.desktop-popup-chat #desktop-popup-chat-messages,
+#fullpage-chat .chat-main-area {
+  min-width:0;
+}
+.antwar-chat-message { animation: aw-message-in .16s ease both; }
+.antwar-chat-message + .antwar-chat-message { margin-top:2px; }
+.chat-bubble-other,
+.chat-bubble-mine { max-width:min(72ch,80vw); word-break:break-word; }
+.chat-bubble-other:hover,
+.chat-bubble-mine:hover { filter:brightness(1.04); }
+.desktop-popup-chat .chat-footer-bar { display:flex; align-items:center; gap:8px; }
+.desktop-popup-chat .chat-send-btn { min-width:42px; min-height:42px; font-weight:950; }
+#chat-unread-badge:not(.hidden) { animation:aw-badge-pulse 1.5s ease-in-out infinite; }
+
+/* Inventory / shop / mailbox / rewards: card rhythm. */
+.shop-item-card,
+.shop-card,
+.product-card,
+.pass-card,
+.reward-card,
+.mail-row,
+.inventory-item {
+  border-radius:12px !important;
+  transition:transform .16s ease,filter .16s ease,box-shadow .16s ease;
+}
+.shop-item-card:hover,
+.shop-card:hover,
+.product-card:hover,
+.pass-card:hover,
+.reward-card:hover,
+.mail-row:hover,
+.inventory-item:hover { transform:translateY(-2px); filter:brightness(1.03); box-shadow:0 10px 24px rgba(0,0,0,.18); }
+
+/* Empty / loading / error states, if corresponding classes are introduced. */
+.aw-empty-state,
+.aw-loading-state,
+.aw-error-state {
+  min-height:120px;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  border:1px dashed rgba(148,163,184,.22);
+  border-radius:12px;
+  background:rgba(17,24,39,.4);
+  color:var(--aw-ui-muted);
+  text-align:center;
+}
+.aw-loading-state::before { content:'…'; font-size:28px; line-height:1; color:#a5b4fc; animation:aw-loading 1s steps(3,end) infinite; }
+.aw-error-state { color:#fca5a5; border-color:rgba(239,68,68,.25); }
+
+/* Responsive */
+@media (max-width:760px) {
+  .profile-header-card,
+  .player-profile-header,
+  .profile-hero,
+  #detail-player-header,
+  #my-profile-header { grid-template-columns:auto 1fr; }
+  .profile-header-card > :last-child,
+  .player-profile-header > :last-child,
+  .profile-hero > :last-child,
+  #detail-player-header > :last-child,
+  #my-profile-header > :last-child { grid-column:1/-1; }
+  .profile-stats-grid,
+  .player-stats-grid,
+  .profile-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:520px) {
+  #modal-settings .settings-tab-bar .wood-tab-btn { min-width:0; flex:1 1 30%; font-size:11px !important; }
+  .profile-header-card,
+  .player-profile-header,
+  .profile-hero,
+  #detail-player-header,
+  #my-profile-header { padding:12px; gap:10px; }
+  .profile-avatar-frame { width:72px !important; height:72px !important; }
+}
+
+@keyframes aw-panel-in { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:none} }
+@keyframes aw-dropdown-in { from{opacity:0;transform:translateY(-4px) scale(.985)} to{opacity:1;transform:none} }
+@keyframes aw-message-in { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:none} }
+@keyframes aw-badge-pulse { 50%{transform:scale(1.06)} }
+@keyframes aw-loading { 0%{opacity:.25;transform:translateY(0)} 50%{opacity:1;transform:translateY(-2px)} 100%{opacity:.25;transform:translateY(0)} }
+
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
