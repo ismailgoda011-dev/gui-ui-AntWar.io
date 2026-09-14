@@ -1,5 +1,5 @@
 // AntWar GUI visual runtime.
-// v1.5 uses a CSS-first 2D game interface. The existing element frame is the only decorative GUI image retained.
+// v1.6 uses a CSS-first 2D game interface. The existing element frame is the only decorative GUI image retained.
 
 import { APP_VERSION, APP_RELEASE } from '../core/app-version.js';
 
@@ -21,7 +21,8 @@ function loadSkinStyles() {
     'css/ui/game-items.css',
     'css/ui/game-chat.css',
     'css/ui/game-motion.css',
-    'css/ui/game-responsive.css'
+    'css/ui/game-responsive.css',
+    'css/ui/game-overrides.css'
   ].forEach(href => {
     if (document.querySelector(`link[data-antwar-skin="${href}"]`)) return;
     const link = document.createElement('link');
