@@ -3,9 +3,7 @@
 
 import { APP_VERSION, APP_RELEASE } from '../core/app-version.js';
 
-export const UI_ASSETS = Object.freeze({
-  itemFrame: 'img/frame-item.png'
-});
+export const UI_ASSETS = Object.freeze({ itemFrame: 'img/frame-item.png' });
 
 function loadSkinStyles() {
   ['css/ui/tokens.css','css/ui/surfaces.css','css/ui/controls.css','css/ui/responsive.css','css/ui/ux-overhaul.css','css/ui/modern-ui.css'].forEach(href => {
