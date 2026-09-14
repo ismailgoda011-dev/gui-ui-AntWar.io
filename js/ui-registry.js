@@ -3,6 +3,7 @@
 // All navigational/event UI definitions live in data/nav-items.json.
 // =======================================================
 
+import './visual-assets.js';
 import { t } from './i18n.js';
 
 let registry = null;
