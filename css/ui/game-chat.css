@@ -1,0 +1,13 @@
+/* AntWar Game UI v2 — social/chat */
+.desktop-popup-chat { background:#f7fbfd !important; }
+.desktop-popup-chat .chat-tabs-sidebar,#fullpage-chat .chat-sidebar-tabs { background:#edf4f8 !important; border-color:var(--aw-game-line) !important; }
+.desktop-popup-chat .chat-tab-btn,#fullpage-chat .chat-tab-btn-v { color:var(--aw-game-muted) !important; border:0 !important; background:transparent !important; box-shadow:none !important; }
+.desktop-popup-chat .chat-tab-btn:hover,#fullpage-chat .chat-tab-btn-v:hover { background:#fff !important; color:var(--aw-game-primary-strong) !important; }
+.desktop-popup-chat .chat-tab-btn.active,#fullpage-chat .chat-tab-btn-v.active { background:#fff !important; color:var(--aw-game-primary-strong) !important; box-shadow:inset 3px 0 var(--aw-game-primary) !important; }
+.desktop-popup-chat .chat-body-area,#fullpage-chat .chat-main-area,#fullpage-chat .full-page-body,#desktop-popup-chat-messages { background:#f8fbfd !important; }
+.chat-bubble-other,.chat-bubble-mine { background:#fff !important; border:1px solid var(--aw-game-line) !important; border-radius:12px !important; color:var(--aw-game-text) !important; box-shadow:0 4px 12px rgba(34,67,92,.07) !important; }
+.chat-bubble-mine { background:#e5f3ff !important; border-color:#a8cfe8 !important; }
+.desktop-popup-chat .chat-input-box { background:#fff !important; border:1px solid var(--aw-game-line) !important; color:var(--aw-game-text) !important; }
+.desktop-popup-chat .chat-send-btn { background:linear-gradient(180deg,#2d91df,#1b6eb7) !important; color:#fff !important; }
+.chat-time-text { color:var(--aw-game-muted) !important; }
+.chat-name-mine { color:var(--aw-game-primary-strong) !important; }
