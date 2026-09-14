@@ -1,0 +1,184 @@
+/* AntWar GUI v1.4 — responsive game UI layer */
+
+:root {
+  --aw-bg: #101827;
+  --aw-surface: #182235;
+  --aw-surface-2: #202d43;
+  --aw-surface-3: #293952;
+  --aw-border: #3a4d68;
+  --aw-text: #f5f7fb;
+  --aw-muted: #aebbd0;
+  --aw-accent: #5ea7ff;
+  --aw-accent-strong: #347fe0;
+  --aw-success: #43c77b;
+  --aw-danger: #ef6671;
+  --aw-radius: clamp(8px, 1vw, 14px);
+  --aw-gap: clamp(8px, 1.2vw, 16px);
+  --aw-pad: clamp(10px, 1.6vw, 22px);
+  --aw-control: clamp(36px, 4vw, 44px);
+}
+
+html, body { min-width: 280px; }
+body { overflow-x: hidden; background: var(--aw-bg); color: var(--aw-text); }
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video, canvas { max-width: 100%; }
+button, input, select, textarea { max-width: 100%; }
+button { min-height: var(--aw-control); }
+
+/* Responsive viewport-safe windows */
+.wood-modal-container,
+.wood-modal-shell,
+.modal-window,
+.window-shell,
+.full-page-window,
+.rpg-window,
+.desktop-popup-chat,
+.full-page-container,
+.full-page-modal {
+  width: min(94vw, 1100px) !important;
+  max-width: calc(100vw - 20px) !important;
+  max-height: calc(100dvh - 20px) !important;
+  margin: auto;
+}
+
+.wood-modal-body,
+.full-page-body,
+.modal-window-body,
+.window-body {
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.wood-modal-header,
+.full-page-header,
+.modal-window-header,
+.window-header {
+  min-height: clamp(42px, 6vh, 56px) !important;
+  padding: 0 var(--aw-pad) !important;
+}
+
+/* Prevent fixed desktop grids from overflowing narrow displays. */
+.grid, [class*="grid-cols-"] { min-width: 0; }
+[class*="grid-cols-"] { grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.flex { min-width: 0; }
+.flex > * { min-width: 0; }
+
+/* Settings */
+#modal-settings { width: min(94vw, 900px) !important; }
+#modal-settings .settings-tab-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  gap: 8px;
+  width: 100%;
+}
+#modal-settings .settings-tab-bar .wood-tab-btn { width: 100%; min-width: 0; }
+#modal-settings #settings-panel-toggles,
+#modal-settings #settings-panel-dropdowns,
+#modal-settings #settings-panel-audio {
+  width: min(100%, 680px) !important;
+  margin-inline: auto !important;
+}
+
+/* Profiles */
+.profile-header-card,
+.player-profile-header,
+.profile-hero,
+#detail-player-header,
+#my-profile-header {
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+.profile-stats-grid,
+.player-stats-grid,
+.profile-stat-grid {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+/* Chat */
+.desktop-popup-chat { width: min(96vw, 980px) !important; }
+.desktop-popup-chat .chat-body-area,
+#fullpage-chat .full-page-body {
+  display: grid;
+  grid-template-columns: minmax(150px, 24%) minmax(0, 1fr);
+  min-height: 0;
+}
+.desktop-popup-chat #desktop-popup-chat-messages { min-width: 0; }
+.chat-bubble-other, .chat-bubble-mine { max-width: min(75%, 68ch); }
+
+/* Tables and long rows become horizontally scrollable instead of breaking the viewport. */
+.table-scroll,
+.overflow-x-auto,
+[data-responsive-table] { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* Touch-friendly controls */
+@media (pointer: coarse) {
+  button, select, input[type="checkbox"], input[type="radio"], .wood-tab-btn { min-height: 42px; }
+  button, .wood-tab-btn { touch-action: manipulation; }
+}
+
+@media (max-width: 900px) {
+  .wood-modal-container,
+  .modal-window,
+  .full-page-window,
+  .rpg-window { width: min(96vw, 760px) !important; }
+  .profile-header-card,
+  .player-profile-header,
+  .profile-hero,
+  #detail-player-header,
+  #my-profile-header { grid-template-columns: auto minmax(0, 1fr); }
+  .profile-header-card > :last-child,
+  .player-profile-header > :last-child,
+  .profile-hero > :last-child,
+  #detail-player-header > :last-child,
+  #my-profile-header > :last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 700px) {
+  .wood-modal-container,
+  .modal-window,
+  .full-page-window,
+  .rpg-window,
+  .desktop-popup-chat { width: calc(100vw - 12px) !important; max-width: calc(100vw - 12px) !important; max-height: calc(100dvh - 12px) !important; }
+  .wood-modal-body, .full-page-body { padding: clamp(8px, 2.5vw, 14px) !important; }
+  .desktop-popup-chat .chat-body-area,
+  #fullpage-chat .full-page-body { grid-template-columns: 1fr; }
+  .desktop-popup-chat .chat-tabs-sidebar,
+  #fullpage-chat .chat-sidebar-tabs { display: flex; gap: 6px; overflow-x: auto; }
+  .desktop-popup-chat .chat-tab-btn,
+  #fullpage-chat .chat-tab-btn-v { flex: 0 0 auto; white-space: nowrap; }
+  .chat-bubble-other, .chat-bubble-mine { max-width: 88%; }
+}
+
+@media (max-width: 480px) {
+  .wood-modal-header, .full-page-header, .modal-window-header, .window-header { min-height: 40px !important; padding-inline: 9px !important; }
+  .settings-tab-bar { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  #modal-settings .settings-tab-bar .wood-tab-btn { font-size: 11px !important; padding-inline: 6px !important; }
+  .profile-header-card,
+  .player-profile-header,
+  .profile-hero,
+  #detail-player-header,
+  #my-profile-header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .profile-header-card > :last-child,
+  .player-profile-header > :last-child,
+  .profile-hero > :last-child,
+  #detail-player-header > :last-child,
+  #my-profile-header > :last-child { grid-column: auto; width: 100%; }
+  .profile-stats-grid,
+  .player-stats-grid,
+  .profile-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .player-card, .user-card, .member-card { padding: 8px 6px; gap: 7px; }
+}
+
+@media (max-width: 340px) {
+  .settings-tab-bar { grid-template-columns: 1fr !important; }
+  .profile-stats-grid,
+  .player-stats-grid,
+  .profile-stat-grid { grid-template-columns: 1fr; }
+  .chat-bubble-other, .chat-bubble-mine { max-width: 94%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
