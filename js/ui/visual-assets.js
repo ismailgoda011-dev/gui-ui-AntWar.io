@@ -18,14 +18,14 @@ const ROOT_IMAGE_NAMES = [
 
 export function assetPath(file) {
   if (!file) return '';
-  if (/^(?:https?:)?\\/\\//i.test(file) || file.startsWith('data:') || file.startsWith('/')) return file;
+  if (/^https?:\/\//i.test(file) || file.startsWith('//') || file.startsWith('data:') || file.startsWith('/')) return file;
   if (file.startsWith('img/')) return file;
   return `img/${file}`;
 }
 
 function repairRootAssetReference(value) {
   if (!value || typeof value !== 'string') return value;
-  const normalized = value.replace(/^\\.\\//, '');
+  const normalized = value.replace(/^\.\//, '');
   if (normalized.startsWith('img/') || normalized.startsWith('icons/') || normalized.startsWith('language/')) return value;
   const match = ROOT_IMAGE_NAMES.find(name => normalized === name || normalized.endsWith(`/${name}`));
   return match ? `img/${match}` : value;
@@ -38,7 +38,7 @@ export function repairImagePaths(root = document) {
       if (next !== node.getAttribute('src')) node.setAttribute('src', next);
     }
     const style = node.getAttribute('style');
-    if (style && /url\\(/i.test(style)) {
+    if (style && /url\(/i.test(style)) {
       let next = style;
       ROOT_IMAGE_NAMES.forEach(name => {
         next = next.replaceAll(`url('${name}')`, `url('img/${name}')`).replaceAll(`url(\"${name}\")`, `url(\"img/${name}\")`).replaceAll(`url(${name})`, `url(img/${name})`);
@@ -121,16 +121,13 @@ function installRoyalPassRuntimeGuard() {
   window.addEventListener('error', event => {
     const message = String(event.message || '');
     const file = String(event.filename || '');
-    if (!/t is not a function/.test(message) || !/script\\.js/.test(file)) return;
+    if (!/t is not a function/.test(message) || !/script\.js/.test(file)) return;
     if (event.lineno && (event.lineno < 1880 || event.lineno > 1950)) return;
 
     const body = document.getElementById('wood-modal-body-royal-pass');
     if (!body) return;
     event.preventDefault();
 
-    // The original failure is caused by a Royal Pass loop variable named `t`
-    // shadowing the i18n translator `t()`. Keep the modal usable while the
-    // source path is refreshed by rendering a safe, self-contained track.
     body.innerHTML = `
       <div class="w-full flex flex-col gap-2">
         <div class="flex items-center justify-between px-2 py-2 rounded-xl" style="background:#1f2937;border:1px solid rgba(114,137,218,.35)">
