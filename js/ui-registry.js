@@ -3,7 +3,7 @@
 // All navigational/event UI definitions live in data/nav-items.json.
 // =======================================================
 
-import './visual-assets.js';
+import './ui/visual-assets.js';
 import { t } from './i18n.js';
 
 let registry = null;
@@ -51,7 +51,7 @@ export function renderIconButton(item, options = {}) {
             <img id="${item.iconId || `${item.id}-icon`}" src="${icon}" alt="${label}" class="${iconClass} ${iconExtra}">
             ${badge}${levelTag}
         </div>
-        <span id="${item.labelId || `${item.id}-label`}" class="${labelClass}">${label}</span>
+        <span id="${item.labelId || `${item.id}-label" class="${labelClass}">${label}</span>
     </button>`;
 }
 
@@ -61,8 +61,7 @@ export function renderHeaderDock(container) {
     container.innerHTML = items.map(item => renderIconButton(item, {
         iconClass: item.size === 'large'
             ? 'w-[clamp(32px,3.8vw,46px)] h-[clamp(32px,3.8vw,46px)] drop-shadow'
-            : 'w-[clamp(32px,3.8vw,44px)] h-[clamp(32px,3.8vw,44px)] drop-shadow',
-        iconExtra: item.iconClass || ''
+            : 'w-[clamp(32px,3.8vw,44px)] h-[clamp(32px,3.8vw,44px)] drop-shadow'
     })).join('');
 }
 
@@ -78,7 +77,7 @@ export function renderBottomNav(container) {
 export function renderServerOptions(container) {
     if (!container || !registry) return;
     const servers = registry.serverOptions || [];
-    container.innerHTML = servers.map((server, index) => `
+    container.innerHTML = servers.map(server => `
         <button type="button" class="server-option-btn w-full px-1.5 py-1 rounded flex items-center justify-between hover:c-bg-burgundy transition text-right cursor-pointer" data-server-id="${server.id}" data-ping="${server.ping}" data-status="${server.status}">
             <span class="text-[10px] font-bold text-white flex items-center gap-1">${server.flag || ''} ${t(server.nameKey)}</span>
             <span class="text-[9px] font-black ${server.status === 'emerald' ? 'text-[#37AA49]' : 'text-[#FFD875]'}">${server.ping}</span>
@@ -86,14 +85,6 @@ export function renderServerOptions(container) {
     return servers;
 }
 
-export function getDailyRewards() {
-    return (registry?.dailyRewards || []).map(item => ({ ...item }));
-}
-
-export function getDailyQuests(type = 'daily') {
-    return (registry?.dailyQuests?.[type] || []).map(item => ({ ...item }));
-}
-
-export function getPassTabs() {
-    return (registry?.royalPass?.tabs || []).map(item => ({ ...item }));
-}
+export function getDailyRewards() { return (registry?.dailyRewards || []).map(item => ({ ...item })); }
+export function getDailyQuests(type = 'daily') { return (registry?.dailyQuests?.[type] || []).map(item => ({ ...item })); }
+export function getPassTabs() { return (registry?.royalPass?.tabs || []).map(item => ({ ...item })); }
