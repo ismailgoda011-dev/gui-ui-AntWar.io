@@ -1,8 +1,18 @@
 # AntWar GUI
 
-## Visual UI system — v3.2.0
+## Visual UI system — v1.0.0
 
-The GUI now uses the supplied game artwork as the single visual language. All root-level PNG artwork has been moved into the canonical `img/` directory; UI code resolves reusable assets through `img/` and the visual asset contract.
+The GUI uses the supplied game artwork as the visual language while keeping the window chrome clean and readable. Settings, dropdowns, chat, player profiles and modal surfaces are refined without changing the core navigation structure.
+
+### UI improvements in v1.0
+
+- Settings tabs are centered, larger and white for readability.
+- Settings toggles are centered and use clearer interactive states.
+- Settings dropdowns now enforce a single open menu, stable stacking, and one visible arrow.
+- Window top bars no longer use `topbar-box.png` as their background.
+- Desktop chat follows a Discord-inspired slate/indigo visual system with local message sending and Enter-to-send.
+- Player profile and player dossier surfaces have clearer hierarchy and improved avatar selection states.
+- Royal Pass has a runtime safety guard for the known `t is not a function` crash path.
 
 ### Asset roles
 
@@ -14,26 +24,26 @@ The GUI now uses the supplied game artwork as the single visual language. All ro
 - `Text BackgroundBox.png` — compact text fields, labels and value surfaces
 - `frame.png` — player/avatar frames
 - `frame-item.png` — item/reward frames
-- `arrow-Menu.png` + `option-Menu.png` + `topbar-box.png` — dropdown controls
+- `arrow-Menu.png` + `option-Menu.png` — dropdown controls
 - `lock-list.png` / `lock-team.png` / `color-team.png` — room/team state controls
 - `bg0.png`, `bg1.png`, `bg2.png`, `bg5.png` — scene backgrounds
 
 ### CSS structure
 
-The legacy `style.css` remains the compatibility layer for the existing GUI. The new visual skin is isolated and organized under:
+The legacy `style.css` remains the compatibility layer. The reusable visual skin is organized under:
 
 ```text
 css/ui/
 ├── tokens.css       # visual tokens and spacing
 ├── surfaces.css     # image-backed surfaces
-├── controls.css     # buttons, settings, dropdowns, forms, room/reward cards
+├── controls.css     # buttons, settings, dropdowns, chat and profiles
 └── responsive.css   # mobile/reduced-motion rules
 ```
 
-`js/ui/visual-assets.js` loads the skin, applies the image-backed checkbox/radio system, repairs legacy root image references at runtime, and exposes the canonical asset map as `window.AntWarVisualAssets`.
+`js/ui/visual-assets.js` loads the skin, repairs legacy asset references, applies the control skin, exposes the GUI version and installs runtime UI guards.
 
 ### Release version
 
-`js/core/app-version.js` is the source of truth for the GUI release version. Current release: **v3.2.0**.
+`js/core/app-version.js` is the source of truth for the GUI release version. Current release: **v1.0.0**.
 
 Arabic is the default language in `language/language.json`, while Arabic and English translation files remain available.
