@@ -49,7 +49,7 @@ export function repairImagePaths(root = document) {
 }
 
 function loadSkinStyles() {
-  ['css/ui/tokens.css','css/ui/surfaces.css','css/ui/controls.css','css/ui/responsive.css'].forEach(href => {
+  ['css/ui/tokens.css','css/ui/surfaces.css','css/ui/controls.css','css/ui/responsive.css','css/ui/ux-overhaul.css'].forEach(href => {
     if (document.querySelector(`link[data-antwar-skin="${href}"]`)) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet'; link.href = href; link.dataset.antwarSkin = href;
