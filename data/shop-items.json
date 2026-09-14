@@ -1,0 +1,167 @@
+{
+  "_meta": {
+    "version": "2.0.0"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "icon": "shop.png",
+      "labelKey": "shop.categories.all"
+    },
+    {
+      "id": "coins",
+      "icon": "Coin.png",
+      "labelKey": "shop.categories.coins"
+    },
+    {
+      "id": "diamonds",
+      "icon": "Diamond.png",
+      "labelKey": "shop.categories.diamonds"
+    },
+    {
+      "id": "items",
+      "icon": "bag.png",
+      "labelKey": "shop.categories.items"
+    },
+    {
+      "id": "wardrobe",
+      "icon": "Wardrobe.png",
+      "labelKey": "shop.categories.wardrobe"
+    },
+    {
+      "id": "chests",
+      "icon": "Daily-Gifts.png",
+      "labelKey": "shop.categories.chests"
+    }
+  ],
+  "items": [
+    {
+      "id": "gold-1",
+      "amount": "5,000",
+      "price": "$0.99",
+      "icon": "Coin.png",
+      "category": "coins",
+      "bonus": "+0%",
+      "nameKey": "shop.items.gold-1.name",
+      "descriptionKey": "shop.items.gold-1.description"
+    },
+    {
+      "id": "gold-2",
+      "amount": "25,000",
+      "price": "$4.99",
+      "icon": "Coin.png",
+      "category": "coins",
+      "bonus": "+10%",
+      "nameKey": "shop.items.gold-2.name",
+      "descriptionKey": "shop.items.gold-2.description"
+    },
+    {
+      "id": "gold-3",
+      "amount": "100,000",
+      "price": "$14.99",
+      "icon": "Coin.png",
+      "category": "coins",
+      "bonus": "+25%",
+      "nameKey": "shop.items.gold-3.name",
+      "descriptionKey": "shop.items.gold-3.description"
+    },
+    {
+      "id": "gem-1",
+      "amount": "200",
+      "price": "$1.99",
+      "icon": "Diamond.png",
+      "category": "diamonds",
+      "bonus": "+0%",
+      "nameKey": "shop.items.gem-1.name",
+      "descriptionKey": "shop.items.gem-1.description"
+    },
+    {
+      "id": "gem-2",
+      "amount": "1,200",
+      "price": "$9.99",
+      "icon": "Diamond.png",
+      "category": "diamonds",
+      "bonus": "+15%",
+      "nameKey": "shop.items.gem-2.name",
+      "descriptionKey": "shop.items.gem-2.description"
+    },
+    {
+      "id": "gem-3",
+      "amount": "3,000",
+      "price": "$19.99",
+      "icon": "Diamond.png",
+      "category": "diamonds",
+      "bonus": "+30%",
+      "nameKey": "shop.items.gem-3.name",
+      "descriptionKey": "shop.items.gem-3.description"
+    },
+    {
+      "id": "shop-inv-1005",
+      "itemId": 1005,
+      "price": "250 Gold",
+      "category": "items",
+      "icon": "Coin.png",
+      "amount": "x5"
+    },
+    {
+      "id": "shop-inv-1006",
+      "itemId": 1006,
+      "price": "50 Gems",
+      "category": "items",
+      "icon": "Diamond.png",
+      "amount": "x1"
+    },
+    {
+      "id": "shop-inv-1007",
+      "itemId": 1007,
+      "price": "100 Gems",
+      "category": "items",
+      "icon": "Task.png",
+      "amount": "x2"
+    },
+    {
+      "id": "shop-inv-1001",
+      "itemId": 1001,
+      "price": "500 Gems",
+      "category": "wardrobe",
+      "icon": "ant1.png",
+      "amount": "Permanent"
+    },
+    {
+      "id": "shop-inv-1002",
+      "itemId": 1002,
+      "price": "350 Gems",
+      "category": "wardrobe",
+      "icon": "ant2.png",
+      "amount": "Permanent"
+    },
+    {
+      "id": "shop-inv-1003",
+      "itemId": 1003,
+      "price": "300 Gems",
+      "category": "wardrobe",
+      "icon": "beetle.png",
+      "amount": "Permanent"
+    },
+    {
+      "id": "chest-1",
+      "amount": "Random Loot",
+      "price": "120 Gems",
+      "icon": "Daily-Gifts.png",
+      "category": "chests",
+      "bonus": "Hot Loot",
+      "nameKey": "shop.items.chest-1.name",
+      "descriptionKey": "shop.items.chest-1.description"
+    },
+    {
+      "id": "chest-2",
+      "amount": "Epic Drops",
+      "price": "300 Gems",
+      "icon": "RoyalPass.png",
+      "category": "chests",
+      "bonus": "Super Rare",
+      "nameKey": "shop.items.chest-2.name",
+      "descriptionKey": "shop.items.chest-2.description"
+    }
+  ]
+}

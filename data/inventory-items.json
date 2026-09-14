@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "version": "2.0.0"
+  },
+  "wardrobe": [
+    {
+      "id": 1001,
+      "slot": "body",
+      "icon": "ant1.png",
+      "rarity": "legendary",
+      "nameKey": "items.1001.name",
+      "descriptionKey": "items.1001.description",
+      "statsKey": "items.1001.stats"
+    },
+    {
+      "id": 1002,
+      "slot": "body",
+      "icon": "ant2.png",
+      "rarity": "epic",
+      "nameKey": "items.1002.name",
+      "descriptionKey": "items.1002.description",
+      "statsKey": "items.1002.stats"
+    },
+    {
+      "id": 1003,
+      "slot": "body",
+      "icon": "beetle.png",
+      "rarity": "rare",
+      "nameKey": "items.1003.name",
+      "descriptionKey": "items.1003.description",
+      "statsKey": "items.1003.stats"
+    },
+    {
+      "id": 1004,
+      "slot": "head",
+      "icon": "Coin.png",
+      "rarity": "legendary",
+      "nameKey": "items.1004.name",
+      "descriptionKey": "items.1004.description",
+      "statsKey": "items.1004.stats"
+    }
+  ],
+  "bag": [
+    {
+      "id": 1005,
+      "category": "consumable",
+      "icon": "Coin.png",
+      "quantity": 14,
+      "rarity": "common",
+      "nameKey": "items.1005.name",
+      "descriptionKey": "items.1005.description"
+    },
+    {
+      "id": 1006,
+      "category": "material",
+      "icon": "Diamond.png",
+      "quantity": 3,
+      "rarity": "epic",
+      "nameKey": "items.1006.name",
+      "descriptionKey": "items.1006.description"
+    },
+    {
+      "id": 1007,
+      "category": "special",
+      "icon": "Task.png",
+      "quantity": 5,
+      "rarity": "rare",
+      "nameKey": "items.1007.name",
+      "descriptionKey": "items.1007.description"
+    },
+    {
+      "id": 1008,
+      "category": "material",
+      "icon": "bag.png",
+      "quantity": 28,
+      "rarity": "common",
+      "nameKey": "items.1008.name",
+      "descriptionKey": "items.1008.description"
+    }
+  ]
+}

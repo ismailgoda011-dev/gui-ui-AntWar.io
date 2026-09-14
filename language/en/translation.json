@@ -1,0 +1,371 @@
+{
+  "_meta": {
+    "lang": "en",
+    "version": "1.0.0"
+  },
+  "game": {
+    "title": "AntWar",
+    "tagline": "Grand Colony Battle",
+    "defaultPlayer": "Ant Warrior"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "mail": "Mail",
+    "rank": "Rank",
+    "wardrobe": "Closet",
+    "vault": "Bag",
+    "friends": "Friends",
+    "settings": "Settings",
+    "chat": "Chat",
+    "profile": "Profile",
+    "mailboxTitle": "Mailbox",
+    "shopTitle": "Colony Store",
+    "profileTitle": "View and edit profile"
+  },
+  "hud": {
+    "gold": "Gold",
+    "gems": "Gems",
+    "level": "Level",
+    "id": "ID",
+    "goldCharge": "Buy Gold",
+    "gemsCharge": "Buy Gems"
+  },
+  "actions": {
+    "play": "Play",
+    "createRoom": "Create Room",
+    "back": "Back",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "join": "Join",
+    "leave": "Leave",
+    "ready": "Ready",
+    "equip": "Equip",
+    "buy": "Buy",
+    "send": "Send",
+    "report": "Report",
+    "block": "Block",
+    "addFriend": "Add Friend",
+    "whisper": "Whisper",
+    "invite": "Invite",
+    "startBattle": "Start Battle",
+    "openFullScreen": "Open Full Screen",
+    "surrender": "Surrender",
+    "equipForColony": "Equip for Colony",
+    "use": "Use"
+  },
+  "events": {
+    "gifts": "Gifts",
+    "tasks": "Tasks",
+    "pass": "Pass",
+    "dailyRewards": "Daily Rewards",
+    "dailyQuests": "Daily Quests",
+    "royalPass": "Royal Pass",
+    "dailyRewardsTitle": "Daily Login Rewards",
+    "dailyQuestsTitle": "Daily Quests",
+    "royalPassTitle": "Royal Pass"
+  },
+  "server": {
+    "selectRegion": "Select Region",
+    "middleEast": "Middle East",
+    "europe": "Europe",
+    "usEast": "US East",
+    "asiaPacific": "Asia Pacific",
+    "online": "Online",
+    "rooms": "Rooms",
+    "ping": "Ping",
+    "active": "Active server",
+    "players": "Online Players",
+    "roomsActive": "Active Battle Rooms"
+  },
+  "modals": {
+    "settings": {
+      "title": "Game Settings"
+    },
+    "profile": {
+      "title": "Commander Profile"
+    },
+    "shop": {
+      "title": "Colony Store"
+    },
+    "wardrobe": {
+      "title": "Wardrobe & Armory"
+    },
+    "inventory": {
+      "title": "Vault & Inventory"
+    },
+    "friends": {
+      "title": "Friends List"
+    },
+    "chat": {
+      "title": "Social Chat Hub"
+    },
+    "rank": {
+      "title": "Top 100 Leaderboard"
+    },
+    "mailbox": {
+      "title": "Notifications & Mail"
+    },
+    "createRoom": {
+      "title": "Create Custom Room"
+    },
+    "roomLobby": {
+      "title": "Battle Arena Lobby"
+    },
+    "dailyRewards": {
+      "title": "Daily Login Rewards"
+    },
+    "royalPass": {
+      "title": "Season Royal Pass"
+    }
+  },
+  "loading": {
+    "title": "AntWar",
+    "subtitle": "Loading Battle Assets...",
+    "tip": "An ant can carry 50 to 100 times its own body weight!",
+    "ready": "Ready for Battle!"
+  },
+  "toast": {
+    "profileSaved": "Profile saved and updated!",
+    "linkCopied": "Battle link copied!",
+    "teamJoined": "Joined team successfully!",
+    "teamLeft": "Left current team!",
+    "readySet": "Status: Ready for Battle!",
+    "teamFull": "This team is currently full!",
+    "teamLocked": "This team is locked by the leader!",
+    "langChanged": "Game language updated successfully!",
+    "error": "An unexpected error occurred!"
+  },
+  "chat": {
+    "colonyChat": "Colony Quick Chat",
+    "friends": "Friends",
+    "global": "Global",
+    "recent": "Recent",
+    "blocked": "Blocked",
+    "inputPlaceholder": "Type a quick message...",
+    "noRecent": "No recent chat history",
+    "noBlocked": "Blocked list is empty",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "lobby": {
+    "roomType": "Room Type",
+    "teamCount": "Teams",
+    "playerCount": "Players",
+    "privacy": "Privacy",
+    "endless": "Endless",
+    "classic": "Classic",
+    "teams": "Teams",
+    "private": "Private (Code)",
+    "public": "Public",
+    "shareLink": "Share Link",
+    "ready": "Ready",
+    "readyActive": "✓ Ready",
+    "countdown": "Countdown",
+    "join": "Join",
+    "leave": "Leave"
+  },
+  "settings": {
+    "title": "Settings & Controls",
+    "gameplay": "Gameplay",
+    "graphics": "Graphics",
+    "audio": "Audio",
+    "language": "Language",
+    "save": "Save Settings"
+  },
+  "items": {
+    "1001": {
+      "name": "Golden Ant Armor",
+      "description": "Heavy gilded carapace forged by the ant artisans.",
+      "stats": "+45 Attack, +30 Defense"
+    },
+    "1002": {
+      "name": "Swift Scout Outfit",
+      "description": "Lightweight stealth cloak that blends into foliage.",
+      "stats": "+60 Speed, +20 Agility"
+    },
+    "1003": {
+      "name": "Iron Beetle Shell",
+      "description": "Impenetrable armored plating against predators.",
+      "stats": "+80 Defense, +100 Health"
+    },
+    "1004": {
+      "name": "Queen's Golden Horns",
+      "description": "Majestic crown worn by the supreme ruler of the nest.",
+      "stats": "+25 Leadership"
+    },
+    "1005": {
+      "name": "Nectar of Vitality",
+      "description": "Restores 500 health points instantly in combat."
+    },
+    "1006": {
+      "name": "Ancient Colony Key",
+      "description": "Unlocks mysterious underground reward vaults."
+    },
+    "1007": {
+      "name": "War Tactics Scroll",
+      "description": "Grants double experience points for 30 minutes."
+    },
+    "1008": {
+      "name": "Refined Chitin Plate",
+      "description": "Sturdy crafting component for upgrading armors."
+    }
+  },
+  "dailyRewards": {
+    "title": "Daily Login Rewards",
+    "claim": "Claim Day {{day}} Gift",
+    "day1": "Day 1",
+    "day2": "Day 2",
+    "day3": "Day 3",
+    "day4": "Day 4",
+    "day5": "Day 5",
+    "day6": "Day 6",
+    "day7": "Day 7 (Mega Chest)",
+    "megaBonus": "+500 Gems & Outfit"
+  },
+  "royalPass": {
+    "tabs": {
+      "rewards": "Pass Rewards (1 - 100)",
+      "daily": "Daily Missions ({{count}})",
+      "weekly": "Weekly Challenges ({{count}})"
+    },
+    "title": "Season 4: Royal Pass",
+    "seasonName": "Season 4: Wrath of Dragons",
+    "endsIn": "⏳ Season Ends in: 18 Days 14 Hours",
+    "claimAll": "Claim All Tiers",
+    "progress": "Tier Progress XP",
+    "free": "Free",
+    "name": "Royal Pass"
+  },
+  "quests": {
+    "arenaVictor": {
+      "title": "Arena Victor",
+      "desc": "Win 2 matches in Battle Arena",
+      "guide": "Enter Classic mode and defeat players."
+    },
+    "marketShopper": {
+      "title": "Market Shopper",
+      "desc": "Spend 1,000 Gold in the store",
+      "guide": "Visit the weapon or chest store."
+    },
+    "dungeonWave": {
+      "title": "Dungeon Wave",
+      "desc": "Survive 5 waves in Survival",
+      "guide": "Play Survival mode and clear wave enemies."
+    },
+    "socialMessenger": {
+      "title": "Social Messenger",
+      "desc": "Send a message or whisper to a friend",
+      "guide": "Open chat and send a message in the realm."
+    },
+    "endlessChampion": {
+      "title": "Endless Champion",
+      "desc": "Get 15 victories in Endless mode",
+      "guide": "Fight in Endless Survival and defeat enemies."
+    },
+    "teamStrategist": {
+      "title": "Team Strategist",
+      "desc": "Lead your team to 5 victories as captain",
+      "guide": "Create a room, become team leader and lead your allies."
+    },
+    "masterCollector": {
+      "title": "Master Collector",
+      "desc": "Open 10 chests or card packs",
+      "guide": "Collect daily chests or open rank chests."
+    },
+    "passLevelUp": {
+      "title": "Pass Level Up",
+      "desc": "Reach 5 new Royal Pass levels",
+      "guide": "Earn battle points to level up the Royal Pass."
+    },
+    "tabs": {
+      "daily": "Daily Missions (Daily)",
+      "weekly": "Weekly Missions (Weekly)"
+    },
+    "claimAll": "Claim All Completed",
+    "hint": "Complete missions to earn Gold, Gems and Royal Pass XP",
+    "dailyRefresh": "⏳ Daily missions refresh in: 11h 24m",
+    "weeklyRefresh": "⏳ Weekly missions refresh in: 4d 18h"
+  },
+  "ui": {
+    "megaChest": "Mega Chest",
+    "claim": "Claim",
+    "claimed": "Claimed",
+    "pending": "Pending",
+    "done": "Done",
+    "locked": "Locked",
+    "all": "All",
+    "close": "Close",
+    "preview": "Preview"
+  },
+  "shop": {
+    "categories": {
+      "all": "All Items",
+      "coins": "Gold",
+      "diamonds": "Diamonds",
+      "items": "Items",
+      "wardrobe": "Clothing",
+      "chests": "Mystery Chests"
+    },
+    "items": {
+      "gold-1": {
+        "name": "Pouch of Gold",
+        "description": "A small pouch filled with shiny golden colony coins."
+      },
+      "gold-2": {
+        "name": "Sack of Gold",
+        "description": "Rich bag of gold for ambitious warriors."
+      },
+      "gold-3": {
+        "name": "Chest of Gold",
+        "description": "Massive royal chest loaded with glittering treasure."
+      },
+      "gem-1": {
+        "name": "Few Gems",
+        "description": "Pure shimmering diamonds mined from deep underground."
+      },
+      "gem-2": {
+        "name": "Box of Gems",
+        "description": "Luminous crystals granting immense crafting power."
+      },
+      "gem-3": {
+        "name": "Vault of Gems",
+        "description": "The ultimate diamond hoard of the ant empress."
+      },
+      "chest-1": {
+        "name": "Lucky Ant Mystery Chest",
+        "description": "Contains rare outfits, gold potions and legendary chitin."
+      },
+      "chest-2": {
+        "name": "Queen's Secret Mystery Box",
+        "description": "High chance of unlocking exclusive legendary armors and crowns."
+      }
+    },
+    "defaultItem": "Colony Item",
+    "defaultDescription": "Premium colony upgrade item"
+  },
+  "wardrobe": {
+    "openHint": "Tap to open wardrobe and gear",
+    "slots": {
+      "head": "Head / Horns",
+      "body": "Body Carapace",
+      "special": "Special / Tool"
+    },
+    "tool": "Tool",
+    "available": "Available Armors & Outfits",
+    "exclusiveSets": "Exclusive Sets"
+  },
+  "confirm": {
+    "surrender": "Are you sure you want to surrender and return to the main lobby?"
+  },
+  "inventory": {
+    "capacity": "Capacity: {{used}} / {{total}} inventory slots used",
+    "categories": {
+      "consumable": "Consumables",
+      "material": "Materials",
+      "special": "Special"
+    }
+  }
+}
