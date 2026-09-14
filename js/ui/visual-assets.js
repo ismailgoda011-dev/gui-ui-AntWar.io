@@ -1,12 +1,28 @@
 // AntWar GUI visual runtime.
-// v1.4 uses a CSS-first responsive game interface. The existing element frame is the only decorative image retained.
+// v1.5 uses a CSS-first 2D game interface. The existing element frame is the only decorative GUI image retained.
 
 import { APP_VERSION, APP_RELEASE } from '../core/app-version.js';
 
 export const UI_ASSETS = Object.freeze({ itemFrame: 'img/frame-item.png' });
 
 function loadSkinStyles() {
-  ['css/ui/tokens.css','css/ui/surfaces.css','css/ui/controls.css','css/ui/responsive.css','css/ui/ux-overhaul.css','css/ui/modern-ui.css','css/ui/responsive-modern.css'].forEach(href => {
+  [
+    'css/ui/tokens.css',
+    'css/ui/surfaces.css',
+    'css/ui/controls.css',
+    'css/ui/responsive.css',
+    'css/ui/ux-overhaul.css',
+    'css/ui/modern-ui.css',
+    'css/ui/responsive-modern.css',
+    'css/ui/game-theme.css',
+    'css/ui/game-hud.css',
+    'css/ui/game-windows.css',
+    'css/ui/game-components.css',
+    'css/ui/game-items.css',
+    'css/ui/game-chat.css',
+    'css/ui/game-motion.css',
+    'css/ui/game-responsive.css'
+  ].forEach(href => {
     if (document.querySelector(`link[data-antwar-skin="${href}"]`)) return;
     const link = document.createElement('link');
     link.rel = 'stylesheet';
