@@ -1,0 +1,2 @@
+export async function json(path,fallback){try{const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error(`${r.status} ${path}`);return await r.json()}catch(e){console.warn('[AntWar data]',e);return fallback;}}
+export async function loadGameData(){const [inv,shop,nav,servers]=await Promise.all([json('/data/inventory-items.json',{wardrobe:[],bag:[]}),json('/data/shop-items.json',{items:[]}),json('/data/nav-items.json',{dailyRewards:[],dailyQuests:{daily:[],weekly:[]}}),json('/data/servers.json',{servers:[]})]);return{inv,shop,nav,servers};}

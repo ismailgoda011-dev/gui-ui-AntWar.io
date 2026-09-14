@@ -1,0 +1,2 @@
+export const state={screen:'home',gold:12450,gems:350,level:18,xp:.62,server:'Middle East',settings:{autoSave:true,showPing:true,screenFx:true,music:true,sfx:true},chat:[{user:'Imperial Ant',text:'Welcome to the colony!',time:'12:04'},{user:'Thunder Scout',text:'Ready for battle.',time:'12:06'}]};
+export function setState(patch){Object.assign(state,patch);window.dispatchEvent(new CustomEvent('antwar:state',{detail:state}));}

@@ -1,23 +1,5 @@
-﻿# Dependencies
 node_modules/
-
-# Images folder (large assets)
-img/
-
-# Compressed / archive files
-*.zip
-*.rar
-*.7z
-*.tar
-*.tar.gz
-*.gz
-
-# OS files
+dist/
+.vite/
 .DS_Store
 Thumbs.db
-
-# Tailwind build artifacts (regenerated on deploy)
-# tailwind.min.css
-
-# Scratch / temp
-_extracted/
