@@ -1,0 +1,52 @@
+/* AntWar GUI — image-backed surfaces */
+.aw-surface-list,
+.list-surface,
+.settings-list-surface,
+.team-list-surface,
+.room-list-surface { background: url('../../img/list.png') center / 100% 100% no-repeat; }
+.aw-surface-box,
+.white-box-surface,
+.team-surface,
+.room-surface,
+.inventory-surface { background: url('../../img/box-white.png') center / 100% 100% no-repeat; }
+.aw-surface-text,
+.text-surface,
+.text-bg-box,
+.modal-field-surface,
+.setting-label-surface { background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; }
+.aw-topbar,
+.topbar-surface,
+.modal-topbar-surface { background: url('../../img/topbar-box.png') center / 100% 100% no-repeat; }
+.aw-option-menu,
+.option-menu-surface,
+.dropdown-surface { background: url('../../img/option-Menu.png') center / 100% 100% no-repeat; }
+.aw-modal-big { background: url('../../img/box-big.png') center / 100% 100% no-repeat; }
+.aw-modal-large { background: url('../../img/box-big-Brother.png') center / 100% 100% no-repeat; }
+.aw-modal-white { background: url('../../img/box-white.png') center / 100% 100% no-repeat; }
+.aw-modal-white-wide { background: url('../../img/box-white-brother.png') center / 100% 100% no-repeat; }
+.aw-avatar-frame,
+.avatar-frame-skin { background: url('../../img/frame.png') center / 100% 100% no-repeat; }
+.aw-item-frame,
+.item-frame-skin { background: url('../../img/frame-item.png') center / 100% 100% no-repeat; }
+.aw-empty-button,
+.empty-button-skin,
+.btn-wood-empty,
+.btn-compact-wood,
+.btn-wood {
+  background: url('../../img/Empty-button.png') center / 100% 100% no-repeat;
+  border: 0; border-radius: 0; box-shadow: none; background-color: transparent;
+}
+.aw-empty-button:hover,
+.empty-button-skin:hover,
+.btn-wood-empty:hover,
+.btn-compact-wood:hover,
+.btn-wood:hover { filter: brightness(1.08) saturate(1.06); transform: translateY(-1px); }
+.aw-empty-button:active,
+.empty-button-skin:active,
+.btn-wood-empty:active,
+.btn-compact-wood:active,
+.btn-wood:active { filter: brightness(.96); transform: translateY(1px) scale(.985); }
+.aw-avatar-frame > img,
+.avatar-frame-skin > img { width: 72%; height: 72%; object-fit: cover; border-radius: 50%; }
+.aw-avatar-frame::after,
+.avatar-frame-skin::after { content: ''; position: absolute; inset: 0; background: url('../../img/frame.png') center / 100% 100% no-repeat; pointer-events: none; }
