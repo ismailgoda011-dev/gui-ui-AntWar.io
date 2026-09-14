@@ -2,35 +2,35 @@
 
 ## v2.0.0
 
-AntWar is now rebuilt around **PixiJS 8.20.0**, the current stable PixiJS release. The visible game interface is rendered through a single PixiJS application rather than HTML/CSS modal systems. citeturn123982search1turn770817search3
+AntWar is rebuilt as a clean PixiJS application. The visible interface is rendered by PixiJS 8.20.0 with a single render tree instead of the previous HTML/CSS modal stack.
 
 ### Architecture
 
 ```text
 src/
-├── main.js        # Pixi application + HUD + runtime
-├── screens.js     # Home, inventory, shop, profile, chat, settings, rewards...
-├── components.js  # reusable Pixi buttons, panels, progress and item cards
-├── theme.js       # orange-first visual system
-├── data.js        # JSON data loading
-└── state.js       # UI/game state
+├── main.js        # Pixi Application, HUD and runtime
+├── screens.js     # Home, profile, inventory, shop, rank, chat, settings, rewards
+├── components.js  # reusable Pixi panels, buttons, progress bars and item cards
+├── theme.js       # orange-first game theme
+├── data.js        # content loading
+└── state.js       # runtime state
 ```
 
-### PixiJS approach
+### Modern PixiJS stack
 
-- Async `Application.init()` with automatic resize and high-DPI rendering.
-- Pixi federated pointer events for mouse/touch interactions.
-- Pixi `Assets` for item-frame texture loading.
-- Graphics/Text primitives for the majority of UI instead of image-backed panels.
-- Responsive scaling driven by the canvas viewport.
-- Animated ambient particles and lightweight motion.
-- Single render tree for HUD, navigation, windows and feedback.
-
-PixiJS v8 uses asynchronous application initialization and its unified event system for pointer/touch interaction. citeturn770817search3turn123982search0
+- PixiJS 8.20.0
+- Async `Application.init()`
+- Automatic high-DPI rendering and viewport resize
+- Federated pointer events for mouse/touch interaction
+- `Assets` for texture loading
+- `Graphics` and `Text` primitives for game UI
+- Canvas-wide responsive scaling
+- Ambient particles and lightweight motion
+- One Pixi render tree for HUD, navigation, windows and feedback
 
 ### Cleanup
 
-The previous HTML/CSS GUI stack, Tailwind configuration, legacy GUI bridge, legacy `script.js`, old UI CSS tree, and compatibility visual runtime are intentionally removed from the new source tree. Game data and language resources remain as content sources. The legacy artwork set is not part of the new GUI; the new UI is drawn by PixiJS, with the existing item frame retained as the only legacy decorative texture.
+The legacy HTML/CSS GUI, Tailwind configuration, old GUI bridge, legacy script, old UI CSS tree, and compatibility visual runtime are removed from the active project tree. The old image collection is also removed from the project except for the previously approved `frame-item.png`, which is now loaded as a real PixiJS texture inside inventory item cards.
 
 ### Run
 
@@ -39,4 +39,9 @@ npm install
 npm run dev
 ```
 
-The project is a Vite application and can also be built with `npm run build`.
+For production:
+
+```bash
+npm run build
+npm run preview
+```
