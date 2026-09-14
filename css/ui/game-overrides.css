@@ -1,0 +1,390 @@
+/* AntWar GUI v1.6 — final visual override.
+   Goal: make the interface read as a modern 2D game UI, not a web dashboard.
+   Decorative GUI images are disabled. The existing item frame remains the only allowed image skin. */
+
+:root {
+  --aw-game-bg:#f4eadb;
+  --aw-game-bg-soft:#fff8ef;
+  --aw-game-surface:#fffdf9;
+  --aw-game-surface-2:#fff3e4;
+  --aw-game-surface-3:#ffe5c7;
+  --aw-game-line:#e4c7a8;
+  --aw-game-line-strong:#cda477;
+  --aw-game-text:#3b2417;
+  --aw-game-text-2:#76533d;
+  --aw-game-muted:#9b765c;
+  --aw-game-primary:#f27622;
+  --aw-game-primary-strong:#d9560d;
+  --aw-game-primary-soft:#ffb45f;
+  --aw-game-gold:#e5a51f;
+  --aw-game-success:#2f9d61;
+  --aw-game-warning:#d98218;
+  --aw-game-danger:#d9534f;
+  --aw-game-shadow:0 16px 38px rgba(83,48,20,.16);
+  --aw-game-shadow-soft:0 7px 18px rgba(83,48,20,.11);
+  --aw-orange-gradient:linear-gradient(135deg,#ff9a3d 0%,#f27622 52%,#d9560d 100%);
+  --aw-orange-light:linear-gradient(180deg,#ffbd73,#f47a24);
+}
+
+/* ------------------------------------------------------------------
+   GLOBAL GUI SURFACES
+------------------------------------------------------------------- */
+.wood-modal-container,.wood-modal-shell,.modal-window,.window-shell,
+.full-page-container,.full-page-modal,.full-page-window,.rpg-window,
+.desktop-popup-chat {
+  background:linear-gradient(145deg,var(--aw-game-surface),var(--aw-game-surface-2)) !important;
+  color:var(--aw-game-text) !important;
+  border:2px solid var(--aw-game-line-strong) !important;
+  border-radius:18px !important;
+  box-shadow:0 22px 60px rgba(63,36,16,.22),inset 0 1px 0 #fff !important;
+}
+
+.wood-modal-header,.full-page-header,.modal-window-header,.window-header,
+.desktop-popup-chat .chat-popup-header {
+  min-height:58px !important;
+  padding:8px 16px !important;
+  background:linear-gradient(135deg,#fff8ee,#ffe9d0) !important;
+  color:var(--aw-game-text) !important;
+  border-bottom:2px solid var(--aw-game-line) !important;
+}
+.wood-modal-header::after,.full-page-header::after {
+  height:3px !important;
+  left:18px !important;
+  right:18px !important;
+  bottom:-2px !important;
+  background:linear-gradient(90deg,transparent,var(--aw-game-primary),transparent) !important;
+  opacity:1 !important;
+}
+.wood-modal-body,.full-page-body,.wood-modal-cavity,.modal-window-body,.window-body {
+  background:linear-gradient(180deg,#fffaf4,#fff3e6) !important;
+  color:var(--aw-game-text) !important;
+}
+.wood-modal-footer,.modal-window-footer,.window-footer,
+.desktop-popup-chat .chat-footer-bar {
+  background:#fff4e7 !important;
+  border-top:1px solid var(--aw-game-line) !important;
+}
+
+/* Kill legacy navy/image skins on GUI containers. The game world itself is untouched. */
+.wood-modal-container,.wood-modal-shell,.modal-window,.window-shell,
+.full-page-container,.full-page-modal,.full-page-window,.rpg-window,
+.desktop-popup-chat,#modal-settings,#modal-settings .wood-modal-body,
+#main-box-container,#profile-section-wrapper,#currency-hud,
+#events-quick-dock,#header-nav-menu {
+  background-image:none !important;
+}
+
+/* ------------------------------------------------------------------
+   NO IMAGE GUI POLICY
+------------------------------------------------------------------- */
+#main-app-container img:not([src*="frame-item.png"]),
+.wood-modal-container img:not([src*="frame-item.png"]),
+.full-page-container img:not([src*="frame-item.png"]),
+.desktop-popup-chat img:not([src*="frame-item.png"]),
+.rpg-window img:not([src*="frame-item.png"]) {
+  display:none !important;
+}
+
+/* Never let legacy image backgrounds sneak back into GUI controls. */
+#main-app-container .rpg-unified-btn,
+#main-app-container .hud-pill,
+#main-app-container #main-box-container,
+#main-app-container #create-room-action-btn,
+#main-app-container #open-settings-btn,
+#main-app-container #profile-section-wrapper,
+#main-app-container #events-quick-dock > *,
+.wood-modal-container button,.wood-modal-container .settings-section,
+.wood-modal-container .settings-group,.wood-modal-container .rpg-dropdown-wrapper,
+.wood-modal-container .settings-tab-bar,
+.desktop-popup-chat .chat-tab-btn,.desktop-popup-chat .chat-send-btn {
+  background-image:none !important;
+}
+
+/* ------------------------------------------------------------------
+   BUTTON LANGUAGE — ORANGE IS THE PRIMARY ACTION
+------------------------------------------------------------------- */
+button,.rpg-unified-btn,.antwar-button,.aw-button,.primary-button,
+.secondary-button,.success-button,.danger-button,.ghost-button,
+.setup-mode-btn,.wood-tab-btn {
+  min-height:38px;
+  border:1px solid #d8a06e !important;
+  border-radius:11px !important;
+  background:linear-gradient(180deg,#fff8ef,#ffe8d0) !important;
+  color:var(--aw-game-text) !important;
+  font-weight:900;
+  box-shadow:0 5px 12px rgba(91,50,19,.10),inset 0 1px 0 #fff !important;
+  transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease,filter .14s ease;
+}
+button:hover,.rpg-unified-btn:hover,.antwar-button:hover,.aw-button:hover,
+.wood-tab-btn:hover {
+  transform:translateY(-1px);
+  border-color:var(--aw-game-primary) !important;
+  box-shadow:0 9px 18px rgba(242,118,34,.18),inset 0 1px 0 #fff !important;
+}
+button:active,.rpg-unified-btn:active,.antwar-button:active,.aw-button:active { transform:translateY(0) scale(.985); }
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {
+  outline:3px solid rgba(242,118,34,.28);
+  outline-offset:2px;
+}
+.aw-btn-primary,.primary-button,#play-action-btn,.chat-send-btn {
+  background:var(--aw-orange-gradient) !important;
+  border-color:#d9560d !important;
+  color:#fff !important;
+  box-shadow:0 9px 22px rgba(217,86,13,.25),inset 0 1px 0 rgba(255,255,255,.32) !important;
+}
+.aw-btn-success,.success-button { background:linear-gradient(180deg,#53b978,#2f9d61) !important; color:#fff !important; border-color:#23804c !important; }
+.aw-btn-danger,.danger-button { background:linear-gradient(180deg,#e76b66,#c94a46) !important; color:#fff !important; border-color:#a83c39 !important; }
+.aw-btn-ghost,.ghost-button { background:#fffaf4 !important; color:var(--aw-game-text-2) !important; }
+
+/* ------------------------------------------------------------------
+   HUD — CLEAN, COMPACT, GAME-LIKE
+------------------------------------------------------------------- */
+#app-header { min-height:64px !important; }
+#left-hud-row,#currency-hud,#events-quick-dock { gap:8px !important; }
+#profile-section-wrapper {
+  padding:5px 11px 5px 6px !important;
+  background:rgba(255,250,244,.96) !important;
+  border:2px solid var(--aw-game-line) !important;
+  border-radius:999px !important;
+  box-shadow:var(--aw-game-shadow-soft) !important;
+}
+#avatar-container { filter:none !important; }
+#avatar-image,#avatar-frame-image { display:none !important; }
+#avatar-container::before {
+  content:"⚔";
+  width:72%; height:72%;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:var(--aw-orange-gradient);
+  color:#fff;
+  font-size:clamp(18px,2.2vw,27px);
+  font-weight:950;
+  box-shadow:0 5px 12px rgba(217,86,13,.22),inset 0 1px 0 rgba(255,255,255,.35);
+}
+#avatar-container::after { border-color:rgba(242,118,34,.36) !important; }
+#name-bar-container { min-width:clamp(92px,10vw,150px); }
+#player-name-text { color:var(--aw-game-text) !important; text-shadow:none !important; }
+#player-hud-pass-badge { background:#fff0d7 !important; color:#a65a11 !important; border:1px solid #e4b76e !important; }
+#gold-hud-pill,#gems-hud-pill {
+  background:#fffaf4 !important;
+  border:2px solid var(--aw-game-line) !important;
+  color:var(--aw-game-text) !important;
+  box-shadow:var(--aw-game-shadow-soft) !important;
+  min-height:38px;
+}
+#gold-icon-img,#diamond-icon-img { display:none !important; }
+#gold-hud-pill::before,#gems-hud-pill::before { font-size:15px; font-weight:950; }
+#gold-hud-pill::before { content:"◆"; color:var(--aw-game-gold); }
+#gems-hud-pill::before { content:"✦"; color:var(--aw-game-primary); }
+.hud-pill-text { color:var(--aw-game-text) !important; text-shadow:none !important; }
+#gold-add-btn,#gems-add-btn { background:#fff1df !important; color:var(--aw-game-primary-strong) !important; border:1px solid #edbf8c !important; }
+#open-settings-btn {
+  width:44px; height:44px; min-height:44px !important; padding:4px !important;
+  border-radius:13px !important;
+  background:var(--aw-orange-gradient) !important;
+  border-color:#d9560d !important;
+  color:#fff !important;
+  box-shadow:0 8px 18px rgba(217,86,13,.2) !important;
+}
+#settings-nav-icon { display:none !important; }
+#open-settings-btn::before { content:"⚙"; font-size:21px; color:#fff; }
+#events-quick-dock > * { border-radius:12px !important; }
+
+/* ------------------------------------------------------------------
+   MAIN PORTAL — NO BOX ART, CSS GAME CARD
+------------------------------------------------------------------- */
+#main-box-wrapper { width:min(430px,58vw) !important; }
+#main-box-image,#play-btn-image,#create-room-image { display:none !important; }
+#main-box-container {
+  min-height:clamp(300px,35vw,410px) !important;
+  padding:clamp(22px,3vw,34px) !important;
+  border-radius:30px !important;
+  background:linear-gradient(145deg,#fffdf9 0%,#fff0df 62%,#ffe0bd 100%) !important;
+  border:2px solid #dfb27f !important;
+  box-shadow:0 26px 65px rgba(82,43,15,.20),inset 0 1px 0 #fff !important;
+}
+#main-box-container::before {
+  content:"ANTWAR";
+  position:absolute; top:clamp(17px,2vw,25px); inset-inline:0;
+  text-align:center;
+  color:var(--aw-game-primary-strong);
+  font-size:clamp(20px,2.5vw,30px);
+  font-weight:950; letter-spacing:.14em;
+  text-shadow:0 2px 0 #fff;
+}
+#box-buttons-container { gap:12px !important; margin-top:34px !important; }
+#play-action-btn {
+  width:min(290px,86%) !important; min-height:62px !important;
+  border-radius:17px !important;
+}
+#play-action-btn::before { content:"▶  ابدأ المعركة"; font-size:clamp(17px,2vw,22px); font-weight:950; }
+#server-selector-btn {
+  width:min(260px,90%) !important; min-height:45px;
+  background:#fffdf9 !important; color:var(--aw-game-text) !important;
+  border:1px solid #ddb98f !important;
+  box-shadow:var(--aw-game-shadow-soft) !important;
+}
+#server-selector-btn .server-name-text { color:var(--aw-game-text) !important; }
+.server-stat-badge { background:#fffdf9 !important; border:1px solid #e2c19c !important; color:var(--aw-game-text-2) !important; }
+.server-stat-val-white,.server-stat-val-gold { color:var(--aw-game-text) !important; }
+#create-room-action-btn {
+  width:min(250px,72%) !important; min-height:50px;
+  margin-top:12px !important;
+  background:#fff8ef !important;
+  border:2px solid #e0b47f !important;
+  color:var(--aw-game-primary-strong) !important;
+  border-radius:15px !important;
+  box-shadow:var(--aw-game-shadow-soft) !important;
+}
+#create-room-action-btn::before { content:"＋  إنشاء غرفة معركة"; color:var(--aw-game-primary-strong); font-size:14px; font-weight:950; }
+
+/* Quick navigation uses CSS symbols, not image buttons. */
+#header-nav-menu { gap:9px !important; }
+#header-nav-menu .rpg-unified-btn { min-width:82px; background:transparent !important; border:0 !important; box-shadow:none !important; padding:4px !important; }
+#header-nav-menu .rpg-btn-icon-wrap {
+  width:44px; height:44px; border-radius:13px;
+  background:#fff8ef !important; border:2px solid #e0b47f !important;
+  box-shadow:var(--aw-game-shadow-soft) !important;
+}
+#header-nav-menu .rpg-unified-btn img { display:none !important; }
+#wardrobe-nav-btn .rpg-btn-icon-wrap::before { content:"◈"; color:var(--aw-game-primary); font-size:22px; }
+#rank-nav-btn .rpg-btn-icon-wrap::before { content:"★"; color:var(--aw-game-gold); font-size:22px; }
+#header-nav-menu .rpg-btn-label { color:var(--aw-game-text) !important; text-shadow:none !important; font-weight:950; }
+
+/* ------------------------------------------------------------------
+   SETTINGS — LIGHT GAME PANEL, ORANGE TAB SYSTEM
+------------------------------------------------------------------- */
+#modal-settings { width:min(92vw,860px) !important; max-height:calc(100dvh - 24px) !important; }
+#modal-settings .wood-modal-header { min-height:58px !important; }
+#modal-settings .settings-tab-bar {
+  display:flex !important; justify-content:center !important; align-items:center;
+  gap:7px; flex-wrap:wrap; width:100%; padding:7px; margin:0 auto 14px;
+  background:#fff0df !important; border:2px solid #e1b37d !important; border-radius:13px !important;
+}
+#modal-settings .settings-tab-bar .wood-tab-btn {
+  flex:1 1 130px; min-height:42px; color:var(--aw-game-text-2) !important;
+  background:#fffaf4 !important; border:1px solid #e0bf9b !important;
+  font-size:14px !important;
+}
+#modal-settings .settings-tab-bar .wood-tab-btn.active,
+#modal-settings .settings-tab-bar .wood-tab-btn[aria-selected="true"] {
+  background:var(--aw-orange-gradient) !important; border-color:#d9560d !important; color:#fff !important;
+  box-shadow:0 7px 16px rgba(217,86,13,.2) !important;
+}
+#modal-settings .settings-section,#modal-settings .settings-group,#modal-settings .rpg-dropdown-wrapper {
+  padding:13px; margin-top:10px;
+  background:#fffaf4 !important; border:1px solid #e3c5a5 !important; border-radius:12px !important;
+  box-shadow:0 5px 14px rgba(83,48,20,.06) !important;
+}
+#modal-settings label { color:var(--aw-game-text-2) !important; font-weight:900; }
+#modal-settings #settings-panel-toggles,#modal-settings #settings-panel-dropdowns,#modal-settings #settings-panel-audio { width:min(100%,650px) !important; margin-inline:auto !important; }
+
+/* ------------------------------------------------------------------
+   FIELDS / DROPDOWNS
+------------------------------------------------------------------- */
+input:not([type="checkbox"]):not([type="radio"]),select,textarea,
+.setting-opt-pill,.rpg-toggle-pill,.rpg-dropdown-trigger,.server-selector-btn {
+  min-height:38px;
+  background:#fffdf9 !important; color:var(--aw-game-text) !important;
+  border:1px solid #dfbea0 !important; border-radius:10px !important;
+  box-shadow:inset 0 1px 3px rgba(92,51,20,.05) !important;
+}
+input:not([type="checkbox"]):not([type="radio"]):focus,select:focus,textarea:focus {
+  border-color:var(--aw-game-primary) !important;
+  box-shadow:0 0 0 3px rgba(242,118,34,.12) !important;
+}
+.rpg-dropdown-menu,.server-dropdown-menu,.dropdown-menu,.option-menu,.option-menu-surface {
+  background:#fffaf4 !important; border:2px solid #dfb98f !important;
+  border-radius:12px !important; box-shadow:0 18px 38px rgba(70,38,15,.18) !important;
+}
+.rpg-dropdown-menu button,.server-dropdown-menu button,.dropdown-menu button,.option-menu button,.rpg-dropdown-option {
+  background:transparent !important; color:var(--aw-game-text-2) !important; border:0 !important; box-shadow:none !important;
+}
+.rpg-dropdown-menu button:hover,.server-dropdown-menu button:hover,.dropdown-menu button:hover,
+.rpg-dropdown-option:hover,.rpg-dropdown-option.is-selected,.rpg-dropdown-option[aria-selected="true"] {
+  background:#ffe7ce !important; color:var(--aw-game-text) !important;
+}
+
+/* ------------------------------------------------------------------
+   CHAT / PROFILE / CARDS
+------------------------------------------------------------------- */
+.desktop-popup-chat .chat-tabs-sidebar,#fullpage-chat .chat-sidebar-tabs { background:#fff1df !important; border-right:1px solid #e1bd96 !important; }
+.desktop-popup-chat .chat-tab-btn,#fullpage-chat .chat-tab-btn-v { color:var(--aw-game-muted) !important; }
+.desktop-popup-chat .chat-tab-btn:hover,#fullpage-chat .chat-tab-btn-v:hover { background:#ffe3c6 !important; color:var(--aw-game-text) !important; }
+.desktop-popup-chat .chat-tab-btn.active,#fullpage-chat .chat-tab-btn-v.active { background:#ffd5aa !important; color:var(--aw-game-text) !important; box-shadow:inset 3px 0 var(--aw-game-primary) !important; }
+.desktop-popup-chat .chat-body-area,#fullpage-chat .chat-main-area,#fullpage-chat .full-page-body { background:#fffaf4 !important; }
+.desktop-popup-chat #desktop-popup-chat-messages { background:linear-gradient(180deg,#fffaf4,#fff0df) !important; }
+.chat-bubble-other,.chat-bubble-mine { background:#fff0df !important; border:1px solid #e1c09d !important; color:var(--aw-game-text) !important; border-radius:12px !important; }
+.chat-bubble-mine { background:#ffe0bd !important; border-color:#e2a76c !important; }
+.desktop-popup-chat .chat-input-box { background:#fffdf9 !important; border:1px solid #ddb98f !important; color:var(--aw-game-text) !important; }
+
+.profile-header-card,.player-profile-header,.profile-hero,#detail-player-header,#my-profile-header,
+.player-profile-hero,.player-dossier-hero {
+  background:linear-gradient(135deg,#fffaf4,#ffe9d0) !important;
+  border:2px solid #dfb78c !important; border-radius:15px !important; box-shadow:var(--aw-game-shadow) !important;
+}
+.profile-stat,.player-stat,.profile-stat-card { background:#fffaf4 !important; border:1px solid #e1c19e !important; border-radius:11px !important; }
+.player-card,.user-card,.member-card { background:#fffaf4 !important; border:1px solid transparent !important; }
+.player-card:hover,.user-card:hover,.member-card:hover { background:#ffecd7 !important; border-color:#e1ae77 !important; }
+.shop-item-card,.shop-card,.product-card,.pass-card,.reward-card,.mail-row,.inventory-item,.inventory-card {
+  background:linear-gradient(145deg,#fffaf4,#ffecd8) !important;
+  border:1px solid #e0bd98 !important; border-radius:12px !important;
+}
+
+/* Preserve ONLY the existing item frame image. */
+.item-frame,.inventory-item-frame,.shop-item-frame {
+  background-image:url('../../img/frame-item.png') !important;
+  background-repeat:no-repeat !important; background-position:center !important;
+  background-size:100% 100% !important; background-color:transparent !important; border:0 !important;
+}
+
+/* Version badge */
+.antwar-version-badge {
+  background:var(--aw-orange-gradient) !important;
+  color:#fff !important; border:1px solid #d9560d !important;
+  border-radius:8px !important; padding:5px 9px !important; font-weight:950 !important;
+  box-shadow:0 5px 12px rgba(217,86,13,.18) !important;
+}
+
+/* Feedback states */
+.aw-empty-state,.aw-loading-state,.aw-error-state {
+  background:#fff8ef !important; border:1px dashed #d9b48d !important;
+  border-radius:12px !important; color:var(--aw-game-muted) !important;
+}
+.status-online,.online,.is-online { color:var(--aw-game-success) !important; }
+.status-dot,.profile-status-dot { background:var(--aw-game-success) !important; }
+
+/* Responsive: keep the orange visual hierarchy on every screen. */
+@media (max-width:760px) {
+  #main-app-container { padding:8px !important; }
+  #app-header { min-height:0 !important; }
+  #left-hud-row { width:100%; justify-content:center; }
+  #events-quick-dock { width:100%; justify-content:center; max-width:none; }
+  #main-box-wrapper { width:min(94vw,430px) !important; }
+  #main-box-container { min-height:300px !important; }
+  #modal-settings { width:calc(100vw - 12px) !important; }
+  #modal-settings .settings-tab-bar .wood-tab-btn { flex:1 1 30%; min-width:0; font-size:12px !important; }
+}
+@media (max-width:520px) {
+  #profile-section-wrapper { padding:4px 8px 4px 5px !important; }
+  #name-bar-container { min-width:76px; }
+  #player-name-text { max-width:90px !important; }
+  #currency-hud { gap:4px !important; }
+  #gold-hud-pill,#gems-hud-pill { min-height:34px; padding-inline:8px !important; }
+  #open-settings-btn { width:40px; height:40px; min-height:40px !important; }
+  #main-box-container { min-height:280px !important; padding:15px !important; border-radius:23px !important; }
+  #play-action-btn { min-height:55px !important; width:92% !important; }
+  #server-selector-btn { width:92% !important; }
+  #create-room-action-btn { width:86% !important; }
+  #header-nav-menu .rpg-unified-btn { min-width:66px; }
+  #header-nav-menu .rpg-btn-icon-wrap { width:39px; height:39px; }
+}
+@media (max-width:360px) {
+  #name-bar-container { display:none !important; }
+  #main-box-container { min-height:260px !important; }
+  #header-nav-menu .rpg-btn-label { display:none !important; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+}
