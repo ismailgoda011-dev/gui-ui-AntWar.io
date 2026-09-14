@@ -71,3 +71,53 @@ input[type='radio'].antwar-skin-control:disabled { opacity: .55; cursor: not-all
 .rpg-unified-btn { transition: transform var(--aw-transition), filter var(--aw-transition); }
 .rpg-unified-btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
 .rpg-unified-btn:active { transform: translateY(1px) scale(.98); }
+
+/* Settings: compact, centered and asset-led. */
+#modal-settings .wood-modal-body { padding: 10px clamp(10px,2vw,18px) 14px; }
+#modal-settings .settings-tab-bar { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; width: 100%; margin-bottom: 10px; }
+#modal-settings .settings-tab-bar .wood-tab-btn { min-height: 42px; background: url('../../img/Empty-button.png') center / 100% 100% no-repeat; border: 0; color: var(--aw-ink); font-weight: 900; padding: 8px 10px; }
+#modal-settings .settings-tab-bar .wood-tab-btn.active { filter: brightness(1.08) saturate(1.08); }
+#modal-settings .rpg-toggle-pill,
+#modal-settings .rpg-dropdown-wrapper { width: 100%; }
+#modal-settings .rpg-toggle-pill { min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+#modal-settings .rpg-dropdown-wrapper > label { display: block; margin-bottom: 4px; }
+#modal-settings .rpg-toggle-indicator { width: 31px; height: 31px; object-fit: contain; flex: 0 0 auto; }
+
+/* Create-room: list/white-box hierarchy, clean spacing and readable controls. */
+#modal-create-room .setup-form-constrained { max-width: 620px; gap: 11px !important; padding: 12px !important; }
+#modal-create-room .setup-form-constrained > div { width: 100%; }
+#modal-create-room input[type='text'],
+#modal-create-room input[type='password'],
+#modal-create-room input[type='number'],
+#modal-create-room select { min-height: 42px; width: 100%; background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; border: 0; color: var(--aw-ink); font-weight: 800; padding: 7px 12px; outline: none; }
+#modal-create-room input:focus,
+#modal-create-room select:focus { filter: brightness(1.05); }
+#modal-create-room .setup-mode-btn,
+#modal-create-room [id*='setup-mode-'] { min-height: 44px; background: url('../../img/Empty-button.png') center / 100% 100% no-repeat; border: 0; color: var(--aw-ink); font-weight: 900; }
+#modal-create-room #setup-private-toggle-row,
+#modal-create-room [id*='team'] { background: url('../../img/list.png') center / 100% 100% no-repeat; padding: 9px 12px; }
+#modal-create-room #create-room-confirm-btn { min-height: 48px; }
+
+/* Daily rewards: cards are separated and use the game panels. */
+#modal-daily-rewards .wood-modal-body > .grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px !important; padding: 6px !important; }
+#modal-daily-rewards .wood-modal-body > .grid > div { min-height: 104px; padding: 8px 5px; background: url('../../img/box-white.png') center / 100% 100% no-repeat; display: flex; justify-content: center; gap: 4px; }
+#modal-daily-rewards .wood-modal-body > .grid > div img { width: 44px; height: 44px; object-fit: contain; background: url('../../img/frame-item.png') center / 100% 100% no-repeat; padding: 6px; }
+
+/* Royal Pass / shop / mail: shared cards keep one visual language. */
+#modal-royal-pass .wood-modal-body .pass-card,
+#modal-royal-pass .wood-modal-body .reward-card,
+#modal-mailbox .wood-modal-body .mail-row,
+.shop-item-card,
+.shop-card,
+.product-card { background: url('../../img/box-white.png') center / 100% 100% no-repeat !important; border: 0 !important; box-shadow: none !important; }
+#modal-royal-pass .wood-modal-body .wood-tab-btn,
+#modal-mailbox .wood-modal-body button,
+.shop-item-card button,
+.shop-card button,
+.product-card button { background: url('../../img/Empty-button.png') center / 100% 100% no-repeat; border: 0; color: var(--aw-ink); font-weight: 900; }
+
+.antwar-text-box { background: url('../../img/Text BackgroundBox.png') center / 100% 100% no-repeat; }
+.antwar-list-box { background: url('../../img/list.png') center / 100% 100% no-repeat; }
+.antwar-topbar-box { background: url('../../img/topbar-box.png') center / 100% 100% no-repeat; }
+.antwar-option-box { background: url('../../img/option-Menu.png') center / 100% 100% no-repeat; }
+.antwar-button { background: url('../../img/Empty-button.png') center / 100% 100% no-repeat; border: 0; }
