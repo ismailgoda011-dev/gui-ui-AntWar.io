@@ -1,0 +1,49 @@
+/* AntWar Game UI v2 — HUD */
+#main-app-container { max-width:1600px !important; padding:clamp(8px,1.2vw,18px) !important; }
+#app-header { min-height:clamp(56px,7vw,82px); align-items:flex-start !important; }
+#left-hud-row,#currency-hud,#events-quick-dock { gap:clamp(6px,1vw,12px) !important; }
+#profile-section-wrapper { padding:5px 9px 5px 5px; background:rgba(255,255,255,.9); border:1px solid var(--aw-game-line); border-radius:999px; box-shadow:var(--aw-game-shadow-soft); }
+#avatar-container { filter:none !important; }
+#avatar-container::after { content:""; position:absolute; inset:-3px; border:2px solid rgba(36,120,197,.28); border-radius:50%; pointer-events:none; }
+#avatar-image,#avatar-frame-image { display:none !important; }
+#avatar-container::before { content:"⚔"; width:72%; height:72%; display:flex; align-items:center; justify-content:center; border-radius:50%; background:linear-gradient(145deg,#dff3ff,#b9d9ec); color:var(--aw-game-primary-strong); font-size:clamp(18px,2.3vw,28px); font-weight:900; box-shadow:inset 0 2px 5px rgba(255,255,255,.9); }
+#name-bar-container { padding-inline:8px 5px; min-width:clamp(90px,10vw,145px); }
+#player-name-text { color:var(--aw-game-text) !important; text-shadow:none !important; }
+#player-hud-pass-badge { background:#fff4d6 !important; color:#93660d !important; border:1px solid #e5c878; box-shadow:none !important; }
+#currency-hud { flex-wrap:wrap; }
+#gold-hud-pill,#gems-hud-pill { background:var(--aw-game-surface) !important; border:1px solid var(--aw-game-line) !important; border-radius:999px !important; color:var(--aw-game-text) !important; box-shadow:var(--aw-game-shadow-soft) !important; min-height:38px; }
+#gold-icon-img,#diamond-icon-img { display:none !important; }
+#gold-hud-pill::before,#gems-hud-pill::before { font-size:15px; font-weight:900; }
+#gold-hud-pill::before { content:"◆"; color:var(--aw-game-gold); }
+#gems-hud-pill::before { content:"✦"; color:#2aa8c0; }
+.hud-pill-text { color:var(--aw-game-text) !important; text-shadow:none !important; }
+#gold-add-btn,#gems-add-btn { background:#edf6ff !important; color:var(--aw-game-primary) !important; border:1px solid #c4dced !important; }
+#open-settings-btn { width:44px; height:44px; min-height:44px !important; padding:4px !important; border-radius:50% !important; background:#fff !important; border:1px solid var(--aw-game-line) !important; box-shadow:var(--aw-game-shadow-soft) !important; }
+#settings-nav-icon { display:none !important; }
+#open-settings-btn::before { content:"⚙"; font-size:21px; color:var(--aw-game-primary); }
+#global-hud-back-btn { background:#fff !important; color:var(--aw-game-text) !important; border:1px solid var(--aw-game-line) !important; box-shadow:var(--aw-game-shadow-soft) !important; }
+#events-quick-dock { justify-content:flex-end; flex-wrap:wrap; }
+#events-quick-dock > * { min-width:42px; }
+#main-content-area { min-height:0; }
+#main-box-wrapper { width:min(430px,58vw) !important; max-height:none !important; }
+#main-box-image { display:none !important; }
+#main-box-container { min-height:clamp(260px,34vw,390px); padding:clamp(18px,3vw,30px); border-radius:28px; background:linear-gradient(145deg,#ffffff,#edf5fa); border:1px solid var(--aw-game-line); box-shadow:0 24px 60px rgba(40,83,111,.17),inset 0 1px 0 #fff; }
+#main-box-container::before { content:"ANTWAR"; position:absolute; top:clamp(16px,2vw,24px); inset-inline:0; text-align:center; color:var(--aw-game-primary); font-size:clamp(19px,2.5vw,28px); font-weight:950; letter-spacing:.16em; }
+#box-buttons-container { width:100%; display:flex; flex-direction:column; align-items:center; gap:clamp(10px,1.4vw,16px); margin-top:30px; }
+#play-btn-image,#create-room-image { display:none !important; }
+#play-action-btn { width:min(270px,80%); min-height:58px; border-radius:16px !important; background:linear-gradient(180deg,#2d91df,#1b6eb7) !important; border:1px solid #1661a2 !important; color:#fff !important; box-shadow:0 10px 24px rgba(36,120,197,.22) !important; }
+#play-action-btn::before { content:"▶  ابدأ المعركة"; font-size:clamp(16px,2vw,21px); font-weight:950; }
+#server-selector-btn { background:#fff !important; color:var(--aw-game-text) !important; border:1px solid var(--aw-game-line) !important; width:min(250px,90%) !important; min-height:44px; box-shadow:var(--aw-game-shadow-soft) !important; }
+#server-selector-btn .server-name-text { color:var(--aw-game-text) !important; }
+#server-stats-container { color:var(--aw-game-text-2); }
+.server-stat-badge { background:#fff !important; border:1px solid var(--aw-game-line); }
+.server-stat-val-white,.server-stat-val-gold { color:var(--aw-game-text) !important; }
+#create-room-action-btn { width:min(240px,70%) !important; min-height:48px; margin-top:12px !important; background:linear-gradient(180deg,#ffffff,#edf4f8) !important; border:1px solid var(--aw-game-line) !important; border-radius:14px !important; box-shadow:var(--aw-game-shadow-soft) !important; }
+#create-room-action-btn::before { content:"＋  إنشاء غرفة معركة"; color:var(--aw-game-primary-strong); font-weight:950; font-size:14px; }
+#header-nav-menu { gap:8px !important; max-width:100%; }
+#header-nav-menu .rpg-unified-btn { min-width:82px; }
+#header-nav-menu .rpg-btn-icon-wrap { width:42px; height:42px; border-radius:12px; background:#fff; border:1px solid var(--aw-game-line); box-shadow:var(--aw-game-shadow-soft); }
+#header-nav-menu .rpg-unified-btn img { display:none !important; }
+#wardrobe-nav-btn .rpg-btn-icon-wrap::before { content:"◈"; color:#2478c5; font-size:21px; }
+#rank-nav-btn .rpg-btn-icon-wrap::before { content:"★"; color:#d99b20; font-size:21px; }
+#header-nav-menu .rpg-btn-label { color:var(--aw-game-text) !important; text-shadow:none !important; font-weight:900; }
