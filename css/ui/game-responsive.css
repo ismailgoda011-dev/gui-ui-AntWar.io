@@ -1,0 +1,46 @@
+/* AntWar Game UI v2 — responsive */
+@media (max-width:1100px) {
+  #main-app-container { padding:8px !important; }
+  #app-header { align-items:center !important; }
+  #events-quick-dock { max-width:42%; }
+  #main-box-wrapper { width:min(430px,62vw) !important; }
+}
+@media (max-width:760px) {
+  body#game-body { overflow-y:auto !important; }
+  #main-app-container { min-height:100dvh; height:auto !important; }
+  #app-header { gap:6px; flex-wrap:wrap; }
+  #left-hud-row { width:100%; justify-content:center; }
+  #events-quick-dock { width:100%; max-width:none; justify-content:center; }
+  #main-content-area { flex:1 1 auto; margin-block:12px !important; }
+  #main-box-wrapper { width:min(94vw,430px) !important; }
+  #main-box-container { min-height:310px; }
+  #header-nav-menu .rpg-unified-btn { min-width:74px; }
+  .wood-modal-container,.wood-modal-shell,.modal-window,.window-shell,.full-page-container,.full-page-modal,.full-page-window,.rpg-window,.desktop-popup-chat { max-height:calc(100dvh - 12px) !important; width:calc(100vw - 12px) !important; border-radius:12px !important; }
+  .profile-stats-grid,.player-stats-grid,.profile-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:520px) {
+  #profile-section-wrapper { flex:0 1 auto; }
+  #name-bar-container { min-width:76px; }
+  #player-name-text { max-width:90px !important; }
+  #currency-hud { gap:4px !important; }
+  #gold-hud-pill,#gems-hud-pill { min-height:34px; padding-inline:8px !important; }
+  #open-settings-btn { width:40px; height:40px; min-height:40px !important; }
+  #main-box-container { min-height:285px; padding:14px; border-radius:22px; }
+  #box-buttons-container { margin-top:26px; }
+  #play-action-btn { min-height:54px; width:92%; }
+  #server-selector-btn { width:92% !important; }
+  #create-room-action-btn { width:84% !important; }
+  #header-nav-menu { width:100%; }
+  #header-nav-menu .rpg-unified-btn { min-width:68px; padding:5px 6px !important; }
+  #header-nav-menu .rpg-btn-icon-wrap { width:38px; height:38px; }
+  #header-nav-menu .rpg-btn-label { font-size:10px !important; }
+  .wood-modal-header,.full-page-header { min-height:46px !important; padding-inline:10px !important; }
+}
+@media (max-width:360px) {
+  #name-bar-container { display:none !important; }
+  #currency-hud .hud-pill-text { font-size:10px !important; }
+  #main-box-container { min-height:265px; }
+  #header-nav-menu { gap:4px !important; }
+  #header-nav-menu .rpg-unified-btn { min-width:62px; }
+  #header-nav-menu .rpg-btn-label { display:none !important; }
+}
